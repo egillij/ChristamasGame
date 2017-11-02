@@ -5,9 +5,11 @@ using UnityEngine;
 public class Player : Character
 {
     private Rigidbody2D rgdbody;
-
+    
     private bool isGrounded;
     private bool jump;
+    public GameObject snowball;
+    public Transform snowballOrigin;
 
     [SerializeField]
     private float jumpForce;
@@ -59,7 +61,18 @@ public class Player : Character
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
-        }        
+        }
+        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Quaternion direction = new Quaternion(0.0f, 0.0f, 1.0f, 1.0f);
+            if (transform.position.x > snowballOrigin.transform.position.x) {
+                direction.z = -1.0f;
+            }
+
+            Instantiate(snowball, snowballOrigin.position, direction);
+            
+        }
     }
 
     private bool IsGrounded()
