@@ -20,6 +20,6 @@ public abstract class Character : MonoBehaviour
     public void ChangeDirection()
     {
         facingRight = !facingRight;
-        transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, 1);
     }
 }
