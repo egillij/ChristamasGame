@@ -9,17 +9,41 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected float movementSpeed;
 
+    [SerializeField]
+    protected Transform throwPosition;
+
+    [SerializeField]
+    protected GameObject throwablePrefab;
+
+    public bool Attack { get; set; }
+
     protected bool facingRight;
-    
-    public virtual void Start ()
+
+
+    public virtual void Start()
     {
         facingRight = true;
         Animator = GetComponent<Animator>();
+
     }
 
     public void ChangeDirection()
     {
         facingRight = !facingRight;
-        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, 1);
+        transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
+    }
+
+    public virtual void ThrowAttack(int value)
+    {
+        if (facingRight)
+        {
+            GameObject throwable = (GameObject)Instantiate(throwablePrefab, throwPosition.position, Quaternion.Euler(new Vector3(0, 0, -90)));
+            throwable.GetComponent<Kunai>().Initialize(Vector2.right);
+        }
+        else
+        {
+            GameObject throwable = (GameObject)Instantiate(throwablePrefab, throwPosition.position, Quaternion.Euler(new Vector3(0, 0, 90)));
+            throwable.GetComponent<Kunai>().Initialize(Vector2.left);
+        }
     }
 }
