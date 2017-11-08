@@ -4,6 +4,8 @@
 /[Bb]uild/
 /[Bb]uilds/
 /Assets/AssetStoreTools*
+Library/
+ChristmasPlatformer/Library
 
 # Visual Studio 2015 cache directory
 /.vs/
