@@ -1,0 +1,33 @@
+
++breyta santa/player þannig að animator sjái um að triggera attacks... (Egill)
+	-Breyta snjóbolta virkni í eins og kunai hjá ninja
+	-Gera Player throw animation
+
++Ignore collision milli player og enemy (Egill)
+
+
++laga pivot á NinjaGirl attacks og slide (Egill)
++Laga platforma: (Egill)
+	-setja punkta á endan svo enemy labbi ekki út af.
+	-Laga side collision
+	-Setja layer order á sprites fyrir ground
+
++Búa til fleiri platforma (Egill)
+
++klára hreindýr (Sigurbjörn)
+
++Menu (Sigurbjörn)
+
++Hugmyndir af öðrum viðbætum
+
++Skorsteinar til að ferðast milli sublevela???
+
++Myndband í byrjun af óvinunum stela gjöfunum. Tilgangur leiksins er að finna allar gjafirnar til að bjarga jólunum.
+
++Álfar?? Bjarga/Follower
+
++Fleiri enemies en Ninjas
+
++Gera stærra borð
+
++Bakgrunnur fyrir borðin (Norður póll, Ninja HQ, ...)
