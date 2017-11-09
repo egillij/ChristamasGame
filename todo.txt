@@ -1,9 +1,10 @@
 
-+breyta santa/player þannig að animator sjái um að triggera attacks... (Egill)
+(done) +breyta santa/player þannig að animator sjái um að triggera attacks... (Egill)
 	-Breyta snjóbolta virkni í eins og kunai hjá ninja
 	-Gera Player throw animation
++ Gera Player attack animation. Nota candy cane? (Ground og jump attack?) 
 
-+Ignore collision milli player og enemy (Egill)
+(done) +Ignore collision milli player og enemy (Egill)
 
 
 +laga pivot á NinjaGirl attacks og slide (Egill)

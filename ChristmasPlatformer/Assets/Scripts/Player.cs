@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Player : Character
 {
-    private Rigidbody2D rgdbody;
-    
-    private bool isGrounded;
-    private bool jump;
-    public GameObject snowball;
-    public Transform snowballOrigin;
+    private static Player instance;
+
+    public static Player Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<Player>();
+            }
+            return instance;
+        }
+    }
 
     [SerializeField]
     private float jumpForce;
+
+    [SerializeField]
+    private bool airControl;
 
     [SerializeField]
     private Transform[] groundPoints;
@@ -23,10 +33,21 @@ public class Player : Character
     [SerializeField]
     private LayerMask whatIsGround;
 
+    [SerializeField]
+    private Transform throwAirPosition;
+
+    public bool OnGround { get; set; }
+
+    public bool Slide { get; set; }
+
+    public bool Jump { get; set; }
+
+    public Rigidbody2D Rbody { get; set; }
+
     public override void Start()
     {
         base.Start();
-        rgdbody = GetComponent<Rigidbody2D>();
+        Rbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -38,14 +59,13 @@ public class Player : Character
     {
         float horizontal = Input.GetAxis("Horizontal");
 
-        isGrounded = IsGrounded();
-
+        OnGround = IsGrounded();
         HandleMovement(horizontal);
+        
         Flip(horizontal);
        
         HandleLayers();
 
-        ResetValues();
     }
 
     private void Flip(float horizontal)
@@ -58,26 +78,30 @@ public class Player : Character
 
     private void HandleInput()
     {
+        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        //{
+        //    Animator.SetTrigger("attack");
+        //}
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            jump = true;
+            Animator.SetTrigger("jump");
         }
-        
+
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    Animator.SetTrigger("slide");
+        //}
+
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Quaternion direction = new Quaternion(0.0f, 0.0f, 1.0f, 1.0f);
-            if (transform.position.x > snowballOrigin.transform.position.x) {
-                direction.z = -1.0f;
-            }
-
-            Instantiate(snowball, snowballOrigin.position, direction);
-            
+            Animator.SetTrigger("throw");
         }
     }
 
     private bool IsGrounded()
     {
-        if (rgdbody.velocity.y <= 0)
+        if (Rbody.velocity.y <= 0)
         {
             foreach (Transform point in groundPoints)
             {
@@ -87,8 +111,6 @@ public class Player : Character
                 {
                     if (colliders[i].gameObject != gameObject)
                     {
-                        Animator.ResetTrigger("jump");
-                        Animator.SetBool("land", false);
                         return true;
                     }
                 }
@@ -100,25 +122,28 @@ public class Player : Character
 
     private void HandleMovement(float horizontal)
     {
-        if (rgdbody.velocity.y < 0)
+        if (Rbody.velocity.y < 0)
         {
             Animator.SetBool("land", true);
         }
 
-        if (isGrounded && jump)
+        if (!Attack && !Slide && (OnGround || airControl))
         {
-            isGrounded = false;
-            rgdbody.AddForce(new Vector2(0, jumpForce));
-            Animator.SetTrigger("jump");
+            Rbody.velocity = new Vector2(movementSpeed * horizontal, Rbody.velocity.y);
         }
 
-        rgdbody.velocity = new Vector2(horizontal * movementSpeed, rgdbody.velocity.y);
+        if (Jump && Rbody.velocity.y == 0.0f)
+        {
+
+            Rbody.AddForce(new Vector2(0.0f, jumpForce));
+        }
+
         Animator.SetFloat("speed", Mathf.Abs(horizontal));
     }
 
     private void HandleLayers()
     {
-        if (!isGrounded)
+        if (!OnGround)
         {
             Animator.SetLayerWeight(1, 1);
             Animator.SetLayerWeight(0, 0);
@@ -130,8 +155,25 @@ public class Player : Character
         }
     }
 
-    private void ResetValues()
-    {        
-        jump = false;        
+    public override void ThrowAttack(int value)
+    {
+        if (!OnGround && value == 1 || OnGround && value == 0)
+        {
+            Vector3 throwPos = throwPosition.position;
+            if (!OnGround)
+            {
+                throwPos = throwAirPosition.position;
+            }
+            if (facingRight)
+            {
+                GameObject throwable = (GameObject)Instantiate(throwablePrefab, throwPos, Quaternion.Euler(new Vector3(0, 0, -90)));
+                throwable.GetComponent<Kunai>().Initialize(Vector2.right);
+            }
+            else
+            {
+                GameObject throwable = (GameObject)Instantiate(throwablePrefab, throwPos, Quaternion.Euler(new Vector3(0, 0, 90)));
+                throwable.GetComponent<Kunai>().Initialize(Vector2.left);
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ public class Kunai : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        
         rb.velocity = direction * speed;
     }
 

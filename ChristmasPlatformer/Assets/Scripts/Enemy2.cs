@@ -55,8 +55,10 @@ public class Enemy2 : Character {
     // Update is called once per frame
     void FixedUpdate () {
         float horizontal = Input.GetAxis("Horizontal");
-        HandleMovement(horizontal);
+
         OnGround = IsGrounded();
+        HandleMovement(horizontal);
+        
         Flip(horizontal);
         HandleLayers();
     }
