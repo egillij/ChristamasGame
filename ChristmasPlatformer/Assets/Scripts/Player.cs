@@ -136,6 +136,7 @@ public class Player : Character
         {
 
             Rbody.AddForce(new Vector2(0.0f, jumpForce));
+            Jump = !Jump;
         }
 
         Animator.SetFloat("speed", Mathf.Abs(horizontal));
