@@ -36,6 +36,9 @@ public class Player : Character
     [SerializeField]
     private Transform throwAirPosition;
 
+    [SerializeField]
+    private float stoppingSpeed;
+
     public bool OnGround { get; set; }
 
     public bool Slide { get; set; }
@@ -43,6 +46,7 @@ public class Player : Character
     public bool Jump { get; set; }
 
     public Rigidbody2D Rbody { get; set; }
+    
 
     public override void Start()
     {
@@ -52,7 +56,7 @@ public class Player : Character
 
     void Update()
     {
-        HandleInput();
+        HandleInput();   
     }
 
     void FixedUpdate()
@@ -122,6 +126,7 @@ public class Player : Character
 
     private void HandleMovement(float horizontal)
     {
+
         if (Rbody.velocity.y < 0)
         {
             Animator.SetBool("land", true);
@@ -130,11 +135,23 @@ public class Player : Character
         if (!Attack && !Slide && (OnGround || airControl))
         {
             Rbody.velocity = new Vector2(movementSpeed * horizontal, Rbody.velocity.y);
+            if (horizontal == 0.0f)
+            {
+                Rbody.velocity = new Vector2(0.0f, Rbody.velocity.y);
+            }
+
+            if (Mathf.Abs(Rbody.velocity.x) > movementSpeed)
+            {
+                Rbody.velocity = new Vector2(Mathf.Sign(Rbody.velocity.x) * movementSpeed, Rbody.velocity.y);
+            }
+            else
+            {
+                Rbody.AddForce(new Vector2(movementSpeed * horizontal, 0.0f));
+            }
         }
 
         if (Jump && Rbody.velocity.y == 0.0f)
         {
-
             Rbody.AddForce(new Vector2(0.0f, jumpForce));
             Jump = !Jump;
         }

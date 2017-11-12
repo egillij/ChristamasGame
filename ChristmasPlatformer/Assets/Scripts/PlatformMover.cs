@@ -10,14 +10,21 @@ public class PlatformMover : MonoBehaviour {
     private Rigidbody2D rb;
     private Vector2 originPosition;
     private Vector2 movingDirection;
-    //private bool playerOnTop = false;
-    //private GameObject playerObject;
-	// Use this for initialization
+
+    [SerializeField]
+    private BoxCollider2D[] edgeColliders;
+
+    private bool playerOnTop;
+
 	void Start () {
         rb = gameObject.GetComponent<Rigidbody2D>();
         originPosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
         movingDirection = direction;
-	}
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), edgeColliders[0], true);
+        Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), edgeColliders[1], true);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,21 +46,35 @@ public class PlatformMover : MonoBehaviour {
         //}
     }
 
-    //public void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        playerOnTop = true;
-    //        playerObject = collision.gameObject;
-    //    }
-    //}
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerOnTop = true;
+            Physics2D.IgnoreCollision(collision.collider, edgeColliders[0], false);
+            Physics2D.IgnoreCollision(collision.collider, edgeColliders[1], false);
+        }
+    }
 
-    //public void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        playerOnTop = false;
-    //        playerObject = null;
-    //    }
-    //}
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerOnTop = false;
+            bool isEdgeCollider = false;
+            foreach (BoxCollider2D boxCol in edgeColliders)
+            {
+                if (collision.otherCollider == boxCol)
+                {
+                    isEdgeCollider = true;
+                }
+            }
+            if (!isEdgeCollider)
+            {
+                Physics2D.IgnoreCollision(collision.collider, edgeColliders[0], true);
+                Physics2D.IgnoreCollision(collision.collider, edgeColliders[1], true);
+            }
+
+        }
+    }
 }
