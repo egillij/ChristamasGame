@@ -24,6 +24,8 @@ public class ChimneyUp : MonoBehaviour {
 
     [SerializeField]
     private float updraftDecay;
+    [SerializeField]
+    private float updraftDelay;
 
     private float nextSmoke;
 
@@ -63,7 +65,7 @@ public class ChimneyUp : MonoBehaviour {
             smokeOn = false;
         }
 
-        if (smokeOn && Time.time >= smokeStart + 1.0f)
+        if (smokeOn && Time.time >= smokeStart + updraftDelay)
         {
             effectCollider.enabled = true;
         }
@@ -76,7 +78,13 @@ public class ChimneyUp : MonoBehaviour {
         {
             if (smokeOn)
             {
-                float updraft = Mathf.Exp(updraftDecay * (Time.time - smokeStart)) * forceMag;
+                //Uses time to decay the updraft force
+                //float updraft = Mathf.Exp(updraftDecay * (Time.time - smokeStart)) * forceMag;
+                //pBody.AddForce(new Vector2(0.0f, updraft));
+
+                //Uses distance to decay the updraft force
+                float distance = (collision.gameObject.transform.position - this.gameObject.transform.position).magnitude;
+                float updraft = Mathf.Exp(updraftDecay * distance) * forceMag;
                 pBody.AddForce(new Vector2(0.0f, updraft));
             }
         }
