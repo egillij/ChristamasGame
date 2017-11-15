@@ -324,8 +324,7 @@ GameObject:
   - component: {fileID: 4768666458746746}
   - component: {fileID: 61755913938002124}
   - component: {fileID: 50463243870856816}
-  - component: {fileID: 61527105506038356}
-  - component: {fileID: 114758927005080180}
+  - component: {fileID: 251845635845411914}
   m_Layer: 0
   m_Name: Big Platform
   m_TagString: Untagged
@@ -812,31 +811,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61527105506038356
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1700173101664090}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.007848978, y: -0.4477613}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1277151, y: 1.353909}
-  m_EdgeRadius: 0
 --- !u!61 &61755913938002124
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -847,7 +821,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.0101386905, y: -0.13137794}
   m_SpriteTilingProperty:
@@ -862,19 +836,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0227112, y: 1.1965203}
   m_EdgeRadius: 0
---- !u!114 &114758927005080180
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1700173101664090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177a711e487e1f94291217672d5dd1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerCollider: {fileID: 61527105506038356}
-  physicalCollider: {fileID: 61755913938002124}
 --- !u!212 &212019016508539596
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1931,3 +1892,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!251 &251845635845411914
+PlatformEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1700173101664090}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1

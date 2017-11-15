@@ -44,6 +44,8 @@ public class Enemy : Character {
     {
         base.Start();
         ChangeState(new IdleState());
+        BoxCollider2D pCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
+        Physics2D.IgnoreCollision(pCollider, this.GetComponent<BoxCollider2D>(), true);
     }
 
     void Update()

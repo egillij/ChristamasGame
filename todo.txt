@@ -17,7 +17,7 @@
 
 +klára hreindýr (Sigurbjörn)
 
-+Menu (Sigurbjörn)
++Menu (Sigurbjörn) (done)
 
 +Hugmyndir af öðrum viðbætum
 
@@ -32,3 +32,11 @@
 +Gera stærra borð
 
 +Bakgrunnur fyrir borðin (Norður póll, Ninja HQ, ...)
+
++Laga Enemy collision við Player
+
++Laga Big platform (gera effector) (Egill)
+
++Bæta við smákökum sem "healthkit".
+
++Gera kort fyrir level selection. (Egill)
