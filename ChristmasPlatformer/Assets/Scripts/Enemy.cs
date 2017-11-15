@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ public class Enemy : Character {
 
     [SerializeField]
     private float throwRange;
+
+    public EdgeCollider2D SwordCollider;
 
     public bool InMeleeRange
     {
@@ -40,17 +43,34 @@ public class Enemy : Character {
         }
     }
 
+    public override bool IsDead
+    {
+        get
+        {
+            return health <= 0;
+        }
+    }
+
     public override void Start()
     {
         base.Start();
         ChangeState(new IdleState());
         BoxCollider2D pCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(pCollider, this.GetComponent<BoxCollider2D>(), true);
+        SwordCollider.enabled = false;
     }
 
     void Update()
     {
-        currentState.Execute();
+        if (IsDead)
+        {
+            return;
+        }
+
+        if (!TakingDamage)
+        {
+            currentState.Execute();
+        }
 
         LookAtTarget();
     }
@@ -92,10 +112,29 @@ public class Enemy : Character {
         return facingRight ? Vector2.right : Vector2.left;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
-        currentState.OnTriggerEnter(collision);
+        base.OnTriggerEnter2D(other);
+        currentState.OnTriggerEnter(other);
     }
 
+    public override IEnumerator TakeDamage()
+    {
+        health--;
 
+        if (!IsDead)
+        {
+            Animator.SetTrigger("damage");
+        }
+        else
+        {
+            Animator.SetBool("dead", true);
+            yield return null;
+        }
+    }
+
+    public void MeleeAttack()
+    {
+        SwordCollider.enabled = !SwordCollider.enabled;
+    }
 }

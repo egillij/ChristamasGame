@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,7 +49,14 @@ public class Player : Character
     public bool Run { get; set; }
 
     public Rigidbody2D Rbody { get; set; }
-    
+
+    public override bool IsDead
+    {
+        get
+        {
+            return health <= 0;
+        }
+    }
 
     public override void Start()
     {
@@ -63,6 +71,11 @@ public class Player : Character
 
     void FixedUpdate()
     {
+        if (IsDead)
+        {
+            return;
+        }
+
         float horizontal = Input.GetAxis("Horizontal");
 
         OnGround = IsGrounded();
@@ -217,6 +230,21 @@ public class Player : Character
                 GameObject throwable = (GameObject)Instantiate(throwablePrefab, throwPos, Quaternion.Euler(new Vector3(0, 0, 90)));
                 throwable.GetComponent<Kunai>().Initialize(Vector2.left);
             }
+        }
+    }
+
+    public override IEnumerator TakeDamage()
+    {
+        health--;
+
+        if (!IsDead)
+        {
+            Animator.SetTrigger("damage");
+        }
+        else
+        {
+            Animator.SetBool("dead", true);
+            yield return null;
         }
     }
 }

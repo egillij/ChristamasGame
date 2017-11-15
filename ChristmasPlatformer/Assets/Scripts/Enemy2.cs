@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +42,13 @@ public class Enemy2 : Character {
 
     public Rigidbody2D Rbody { get; set; }
 
+    public override bool IsDead
+    {
+        get
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     public override void Start () {
         base.Start();
@@ -168,5 +176,10 @@ public class Enemy2 : Character {
         }
 
         
+    }
+
+    public override IEnumerator TakeDamage()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -1,10 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Reindeer : Character
 {
     Rigidbody2D rgdbody;
+
+    public override bool IsDead
+    {
+        get
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     public override void Start()
     {
@@ -52,5 +61,10 @@ public class Reindeer : Character
         */
         rgdbody.velocity = new Vector2(horizontal * movementSpeed, vertical * movementSpeed);
         Animator.SetFloat("speed", Mathf.Abs(horizontal));
+    }
+
+    public override IEnumerator TakeDamage()
+    {
+        throw new NotImplementedException();
     }
 }

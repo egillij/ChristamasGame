@@ -15,10 +15,17 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected GameObject throwablePrefab;
 
+    [SerializeField]
+    protected int health;
+
     public bool Attack { get; set; }
+    public abstract bool IsDead { get; }
 
     protected bool facingRight;
 
+    public bool TakingDamage { get; set; }
+
+    public abstract IEnumerator TakeDamage();
 
     public virtual void Start()
     {
@@ -47,6 +54,18 @@ public abstract class Character : MonoBehaviour
         {
             GameObject throwable = (GameObject)Instantiate(throwablePrefab, throwPosition.position, Quaternion.Euler(new Vector3(0, 0, 90)));
             throwable.GetComponent<Kunai>().Initialize(Vector2.left);
+        }
+    }    
+
+    public virtual void OnTriggerEnter2D (Collider2D other)
+    {
+        if ((other.tag == "Knife" || other.tag == "Sword") && gameObject.name == "Player")
+        {
+            StartCoroutine(TakeDamage());
+        }
+        else if (other.tag == "Snowball" && gameObject.name != "Player")
+        {
+            StartCoroutine(TakeDamage());
         }
     }
 }
