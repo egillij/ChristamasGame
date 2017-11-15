@@ -45,6 +45,8 @@ public class Player : Character
 
     public bool Jump { get; set; }
 
+    public bool Run { get; set; }
+
     public Rigidbody2D Rbody { get; set; }
     
 
@@ -92,6 +94,16 @@ public class Player : Character
             Animator.SetTrigger("jump");
         }
 
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Run = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.J))
+        {
+            Run = false;
+        }
+
         //if (Input.GetKeyDown(KeyCode.S))
         //{
         //    Animator.SetTrigger("slide");
@@ -126,27 +138,33 @@ public class Player : Character
 
     private void HandleMovement(float horizontal)
     {
+        float finalSpeed = movementSpeed;
 
         if (Rbody.velocity.y < 0)
         {
             Animator.SetBool("land", true);
         }
 
+        if (Run)
+        {
+            finalSpeed *= 1.5f;
+        }
+
         if (!Attack && !Slide && (OnGround || airControl))
         {
-            Rbody.velocity = new Vector2(movementSpeed * horizontal, Rbody.velocity.y);
+            Rbody.velocity = new Vector2(finalSpeed * horizontal, Rbody.velocity.y);
             if (horizontal == 0.0f)
             {
                 Rbody.velocity = new Vector2(0.0f, Rbody.velocity.y);
             }
 
-            if (Mathf.Abs(Rbody.velocity.x) > movementSpeed)
+            if (Mathf.Abs(Rbody.velocity.x) > finalSpeed)
             {
-                Rbody.velocity = new Vector2(Mathf.Sign(Rbody.velocity.x) * movementSpeed, Rbody.velocity.y);
+                Rbody.velocity = new Vector2(Mathf.Sign(Rbody.velocity.x) * finalSpeed, Rbody.velocity.y);
             }
             else
             {
-                Rbody.AddForce(new Vector2(movementSpeed * horizontal, 0.0f));
+                Rbody.AddForce(new Vector2(finalSpeed * horizontal, 0.0f));
             }
         }
 
@@ -155,8 +173,15 @@ public class Player : Character
             Rbody.AddForce(new Vector2(0.0f, jumpForce));
             Jump = !Jump;
         }
-
-        Animator.SetFloat("speed", Mathf.Abs(horizontal));
+        
+        if (Run)
+        {
+            Animator.SetFloat("speed", 2*Mathf.Abs(horizontal));
+        }
+        else
+        {
+            Animator.SetFloat("speed", Mathf.Abs(horizontal));
+        }
     }
 
     private void HandleLayers()

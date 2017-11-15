@@ -277,6 +277,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   throwAirPosition: {fileID: 4408417055582730}
+  stoppingSpeed: 0
 --- !u!212 &212832943161201752
 SpriteRenderer:
   m_ObjectHideFlags: 1
