@@ -40,3 +40,13 @@
 +Bæta við smákökum sem "healthkit".
 
 +Gera kort fyrir level selection. (Egill)
+
++Hljóð:
+	- Hljóð fyrir pakka
+	- Hljóð fyrir hoppa
+	- Hljóð fyrir deyja
+	- jóla soundtracks
+	- Hljóð fyrir skorstein og ef leikmaður interactar við hann
+	- Hljóð fyrir árás
+	- Hvaða hljóð á Enemy?
+	- Hljóð fyrir labba og hlaupa
