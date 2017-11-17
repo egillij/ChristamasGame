@@ -50,3 +50,5 @@
 	- Hljóð fyrir árás
 	- Hvaða hljóð á Enemy?
 	- Hljóð fyrir labba og hlaupa
+
++ Laga player death þegar hann er hoppandi. Festist í jump eða landing animation.

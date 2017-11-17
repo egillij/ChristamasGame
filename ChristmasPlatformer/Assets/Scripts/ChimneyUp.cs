@@ -32,6 +32,8 @@ public class ChimneyUp : MonoBehaviour {
     private bool smokeOn;
     private float smokeStart;
 
+    private bool forceApplied = false;
+
 	// Use this for initialization
 	void Start () {
         pBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
@@ -56,6 +58,7 @@ public class ChimneyUp : MonoBehaviour {
             nextSmoke = Time.time + smokeDuration + smokeInterval;
             smokeStart = Time.time;
             smokeOn = true;
+            forceApplied = false;
         }
 
         if (Time.time > nextSmoke - smokeInterval)
@@ -78,14 +81,21 @@ public class ChimneyUp : MonoBehaviour {
         {
             if (smokeOn)
             {
-                //Uses time to decay the updraft force
-                //float updraft = Mathf.Exp(updraftDecay * (Time.time - smokeStart)) * forceMag;
-                //pBody.AddForce(new Vector2(0.0f, updraft));
+                if (!forceApplied)
+                {
+                    forceApplied = !forceApplied;
+                    //Uses time to decay the updraft force
+                    //float updraft = Mathf.Exp(updraftDecay * (Time.time - smokeStart)) * forceMag;
+                    //pBody.AddForce(new Vector2(0.0f, updraft));
 
-                //Uses distance to decay the updraft force
-                float distance = (collision.gameObject.transform.position - this.gameObject.transform.position).magnitude;
-                float updraft = Mathf.Exp(updraftDecay * distance) * forceMag;
-                pBody.AddForce(new Vector2(0.0f, updraft));
+                    //Uses distance to decay the updraft force
+                    if (pBody.velocity.y < -5.0)
+                        pBody.velocity = new Vector2(pBody.velocity.x, 0.0f);
+                    float distance = (collision.gameObject.transform.position - this.gameObject.transform.position).magnitude;
+                    float updraft = Mathf.Exp(updraftDecay * distance) * forceMag;
+                    pBody.AddForce(new Vector2(0.0f, updraft), ForceMode2D.Impulse);
+                }
+                
             }
         }
     }

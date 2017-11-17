@@ -50,6 +50,8 @@ public class Player : Character
 
     public Rigidbody2D Rbody { get; set; }
 
+    public Rigidbody2D MovingPlatform { get; set; }
+
     public override bool IsDead
     {
         get
@@ -165,20 +167,29 @@ public class Player : Character
 
         if (!Attack && !Slide && (OnGround || airControl))
         {
-            Rbody.velocity = new Vector2(finalSpeed * horizontal, Rbody.velocity.y);
-            if (horizontal == 0.0f)
+            if (MovingPlatform == null)
             {
-                Rbody.velocity = new Vector2(0.0f, Rbody.velocity.y);
+                Rbody.velocity = new Vector2(finalSpeed * horizontal, Rbody.velocity.y);
+                if (horizontal == 0.0f)
+                {
+                    Rbody.velocity = new Vector2(0.0f, Rbody.velocity.y);
+                }
+
+                if (Mathf.Abs(Rbody.velocity.x) > finalSpeed)
+                {
+                    Rbody.velocity = new Vector2(Mathf.Sign(Rbody.velocity.x) * finalSpeed, Rbody.velocity.y);
+                }
+                else
+                {
+                    Rbody.AddForce(new Vector2(finalSpeed * horizontal, 0.0f));
+                }
             }
 
-            if (Mathf.Abs(Rbody.velocity.x) > finalSpeed)
-            {
-                Rbody.velocity = new Vector2(Mathf.Sign(Rbody.velocity.x) * finalSpeed, Rbody.velocity.y);
-            }
             else
             {
-                Rbody.AddForce(new Vector2(finalSpeed * horizontal, 0.0f));
+                Rbody.velocity = new Vector2(finalSpeed * horizontal, Rbody.velocity.y) + MovingPlatform.velocity;
             }
+
         }
 
         if (Jump && Rbody.velocity.y == 0.0f)
