@@ -7,11 +7,11 @@
 (done) +Ignore collision milli player og enemy (Egill)
 
 
-+laga pivot á NinjaGirl attacks og slide (Egill)
++laga pivot á NinjaGirl attacks og slide (Egill) (done)
 +Laga platforma: (Egill)
 	-setja punkta á endan svo enemy labbi ekki út af.
-	-Laga side collision
-	-Setja layer order á sprites fyrir ground
+	-Laga side collision (Done)
+	-Setja layer order á sprites fyrir ground (Done)
 
 +Búa til fleiri platforma (Egill)
 

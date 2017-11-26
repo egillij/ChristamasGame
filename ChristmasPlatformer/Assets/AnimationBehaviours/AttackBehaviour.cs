@@ -31,7 +31,9 @@ public class AttackBehaviour : StateMachineBehaviour {
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.GetComponent<Character>().Attack = false;
-        animator.GetComponent<Enemy>().SwordCollider.enabled = false;
+        
+        if (animator.tag == "Enemy")
+            animator.GetComponent<Enemy>().SwordCollider.enabled = false;   
 
         animator.ResetTrigger("attack");
         animator.ResetTrigger("throw");

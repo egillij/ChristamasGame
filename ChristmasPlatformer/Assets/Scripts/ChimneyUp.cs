@@ -76,7 +76,6 @@ public class ChimneyUp : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision");
         if (collision.tag == "Player")
         {
             if (smokeOn)

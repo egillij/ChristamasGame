@@ -33,6 +33,7 @@ public class PlatformMover : MonoBehaviour {
         
         if (playerOnTop)
         {
+            Debug.Log(Player.Instance.Jump);
             if (!Player.Instance.Jump)
             {
                 pBody.MovePosition(pBody.position + movingDirection * speed * Time.fixedDeltaTime);
