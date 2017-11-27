@@ -8,7 +8,7 @@ public class Gift : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.instance.score += 10;
+            GameManager.instance.score += 1;
             Destroy(gameObject);
         }
     }
