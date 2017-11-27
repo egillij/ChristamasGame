@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour {
 
     public Texture gift;
 
+    public float LevelStart;
+    public float LevelDuration;
+
     void Awake()
     {
         MakeSingleton();
@@ -31,16 +34,16 @@ public class GameManager : MonoBehaviour {
 
     void OnGUI()
     {
-        if (SceneManager.GetActiveScene().name != "Menu")// && SceneManager.GetActiveScene().name != "LevelSelect")
+        if (SceneManager.GetActiveScene().name != "Menu" && SceneManager.GetActiveScene().name != "LevelSelect")
         {
-            GUIContent giftImage = new GUIContent(gift);
+            // Gift and gift count
             GUIStyle giftStyle = new GUIStyle()
             {
                 alignment = TextAnchor.MiddleLeft,
                 margin = new RectOffset(5, 0, 0, 0)
                 
             };
-            GUI.Box(new Rect(0, 0, 100, 70), giftImage, giftStyle);
+            GUI.Box(new Rect(0, 0, 100, 70), gift, giftStyle);
             GUIStyle xStyle = new GUIStyle()
             {
                 fontSize = 18,
@@ -53,7 +56,15 @@ public class GameManager : MonoBehaviour {
                 fontStyle = FontStyle.Bold
             };
             GUI.Label(new Rect(72, 27, 80, 80), score.ToString(), scoreStyle);
+
+            //Time counter in seconds
+            GUIStyle timeStyle = new GUIStyle()
+            {
+                fontSize = 18,
+                fontStyle = FontStyle.Bold
+            };
+            GUI.Label(new Rect(Screen.width/2, 0, 100, 100), string.Format("{0:F2}",(LevelDuration - LevelStart)), timeStyle);
         }        
-    }
+    }   
     
 }

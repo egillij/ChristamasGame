@@ -8,6 +8,7 @@ public class ChangeScenes : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        GameManager.instance.LevelStart = Time.time;
         SceneManager.LoadScene(sceneName);
     }
 }

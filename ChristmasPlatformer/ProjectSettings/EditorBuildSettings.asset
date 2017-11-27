@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelTestEgill.unity
     guid: b6613518d9fe3534e917de374c037113
+  - enabled: 1
+    path: Assets/Scenes/LevelLast.unity
+    guid: 00000000000000000000000000000000

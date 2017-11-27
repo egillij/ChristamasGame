@@ -73,6 +73,8 @@ public class Player : Character
 
     void FixedUpdate()
     {
+        GameManager.instance.LevelDuration = Time.time;
+
         if (IsDead)
         {
             return;
@@ -192,9 +194,9 @@ public class Player : Character
 
         }
 
-        if (Jump && Rbody.velocity.y == 0.0f)
+        if (Jump && OnGround)//Rbody.velocity.y == 0.0f)
         {
-            Rbody.AddForce(new Vector2(0.0f, jumpForce));
+            Rbody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
             Jump = !Jump;
         }
         
