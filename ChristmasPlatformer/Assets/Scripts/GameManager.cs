@@ -65,6 +65,11 @@ public class GameManager : MonoBehaviour {
             };
             GUI.Label(new Rect(Screen.width/2, 0, 100, 100), string.Format("{0:F2}",(LevelDuration - LevelStart)), timeStyle);
         }        
-    }   
-    
+    }
+
+    private void FixedUpdate()
+    {
+        LevelDuration = Time.time;
+    }
+
 }

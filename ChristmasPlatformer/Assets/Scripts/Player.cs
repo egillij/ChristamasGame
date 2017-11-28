@@ -73,7 +73,7 @@ public class Player : Character
 
     void FixedUpdate()
     {
-        GameManager.instance.LevelDuration = Time.time;
+        //GameManager.instance.LevelDuration = Time.time;
 
         if (IsDead)
         {
