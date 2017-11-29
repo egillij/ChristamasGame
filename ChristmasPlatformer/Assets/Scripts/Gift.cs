@@ -10,7 +10,6 @@ public class Gift : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            //LibPD.SendFloat("banger", 1f);
             LibPD.SendBang("banger");
             GameManager.instance.score += 1;
             Destroy(gameObject);

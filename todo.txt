@@ -1,41 +1,22 @@
 
-(done) +breyta santa/player þannig að animator sjái um að triggera attacks... (Egill)
-	-Breyta snjóbolta virkni í eins og kunai hjá ninja
-	-Gera Player throw animation
-+ Gera Player attack animation. Nota candy cane? (Ground og jump attack?) 
 
-(done) +Ignore collision milli player og enemy (Egill)
-
-
-+laga pivot á NinjaGirl attacks og slide (Egill) (done)
-+Laga platforma: (Egill)
-	-setja punkta á endan svo enemy labbi ekki út af.
-	-Laga side collision (Done)
-	-Setja layer order á sprites fyrir ground (Done)
++ Gera Player attack animation. Nota candy cane? (Ground og jump attack?) [FRAMTÍÐARHUGMYND]
 
 +Búa til fleiri platforma (Egill)
 
-+klára hreindýr (Sigurbjörn)
++klára hreindýr (Sigurbjörn) (On Hold)
 
-+Menu (Sigurbjörn) (done)
-
-+Hugmyndir af öðrum viðbætum
-
-+Skorsteinar til að ferðast milli sublevela???
++Skorsteinar til að ferðast milli levela (Egill(sublevel) og Sigurbjörn(level))
 
 +Myndband í byrjun af óvinunum stela gjöfunum. Tilgangur leiksins er að finna allar gjafirnar til að bjarga jólunum.
 
-+Álfar?? Bjarga/Follower
++Álfar?? Bjarga/Follower [Framtíðarhugmynd]
 
 +Fleiri enemies en Ninjas
 
 +Gera stærra borð
 
-+Bakgrunnur fyrir borðin (Norður póll, Ninja HQ, ...)
-
 +Laga Enemy collision við Player
-
-+Laga Big platform (gera effector) (Egill)
 
 +Bæta við smákökum sem "healthkit".
 
@@ -52,3 +33,19 @@
 	- Hljóð fyrir labba og hlaupa
 
 + Laga player death þegar hann er hoppandi. Festist í jump eða landing animation.
+
++ Laga run animation
+
++ Disappearing platform (Egill)
+
++ Tímasprengja (Sigurbjörn)
+
++ Tímmað undirborð með stigasöfnun. Mismunandi týpur (Egill)
+
++ Bæta Enemy AI
+
++ Bæta við lífi í UI. (Egill)
+
++ Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn)
+
++ Moving platform er buggað (Egill)
