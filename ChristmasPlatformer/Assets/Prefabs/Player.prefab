@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 114767764758826402}
   - component: {fileID: 61818532967973134}
   - component: {fileID: 50544247562437284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365347652504300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.99, y: -3.83, z: 0}
+  m_LocalPosition: {x: 142.4, y: 8.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4947951497256560}
@@ -267,7 +267,7 @@ MonoBehaviour:
   throwablePrefab: {fileID: 1988258060381486, guid: 17e104d54a75b43438b5af3f61eaa642,
     type: 2}
   health: 3
-  jumpForce: 400
+  jumpForce: 10
   airControl: 1
   groundPoints:
   - {fileID: 4947951497256560}

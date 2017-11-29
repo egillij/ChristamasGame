@@ -532,6 +532,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 29.44, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &978545000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 978545001}
+  m_Layer: 0
+  m_Name: LeftPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &978545001
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 978545000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.83, y: 1.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1809195908}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1024104734 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4770561765246204, guid: f5ef5d080af333543943a01002f7c584,
@@ -3788,6 +3816,10 @@ Prefab:
       propertyPath: jumpForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1365347652504300, guid: 5890a77d590cdfa4081d5861a56d3f7e, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5890a77d590cdfa4081d5861a56d3f7e, type: 2}
   m_IsPrefabParent: 0
@@ -3798,6 +3830,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 208511440}
     m_Modifications:
+    - target: {fileID: 114466600465099152, guid: d12c3f9e59ef4b64faf9687b4e0ea827,
+        type: 2}
+      propertyPath: outPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4556026720654976, guid: d12c3f9e59ef4b64faf9687b4e0ea827, type: 2}
       propertyPath: m_LocalPosition.x
       value: 14.48
@@ -3830,7 +3867,33 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 61831868426921480, guid: d12c3f9e59ef4b64faf9687b4e0ea827,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 114466600465099152, guid: d12c3f9e59ef4b64faf9687b4e0ea827,
+        type: 2}
+      propertyPath: outPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1512951813}
+    - target: {fileID: 114466600465099152, guid: d12c3f9e59ef4b64faf9687b4e0ea827,
+        type: 2}
+      propertyPath: outPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 978545001}
+    - target: {fileID: 114466600465099152, guid: d12c3f9e59ef4b64faf9687b4e0ea827,
+        type: 2}
+      propertyPath: groundRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114466600465099152, guid: d12c3f9e59ef4b64faf9687b4e0ea827,
+        type: 2}
+      propertyPath: player.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 61831868426921480, guid: d12c3f9e59ef4b64faf9687b4e0ea827, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d12c3f9e59ef4b64faf9687b4e0ea827, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1304144732 stripped
@@ -4003,9 +4066,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1357899477
+  m_SortingLayer: 4
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e4179271845d55d448ea38b4da783d73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4034,6 +4097,10 @@ EdgeCollider2D:
   - {x: -9.09371, y: 0.6810694}
   - {x: -10.05982, y: 1.5853825}
   - {x: -0.00032615662, y: 8.268531}
+  - {x: 1.4044132, y: 7.266283}
+  - {x: 0.97657204, y: -0.05487728}
+  - {x: 6.0884037, y: -0.52071667}
+  - {x: 5.376398, y: 4.942292}
   - {x: 10.039057, y: 1.6030216}
   - {x: 9.174265, y: 0.69151974}
   - {x: 9.125605, y: -8.197398}
@@ -4083,6 +4150,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a066a4321012ca54eb7d74fc757f401d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1512951812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1512951813}
+  m_Layer: 0
+  m_Name: RightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1512951813
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512951812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.86, y: 1.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1809195908}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1572458922 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4189774721626934, guid: 24b6e8303064a8e4799e70de0bf2d9b0,

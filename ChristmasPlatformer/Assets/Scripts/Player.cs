@@ -48,6 +48,10 @@ public class Player : Character
 
     public bool Run { get; set; }
 
+    public bool AllowedDown { get; set; }
+
+    public bool GoDown { get; set; }
+
     public Rigidbody2D Rbody { get; set; }
 
     public Rigidbody2D MovingPlatform { get; set; }
@@ -121,6 +125,11 @@ public class Player : Character
             Run = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.DownArrow) && AllowedDown)
+        {
+            GoDown = true;
+        }
+
         //if (Input.GetKeyDown(KeyCode.S))
         //{
         //    Animator.SetTrigger("slide");
@@ -156,6 +165,12 @@ public class Player : Character
     private void HandleMovement(float horizontal)
     {
         float finalSpeed = movementSpeed;
+
+        if (GoDown)
+        {
+            Rbody.velocity = new Vector2(0, -1 * movementSpeed);
+            return;
+        }
 
         if (Rbody.velocity.y < 0)
         {
