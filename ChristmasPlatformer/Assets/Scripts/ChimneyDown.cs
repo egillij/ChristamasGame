@@ -28,7 +28,6 @@ public class ChimneyDown : MonoBehaviour
     {
         if (IsInside())
         {
-            Debug.Log("inni");
             Player.Instance.AllowedDown = true;
 
             if (Player.Instance.GoDown)
@@ -41,7 +40,6 @@ public class ChimneyDown : MonoBehaviour
         }
         else
         {
-            Debug.Log("Uti");
             Player.Instance.AllowedDown = false;
         }
     }
