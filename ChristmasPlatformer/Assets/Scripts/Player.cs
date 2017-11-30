@@ -54,7 +54,7 @@ public class Player : Character
 
     public Rigidbody2D Rbody { get; set; }
 
-    public Rigidbody2D MovingPlatform { get; set; }
+    public GameObject MovingPlatform { get; set; }
 
     public override bool IsDead
     {
@@ -204,15 +204,19 @@ public class Player : Character
 
             else
             {
-                Rbody.velocity = new Vector2(finalSpeed * horizontal, Rbody.velocity.y) + MovingPlatform.velocity;
+                Rbody.velocity = new Vector2(finalSpeed * horizontal, Rbody.velocity.y) + MovingPlatform.GetComponent<Rigidbody2D>().velocity;
             }
 
         }
 
         if (Jump && OnGround)//Rbody.velocity.y == 0.0f)
         {
+            if (MovingPlatform != null)
+            {
+                MovingPlatform.GetComponent<PlatformMover>().playerOnTop = false;
+            }
             Rbody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
-            Jump = !Jump;
+            Jump = false;
         }
         
         if (Run)

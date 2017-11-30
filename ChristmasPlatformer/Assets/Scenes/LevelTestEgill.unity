@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4770561765246204, guid: f5ef5d080af333543943a01002f7c584, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 19.61
+      value: 27.26
       objectReference: {fileID: 0}
     - target: {fileID: 4770561765246204, guid: f5ef5d080af333543943a01002f7c584, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.44
+      value: 4.29
       objectReference: {fileID: 0}
     - target: {fileID: 4770561765246204, guid: f5ef5d080af333543943a01002f7c584, type: 2}
       propertyPath: m_LocalPosition.z
@@ -151,6 +151,46 @@ Prefab:
     - target: {fileID: 4770561765246204, guid: f5ef5d080af333543943a01002f7c584, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114392996316079970, guid: f5ef5d080af333543943a01002f7c584,
+        type: 2}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 50590604590623048, guid: f5ef5d080af333543943a01002f7c584,
+        type: 2}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50590604590623048, guid: f5ef5d080af333543943a01002f7c584,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50590604590623048, guid: f5ef5d080af333543943a01002f7c584,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114392996316079970, guid: f5ef5d080af333543943a01002f7c584,
+        type: 2}
+      propertyPath: direction.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50590604590623048, guid: f5ef5d080af333543943a01002f7c584,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 50590604590623048, guid: f5ef5d080af333543943a01002f7c584,
+        type: 2}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114392996316079970, guid: f5ef5d080af333543943a01002f7c584,
+        type: 2}
+      propertyPath: direction.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5ef5d080af333543943a01002f7c584, type: 2}
@@ -862,11 +902,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4328234286234698, guid: 5890a77d590cdfa4081d5861a56d3f7e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 14.4
       objectReference: {fileID: 0}
     - target: {fileID: 4328234286234698, guid: 5890a77d590cdfa4081d5861a56d3f7e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 4328234286234698, guid: 5890a77d590cdfa4081d5861a56d3f7e, type: 2}
       propertyPath: m_LocalPosition.z
