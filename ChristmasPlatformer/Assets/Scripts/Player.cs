@@ -68,6 +68,7 @@ public class Player : Character
     {
         base.Start();
         Rbody = GetComponent<Rigidbody2D>();
+        GameManager.instance.health = 3;
     }
 
     void Update()
@@ -268,6 +269,7 @@ public class Player : Character
     public override IEnumerator TakeDamage()
     {
         health--;
+        GameManager.instance.health = health;
 
         if (!IsDead)
         {

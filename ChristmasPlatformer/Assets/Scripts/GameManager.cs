@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour {
     public int score;
 
     public Texture gift;
+    public Texture heart;
 
     public float LevelStart;
     public float LevelDuration;
+    public int health;
 
     void Awake()
     {
@@ -64,6 +66,18 @@ public class GameManager : MonoBehaviour {
                 fontStyle = FontStyle.Bold
             };
             GUI.Label(new Rect(Screen.width/2, 0, 100, 100), string.Format("{0:F2}",(LevelDuration - LevelStart)), timeStyle);
+
+            // Add player health to GUI
+            GUIStyle healthStyle = new GUIStyle()
+            {
+                alignment = TextAnchor.MiddleCenter,
+                margin = new RectOffset(5, 0, 0, 0)
+
+            };
+            for (int i = 0; i < health; i++)
+            {
+                GUI.Box(new Rect(Screen.width-250+i*50, 0, 100, 70), heart, healthStyle);
+            }
         }        
     }
 

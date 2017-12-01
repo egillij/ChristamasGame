@@ -2,7 +2,7 @@
 
 + Gera Player attack animation. Nota candy cane? (Ground og jump attack?) [FRAMTÍÐARHUGMYND]
 
-+Búa til fleiri platforma (Egill)
++Búa til fleiri platforma
 
 +klára hreindýr (Sigurbjörn) (On Hold)
 
@@ -20,7 +20,7 @@
 
 +Bæta við smákökum sem "healthkit".
 
-+Gera kort fyrir level selection. (Egill)
++Gera kort fyrir level selection. (Egill) [done? - mögulega breyta um kort eða fjarlægja logo af korti]
 
 +Hljóð:
 	- Hljóð fyrir pakka
@@ -36,7 +36,7 @@
 
 + Laga run animation
 
-+ Disappearing platform (Egill)
++ Disappearing platform (Egill) [done]
 
 + Tímasprengja (Sigurbjörn)
 
@@ -44,8 +44,8 @@
 
 + Bæta Enemy AI
 
-+ Bæta við lífi í UI. (Egill)
++ Bæta við lífi í UI. (Egill) [done]
 
 + Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn)
 
-+ Moving platform er buggað (Egill)
++ Moving platform er buggað (Egill) [mögulega lagað]
