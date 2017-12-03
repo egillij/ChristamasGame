@@ -61,10 +61,13 @@ public abstract class Character : MonoBehaviour
     {
         if ((other.tag == "Knife" || other.tag == "Sword") && gameObject.name == "Player")
         {
+            if (other.tag == "Knife") Destroy(other.gameObject);
             StartCoroutine(TakeDamage());
         }
         else if (other.tag == "Snowball" && gameObject.name != "Player")
         {
+            if (gameObject.tag == "Enemy")
+                Destroy(other.gameObject);
             StartCoroutine(TakeDamage());
         }
         else if(other.tag == "Bomb" && other is CircleCollider2D)

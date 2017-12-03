@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114050977051992380}
   - component: {fileID: 251423155449440168}
   m_Layer: 0
-  m_Name: chimney2_with_snow
+  m_Name: Chimney With Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

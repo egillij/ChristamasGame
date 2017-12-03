@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 114187695639961204}
   m_Layer: 8
   m_Name: NinjaGirl
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1832775063237284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.79, y: 11.21, z: 0}
+  m_LocalPosition: {x: -13.79, y: -6.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4003492280996094}
@@ -313,7 +313,7 @@ EdgeCollider2D:
   - {x: 1.3455803, y: 0.1505971}
   - {x: 1.5229924, y: -0.5499503}
   - {x: 1.3411515, y: -1.2621672}
-  - {x: 0.97660756, y: -1.8784008}
+  - {x: 0.9766075, y: -1.8784008}
   - {x: 0.34376645, y: -2.3418767}
   - {x: -0.35614848, y: -2.512912}
   - {x: -0.6987827, y: -2.5071838}
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076f559ec8399124daaf4314681f739d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 3
   throwPosition: {fileID: 4948818461461172}
   throwablePrefab: {fileID: 1324513367013272, guid: 299f2367eafbbf442a05b0909b76ad72,
     type: 2}

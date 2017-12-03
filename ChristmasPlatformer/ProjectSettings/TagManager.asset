@@ -10,6 +10,7 @@ TagManager:
   - Sword
   - Chimney
   - Bomb
+  - Enemy
   layers:
   - Default
   - TransparentFX

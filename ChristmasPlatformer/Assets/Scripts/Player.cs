@@ -40,6 +40,8 @@ public class Player : Character
     [SerializeField]
     private float stoppingSpeed;
 
+    private float sleepStop;
+
     public bool OnGround { get; set; }
 
     public bool Slide { get; set; }
@@ -56,6 +58,10 @@ public class Player : Character
 
     public GameObject MovingPlatform { get; set; }
 
+    public bool Sleep { get; set; }
+
+    public float BonusScore {get;set;}
+
     public override bool IsDead
     {
         get
@@ -69,11 +75,27 @@ public class Player : Character
         base.Start();
         Rbody = GetComponent<Rigidbody2D>();
         GameManager.instance.health = 3;
+        BonusScore = 0.0f;
     }
 
     void Update()
     {
-        HandleInput();   
+        if(Sleep)
+        {
+            Debug.Log(sleepStop);
+            Debug.Log(Time.time);
+            if (Time.time >= sleepStop)
+            {
+                Sleep = !Sleep;
+                Rbody.WakeUp();
+            }
+        }
+        else
+        {
+            HandleInput();
+        }
+
+        
     }
 
     void FixedUpdate()
@@ -86,12 +108,16 @@ public class Player : Character
         }
 
         float horizontal = Input.GetAxis("Horizontal");
+        if (Sleep)
+        {
+            horizontal = 0.0f;   
+        }
 
         OnGround = IsGrounded();
         HandleMovement(horizontal);
-        
+
         Flip(horizontal);
-       
+
         HandleLayers();
 
     }
@@ -242,6 +268,13 @@ public class Player : Character
             Animator.SetLayerWeight(0, 1);
             Animator.SetLayerWeight(1, 0);
         }
+    }
+
+    public void Sleeping(float sleepDuration)
+    {
+        Sleep = true;
+        Rbody.Sleep();
+        sleepStop = Time.time + sleepDuration;
     }
 
     public override void ThrowAttack(int value)
