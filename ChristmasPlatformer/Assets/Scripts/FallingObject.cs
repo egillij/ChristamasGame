@@ -33,6 +33,20 @@ public class FallingObject : MonoBehaviour {
                 
                 Destroy(this.gameObject);
             }
+
+            if (this.gameObject.tag == "Bomb")
+            {
+                Camera[] cams = GameObject.FindObjectsOfType<Camera>();
+                foreach (Camera cam in cams)
+                {
+                    if (cam.name == "Falling Camera")
+                    {
+                        float currentScore = cam.GetComponent<CaptureGame>().score;
+                        cam.GetComponent<CaptureGame>().score = currentScore >=15 ? cam.GetComponent<CaptureGame>().score-15 : 0.0f;
+                        
+                    }
+                }
+            }
             
         }
     }

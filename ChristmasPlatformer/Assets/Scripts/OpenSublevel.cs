@@ -29,13 +29,13 @@ public class OpenSublevel: MonoBehaviour {
             
             if (colorToGreen)
             {
-                newColor.r -= 5;
-                newColor.b -= 5;
+                newColor.r -= 25;
+                newColor.b -= 25;
             }
             else
             {
-                newColor.r += 5;
-                newColor.b += 5;
+                newColor.r += 25;
+                newColor.b += 25;
             }
 
             if (newColor.r <= 0)

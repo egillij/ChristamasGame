@@ -30,8 +30,8 @@ public class CaptureGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         levelStart = Time.time;
-        spawnRate = 3.0f/levelDifficulty;
-        badRate = 0.5f * Mathf.Exp(-1f / levelDifficulty);
+        spawnRate = 2.0f/levelDifficulty;
+        badRate = 0.5f * Mathf.Exp(-2f / levelDifficulty);
 	}
 	
 	// Update is called once per frame
@@ -63,17 +63,34 @@ public class CaptureGame : MonoBehaviour {
                     lastSpawn = Time.time;
                     float spawnType = Random.value;
 
+                    Camera cam = this.gameObject.GetComponent<Camera>();
+                    var vertExtent = cam.orthographicSize;
+                    var horzExtent = cam.orthographicSize * Screen.width / Screen.height;
+                    Vector3 position = new Vector3((Random.value * 2 - 1) * horzExtent + this.transform.position.x, vertExtent + this.transform.position.y, 0.0f);
+
                     if (Random.value <= badRate)
                     {
-                        //Spawn bomb
-                        Debug.Log("Bomb");
+                        GameObject newBomb = Instantiate(bomb, position, new Quaternion()) as GameObject;
+                        switch (levelDifficulty.ToString())
+                        {
+                            case "1":
+                                newBomb.GetComponent<Rigidbody2D>().gravityScale = 0.4f;
+                                break;
+
+                            case "2":
+                                newBomb.GetComponent<Rigidbody2D>().gravityScale = 0.6f;
+                                break;
+
+                            case "3":
+
+                                float scale = Random.Range(0.8f, 2.0f);
+                                newBomb.GetComponent<Rigidbody2D>().gravityScale = scale;
+                                break;
+                        }
                     }
                     else
                     {
-                        Camera cam = this.gameObject.GetComponent<Camera>();
-                        var vertExtent = cam.orthographicSize;
-                        var horzExtent = cam.orthographicSize * Screen.width / Screen.height;
-                        Vector3 position = new Vector3((Random.value * 2 - 1) * horzExtent + this.transform.position.x, vertExtent + this.transform.position.y, 0.0f);
+                        
                         GameObject newGift = Instantiate(gift, position, new Quaternion()) as GameObject;
                         switch(levelDifficulty.ToString())
                         {
@@ -87,7 +104,7 @@ public class CaptureGame : MonoBehaviour {
 
                             case "3":
 
-                                float scale = Random.Range(0.4f, 1.0f);
+                                float scale = Random.Range(0.7f, 1.5f);
                                 newGift.GetComponent<Rigidbody2D>().gravityScale = scale;
                                 break;
                         }

@@ -257,6 +257,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1362948040623704, guid: fd17452be5ca23d49b375e477bb9d6ce, type: 2}
+      propertyPath: m_TagString
+      value: EnemySight
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd17452be5ca23d49b375e477bb9d6ce, type: 2}
   m_IsPrefabParent: 0
@@ -453,7 +457,7 @@ Prefab:
     - target: {fileID: 114032952602506020, guid: 25024a27cf9363c409f836df2132cabf,
         type: 2}
       propertyPath: levelDifficulty
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114032952602506020, guid: 25024a27cf9363c409f836df2132cabf,
         type: 2}
