@@ -4,8 +4,7 @@ Implementations:
 	+ Bæta við smákökum sem "healthkit".
 	+ Tímmað undirborð með stigasöfnun. Mismunandi týpur (Egill)
 	+ Bæta Enemy AI
-	+ Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn)	
-	+ Skorstein til að ferðast milli sublevela (bónus borða) (Egill)     % comment frá Sibba: Hafðu sublevelin fyrir ofan aðallevelin ekki að neðan inn í scenes
+	+ Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn)		
 	+ Myndband í byrjun af óvinunum stela gjöfunum. Tilgangur leiksins er að finna allar gjafirnar til að bjarga jólunum.
 	+Fleiri enemies en Ninjas
 	
@@ -14,6 +13,7 @@ Implementations:
 		Tímasprengja (Sigurbjörn) [done]
 		Bæta við lífi í UI. (Egill) [done]
 		Skorsteinar til að ferðast milli levela Sigurbjörn [done]		
+		Skorstein til að ferðast milli sublevela (bónus borða) (Egill)     % comment frá Sibba: Hafðu sublevelin fyrir ofan aðallevelin ekki að neðan inn í scenes
 
 
 
