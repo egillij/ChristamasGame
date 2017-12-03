@@ -74,16 +74,16 @@ public class Player : Character
     {
         base.Start();
         Rbody = GetComponent<Rigidbody2D>();
-        GameManager.instance.health = 3;
+
         BonusScore = 0.0f;
+        health = GameManager.instance.health;
+
     }
 
     void Update()
     {
         if(Sleep)
         {
-            Debug.Log(sleepStop);
-            Debug.Log(Time.time);
             if (Time.time >= sleepStop)
             {
                 Sleep = !Sleep;
@@ -104,6 +104,7 @@ public class Player : Character
 
         if (IsDead)
         {
+            Animator.SetBool("dead", true);
             return;
         }
 
@@ -301,8 +302,8 @@ public class Player : Character
 
     public override IEnumerator TakeDamage()
     {
-        health--;
-        GameManager.instance.health = health;
+        GameManager.instance.health--;
+        health = GameManager.instance.health;
 
         if (!IsDead)
         {

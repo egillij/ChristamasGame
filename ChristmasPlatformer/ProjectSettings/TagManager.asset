@@ -11,6 +11,7 @@ TagManager:
   - Chimney
   - Bomb
   - Enemy
+  - Hell
   layers:
   - Default
   - TransparentFX

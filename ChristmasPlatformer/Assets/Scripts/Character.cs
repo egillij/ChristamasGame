@@ -59,20 +59,22 @@ public abstract class Character : MonoBehaviour
 
     public virtual void OnTriggerEnter2D (Collider2D other)
     {
-        if ((other.tag == "Knife" || other.tag == "Sword") && gameObject.name == "Player")
+        if (gameObject.name == "Player")
         {
-            if (other.tag == "Knife") Destroy(other.gameObject);
-            StartCoroutine(TakeDamage());
+            if ((other.tag == "Knife" || other.tag == "Sword" || other.tag == "Hell")
+                || (other.tag == "Bomb" && other is CircleCollider2D)
+            ) {
+                if (other.tag == "Knife") Destroy(other.gameObject);
+                StartCoroutine(TakeDamage());
+            }
         }
-        else if (other.tag == "Snowball" && gameObject.name != "Player")
+        else
         {
-            if (gameObject.tag == "Enemy")
+            if (other.tag == "Snowball")
+            {
                 Destroy(other.gameObject);
-            StartCoroutine(TakeDamage());
-        }
-        else if(other.tag == "Bomb" && other is CircleCollider2D)
-        {
-            StartCoroutine(TakeDamage());
+                StartCoroutine(TakeDamage());
+            }            
         }
     }
-}
+}            
