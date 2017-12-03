@@ -77,4 +77,12 @@ public abstract class Character : MonoBehaviour
             }            
         }
     }
+
+    public virtual void OnCollisionEnter2D(Collision2D other)
+    {
+        if (gameObject.name == "Player" && other.gameObject.tag == "Icicle")
+        {
+            StartCoroutine(TakeDamage());
+        }
+    }
 }            

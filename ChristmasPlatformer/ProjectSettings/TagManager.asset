@@ -12,6 +12,7 @@ TagManager:
   - Bomb
   - Enemy
   - Hell
+  - Icicle
   layers:
   - Default
   - TransparentFX
