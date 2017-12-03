@@ -34,11 +34,11 @@
 
 + Laga player death þegar hann er hoppandi. Festist í jump eða landing animation.
 
-+ Laga run animation
++ Laga run animation [done]
 
 + Disappearing platform (Egill) [done]
 
-+ Tímasprengja (Sigurbjörn)
++ Tímasprengja (Sigurbjörn) [done]
 
 + Tímmað undirborð með stigasöfnun. Mismunandi týpur (Egill)
 
