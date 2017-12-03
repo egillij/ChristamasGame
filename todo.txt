@@ -1,28 +1,34 @@
+Implementations:
+	+ Gera stærra borð
+	+ Búa til fleiri platforma
+	+ Bæta við smákökum sem "healthkit".
+	+ Tímmað undirborð með stigasöfnun. Mismunandi týpur (Egill)
+	+ Bæta Enemy AI
+	+ Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn)	
+	+ Skorstein til að ferðast milli sublevela (bónus borða) (Egill)     % comment frá Sibba: Hafðu sublevelin fyrir ofan aðallevelin ekki að neðan inn í scenes
+	+ Myndband í byrjun af óvinunum stela gjöfunum. Tilgangur leiksins er að finna allar gjafirnar til að bjarga jólunum.
+	+Fleiri enemies en Ninjas
+	
+
+		Gera kort fyrir level selection. (Egill) [done? - mögulega breyta um kort eða fjarlægja logo af korti]
+		Tímasprengja (Sigurbjörn) [done]
+		Bæta við lífi í UI. (Egill) [done]
+		Skorsteinar til að ferðast milli levela Sigurbjörn [done]		
 
 
-+ Gera Player attack animation. Nota candy cane? (Ground og jump attack?) [FRAMTÍÐARHUGMYND]
 
-+Búa til fleiri platforma
+Bugs: 
+	
+	+ Laga player death þegar hann er hoppandi. Festist í jump eða landing animation.
+	+ Laga Player damage. (Frekar óskýrt t.d. þegar hann verður fyrir sprengju) Einnig sést ekki damage þegar hlaupandi.
+	+ Laga Enemy collision við Player
 
-+klára hreindýr (Sigurbjörn) (On Hold)
+		Moving platform er buggað (Egill) [mögulega lagað]
+		Laga run animation [done]
+		Disappearing platform (Egill) [done]
 
-+Skorsteinar til að ferðast milli levela (Egill(sublevel) og Sigurbjörn(level))
 
-+Myndband í byrjun af óvinunum stela gjöfunum. Tilgangur leiksins er að finna allar gjafirnar til að bjarga jólunum.
-
-+Álfar?? Bjarga/Follower [Framtíðarhugmynd]
-
-+Fleiri enemies en Ninjas
-
-+Gera stærra borð
-
-+Laga Enemy collision við Player
-
-+Bæta við smákökum sem "healthkit".
-
-+Gera kort fyrir level selection. (Egill) [done? - mögulega breyta um kort eða fjarlægja logo af korti]
-
-+Hljóð:
+Hljóð:
 	- Hljóð fyrir pakka
 	- Hljóð fyrir hoppa
 	- Hljóð fyrir deyja
@@ -32,20 +38,7 @@
 	- Hvaða hljóð á Enemy?
 	- Hljóð fyrir labba og hlaupa
 
-+ Laga player death þegar hann er hoppandi. Festist í jump eða landing animation.
-
-+ Laga run animation [done]
-
-+ Disappearing platform (Egill) [done]
-
-+ Tímasprengja (Sigurbjörn) [done]
-
-+ Tímmað undirborð með stigasöfnun. Mismunandi týpur (Egill)
-
-+ Bæta Enemy AI
-
-+ Bæta við lífi í UI. (Egill) [done]
-
-+ Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn)
-
-+ Moving platform er buggað (Egill) [mögulega lagað]
+Nice to have - Future things if time:
+	+ Gera Player attack animation. Nota candy cane? (Ground og jump attack?) [FRAMTÍÐARHUGMYND]
+	+klára hreindýr (Sigurbjörn) (On Hold)
+	+Álfar?? Bjarga/Follower [Framtíðarhugmynd]
