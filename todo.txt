@@ -13,7 +13,8 @@ Implementations:
 		Tímasprengja (Sigurbjörn) [done]
 		Bæta við lífi í UI. (Egill) [done]
 		Skorsteinar til að ferðast milli levela Sigurbjörn [done]
-		Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn) [done]	
+		Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn) [done]
+		Grýlukerti sem detta ef player fer undir þau [done]
 
 
 
