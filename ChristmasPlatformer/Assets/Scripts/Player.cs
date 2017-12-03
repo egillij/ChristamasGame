@@ -152,9 +152,11 @@ public class Player : Character
         {
             Run = false;
         }
-
+        //Debug.Log(Input.GetKeyDown(KeyCode.DownArrow));
+        //Debug.Log(AllowedDown);
         if (Input.GetKeyDown(KeyCode.DownArrow) && AllowedDown)
         {
+            Debug.Log("GGOOO DOWN");
             GoDown = true;
         }
 
@@ -166,6 +168,16 @@ public class Player : Character
         if (Input.GetKeyDown(KeyCode.K))
         {
             Animator.SetTrigger("throw");
+        }
+    }
+
+    public void PlayerDown()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Debug.Log("GGOOO DOWN");
+            GoDown = true;
+            //Rbody.velocity = new Vector2(0, -1 * movementSpeed);
         }
     }
 

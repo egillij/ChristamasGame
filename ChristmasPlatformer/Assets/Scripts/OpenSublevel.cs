@@ -9,22 +9,39 @@ public class OpenSublevel: MonoBehaviour {
 
     public float levelDifficulty;
     public float levelDuration;
+    
 
-    private bool sceneLoaded = false;
+    [SerializeField]
+    private Transform[] outPoints;
+
+    [SerializeField]
+    private float groundRadius;
+
+    [SerializeField]
+    private LayerMask player;
+
     private bool sceneIsLoading = false;
+    private bool isPlayerDown;
     private bool isSublevelOpen;
     private bool colorToGreen = true;
-	// Use this for initialization
-	void Start () {
+    private Vector3 returnPos;
+
+    private BoxCollider2D ChimneyCollider;
+    private SpriteRenderer spriteRenderer;
+
+    // Use this for initialization
+    void Start () {
+        ChimneyCollider = GetComponent<BoxCollider2D>();
         isSublevelOpen = true;
-	}
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (isSublevelOpen)
         {
-            //Make the chimney glow
-            SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
+            //Make the chimney blink
+            
             Color newColor = spriteRenderer.color;
             
             if (colorToGreen)
@@ -34,8 +51,8 @@ public class OpenSublevel: MonoBehaviour {
             }
             else
             {
-                newColor.r += 25;
-                newColor.b += 25;
+                newColor.r += 10;
+                newColor.b += 10;
             }
 
             if (newColor.r <= 0)
@@ -51,42 +68,99 @@ public class OpenSublevel: MonoBehaviour {
         }
 
 
+        
         if (sceneIsLoading)
         {
-            if (SceneManager.GetSceneAt(1).isLoaded)
+            if (isPlayerDown)
             {
-                SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
-                CaptureGame captureObject = GameObject.FindObjectOfType<CaptureGame>();
-                captureObject.playerReturnPosition = Player.Instance.gameObject.transform.position;
-
-                captureObject.StartNew(levelDifficulty, levelDuration);
-
-
-                GameObject[] fallingObjects = SceneManager.GetSceneAt(1).GetRootGameObjects();
-                foreach (GameObject obj in fallingObjects)
+                if (SceneManager.GetSceneAt(1).isLoaded)
                 {
-                    if (obj.tag == "PlayerStart")
+                    SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
+                    CaptureGame captureObject = GameObject.FindObjectOfType<CaptureGame>();
+                    captureObject.playerReturnPosition = returnPos;
+                    captureObject.StartNew(levelDifficulty, levelDuration);
+
+                    GameObject[] fallingObjects = SceneManager.GetSceneAt(1).GetRootGameObjects();
+                    foreach (GameObject obj in fallingObjects)
                     {
-                        Player.Instance.gameObject.transform.position = obj.transform.position;
+                        if (obj.tag == "PlayerStart")
+                        {
+                            Player.Instance.gameObject.transform.position = obj.transform.position;
+                        }
                     }
+                    sceneIsLoading = false;
+                    isSublevelOpen = false;
+                    ChimneyCollider.enabled = true;
                 }
-                sceneLoaded = true;
-                sceneIsLoading = false;
-                isSublevelOpen = false;
             }
+            
         }
-        
+        else
+        {
+            if (IsInside())//Input.GetKeyDown(KeyCode.S))
+            {
+                
+                Player.Instance.AllowedDown = true;
+                Player.Instance.PlayerDown();
+                if (Player.Instance.GoDown)
+                {
+                    returnPos = Player.Instance.gameObject.transform.position;
+                    ChimneyCollider.enabled = false;
+                    sceneIsLoading = true;
+                    StartCoroutine(ChangeScene());
+                    
+                }
+
+            }
+            else
+            {
+                Player.Instance.AllowedDown = false;
+            }
+
+        }
+
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private bool IsInside()
     {
-        if (collision.tag == "Player" && !sceneIsLoading && isSublevelOpen)
+        int counter = 0;
+
+        foreach (Transform point in outPoints)
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRadius, player);
+
+            for (int i = 0; i < colliders.Length; i++)
             {
-                SceneManager.LoadScene(sublevelName, LoadSceneMode.Additive);
-                sceneIsLoading = true;
+                if (colliders[i].gameObject != gameObject)
+                {
+                    counter++;
+                }
             }
         }
+
+        return (counter == 2);
     }
+
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        Player.Instance.GoDown = false;
+        Player.Instance.AllowedDown = false;
+        isPlayerDown = true;
+        spriteRenderer.color = new Color(255, 255, 255, 255);
+
+        SceneManager.LoadScene(sublevelName, LoadSceneMode.Additive);
+
+
+
+    }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "Player" && !sceneIsLoading && isSublevelOpen)
+    //    {
+
+    //    }
+    //}
 }

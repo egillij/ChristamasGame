@@ -26,7 +26,8 @@ public class Icicle : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Animator.SetTrigger("break");
+        if (other.gameObject.tag != "Icicle")
+            Animator.SetTrigger("break");
     }
 
     void DestoryElement()
