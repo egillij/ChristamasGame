@@ -67,5 +67,9 @@ public abstract class Character : MonoBehaviour
         {
             StartCoroutine(TakeDamage());
         }
+        else if(other.tag == "Bomb" && other is CircleCollider2D)
+        {
+            StartCoroutine(TakeDamage());
+        }
     }
 }

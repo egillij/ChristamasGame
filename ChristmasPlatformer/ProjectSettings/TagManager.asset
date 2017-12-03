@@ -9,6 +9,7 @@ TagManager:
   - Snowball
   - Sword
   - Chimney
+  - Bomb
   layers:
   - Default
   - TransparentFX

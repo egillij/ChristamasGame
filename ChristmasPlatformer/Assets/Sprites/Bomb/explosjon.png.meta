@@ -1,0 +1,801 @@
+fileFormatVersion: 2
+guid: d08c3b6811c15f24e9a0d0e51fe0bf50
+timeCreated: 1512293855
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: explosjon_0
+    21300002: explosjon_1
+    21300004: explosjon_2
+    21300006: explosjon_3
+    21300008: explosjon_4
+    21300010: explosjon_5
+    21300012: explosjon_6
+    21300014: explosjon_7
+    21300016: explosjon_8
+    21300018: explosjon_9
+    21300020: explosjon_10
+    21300022: explosjon_11
+    21300024: explosjon_12
+    21300026: explosjon_13
+    21300028: explosjon_14
+    21300030: explosjon_15
+    21300032: explosjon_16
+    21300034: explosjon_17
+    21300036: explosjon_18
+    21300038: explosjon_19
+    21300040: explosjon_20
+    21300042: explosjon_21
+    21300044: explosjon_22
+    21300046: explosjon_23
+    21300048: explosjon_24
+    21300050: explosjon_25
+    21300052: explosjon_26
+    21300054: explosjon_27
+    21300056: explosjon_28
+    21300058: explosjon_29
+    21300060: explosjon_30
+    21300062: explosjon_31
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: explosjon_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 417
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 482
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 394
+        width: 96
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_3
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 390
+        width: 108
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_4
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 389
+        width: 113
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 468
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_6
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 456
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 264
+        width: 106
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_8
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 264
+        width: 102
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_9
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 371
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_10
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 269
+        width: 99
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_11
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 278
+        width: 89
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_12
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 344
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 266
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_14
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 268
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_15
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 270
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_16
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 236
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 233
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_18
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 151
+        width: 65
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 217
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_20
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 164
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_21
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 166
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_22
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 213
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_23
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 167
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_24
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 204
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_25
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 203
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_26
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 200
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_27
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 188
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_28
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 152
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_29
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 154
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_30
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 39
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: explosjon_31
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 39
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -220, y: -166}
+      - {x: -221, y: -167}
+      - {x: -221, y: -213}
+      - {x: -220, y: -219}
+      - {x: -182, y: -219}
+      - {x: -172, y: -207}
+      - {x: -172, y: -166}
+    - - {x: -58, y: -166}
+      - {x: -80, y: -166}
+      - {x: -94, y: -174}
+      - {x: -94, y: -212}
+      - {x: -92, y: -219}
+      - {x: -53, y: -219}
+      - {x: -45, y: -212}
+      - {x: -45, y: -188}
+      - {x: -48, y: -177}
+    - - {x: -190, y: -24}
+      - {x: -191, y: -27}
+      - {x: -191, y: -29}
+      - {x: -191, y: -26}
+      - {x: -188, y: -14}
+      - {x: -221, y: -14}
+      - {x: -224, y: -21}
+      - {x: -243, y: -41}
+      - {x: -243, y: -55}
+      - {x: -229, y: -107}
+      - {x: -150, y: -107}
+      - {x: -150, y: -28}
+      - {x: -157, y: -26}
+    - - {x: -89, y: -36}
+      - {x: -93, y: -41}
+      - {x: -93, y: -87}
+      - {x: -92, y: -94}
+      - {x: -42, y: -94}
+      - {x: -42, y: -42}
+      - {x: -54, y: -36}
+    - - {x: 38, y: -36}
+      - {x: 34, y: -51}
+      - {x: 34, y: -85}
+      - {x: 47, y: -92}
+      - {x: 70, y: -92}
+      - {x: 86, y: -84}
+      - {x: 86, y: -45}
+      - {x: 70, y: -36}
+    - - {x: 173, y: -38}
+      - {x: 163, y: -54}
+      - {x: 163, y: -82}
+      - {x: 169, y: -91}
+      - {x: 202, y: -91}
+      - {x: 212, y: -88}
+      - {x: 212, y: -57}
+      - {x: 204, y: -38}
+    - - {x: -187, y: -17}
+      - {x: -189, y: -18}
+      - {x: -189, y: -24}
+      - {x: -187, y: -25}
+      - {x: -181, y: -25}
+      - {x: -181, y: -19}
+      - {x: -182, y: -17}
+    - - {x: -234, y: 125}
+      - {x: -247, y: 111}
+      - {x: -247, y: 22}
+      - {x: -243, y: 9}
+      - {x: -229, y: 6}
+      - {x: -137, y: 6}
+      - {x: -137, y: 120}
+      - {x: -162, y: 125}
+    - - {x: -64, y: 18}
+      - {x: -65, y: 16}
+      - {x: -65, y: 10}
+      - {x: -61, y: 6}
+      - {x: -58, y: 7}
+      - {x: -58, y: 17}
+      - {x: -61, y: 18}
+    - - {x: -238, y: 25}
+      - {x: -246, y: 17}
+      - {x: -246, y: 8}
+      - {x: -242, y: 8}
+      - {x: -233, y: 14}
+      - {x: -231, y: 18}
+      - {x: -231, y: 24}
+      - {x: -232, y: 25}
+    - - {x: -109, y: 23}
+      - {x: -116, y: 16}
+      - {x: -117, y: 12}
+      - {x: -115, y: 10}
+      - {x: -111, y: 10}
+      - {x: -104, y: 17}
+      - {x: -104, y: 21}
+      - {x: -105, y: 23}
+    - - {x: 13, y: 15}
+      - {x: 13, y: 13}
+      - {x: 15, y: 11}
+      - {x: 17, y: 11}
+      - {x: 20, y: 14}
+      - {x: 19, y: 17}
+      - {x: 15, y: 17}
+    - - {x: -18, y: 23}
+      - {x: -23, y: 23}
+      - {x: -23, y: 14}
+      - {x: -18, y: 12}
+      - {x: -15, y: 12}
+      - {x: -14, y: 14}
+      - {x: -14, y: 21}
+    - - {x: -87, y: 124}
+      - {x: -102, y: 120}
+      - {x: -117, y: 104}
+      - {x: -117, y: 45}
+      - {x: -99, y: 16}
+      - {x: -31, y: 16}
+      - {x: -18, y: 22}
+      - {x: -11, y: 57}
+      - {x: -11, y: 108}
+      - {x: -34, y: 124}
+    - - {x: 18, y: 18}
+      - {x: 20, y: 16}
+      - {x: 23, y: 17}
+      - {x: 23, y: 20}
+      - {x: 21, y: 22}
+      - {x: 18, y: 21}
+    - - {x: 18, y: 121}
+      - {x: 11, y: 108}
+      - {x: 11, y: 46}
+      - {x: 24, y: 18}
+      - {x: 110, y: 18}
+      - {x: 110, y: 119}
+      - {x: 100, y: 121}
+    - - {x: 164, y: 116}
+      - {x: 140, y: 101}
+      - {x: 140, y: 39}
+      - {x: 152, y: 20}
+      - {x: 237, y: 20}
+      - {x: 237, y: 116}
+    - - {x: -21, y: 64}
+      - {x: -23, y: 62}
+      - {x: -23, y: 60}
+      - {x: -22, y: 57}
+      - {x: -13, y: 57}
+      - {x: -13, y: 62}
+      - {x: -14, y: 64}
+    - - {x: 110, y: 63}
+      - {x: 108, y: 61}
+      - {x: 108, y: 59}
+      - {x: 110, y: 57}
+      - {x: 112, y: 57}
+      - {x: 114, y: 59}
+      - {x: 114, y: 61}
+      - {x: 112, y: 63}
+    - - {x: 28, y: 111}
+      - {x: 34, y: 111}
+      - {x: 34, y: 116}
+      - {x: 32, y: 120}
+      - {x: 26, y: 120}
+      - {x: 26, y: 115}
+    - - {x: -93, y: 121}
+      - {x: -94, y: 119}
+      - {x: -94, y: 116}
+      - {x: -92, y: 115}
+      - {x: -88, y: 115}
+      - {x: -87, y: 117}
+      - {x: -87, y: 119}
+      - {x: -90, y: 121}
+    - - {x: 37, y: 115}
+      - {x: 40, y: 116}
+      - {x: 40, y: 119}
+      - {x: 37, y: 120}
+      - {x: 35, y: 118}
+    - - {x: -103, y: 119}
+      - {x: -102, y: 116}
+      - {x: -99, y: 116}
+      - {x: -97, y: 118}
+      - {x: -98, y: 121}
+      - {x: -101, y: 121}
+    - - {x: 138, y: 254}
+      - {x: 133, y: 230}
+      - {x: 133, y: 179}
+      - {x: 138, y: 139}
+      - {x: 138, y: 136}
+      - {x: 139, y: 131}
+      - {x: 250, y: 131}
+      - {x: 250, y: 253}
+      - {x: 246, y: 254}
+    - - {x: 11, y: 256}
+      - {x: 5, y: 252}
+      - {x: 5, y: 132}
+      - {x: 91, y: 132}
+      - {x: 117, y: 138}
+      - {x: 117, y: 238}
+      - {x: 104, y: 256}
+    - - {x: -69, y: 249}
+      - {x: -103, y: 242}
+      - {x: -118, y: 220}
+      - {x: -118, y: 136}
+      - {x: -58, y: 136}
+      - {x: -18, y: 142}
+      - {x: -18, y: 227}
+      - {x: -43, y: 249}
+    - - {x: -170, y: 168}
+      - {x: -166, y: 168}
+      - {x: -164, y: 169}
+      - {x: -164, y: 231}
+      - {x: -167, y: 239}
+      - {x: -211, y: 239}
+      - {x: -225, y: 213}
+      - {x: -225, y: 198}
+      - {x: -223, y: 197}
+      - {x: -217, y: 197}
+      - {x: -212, y: 191}
+      - {x: -212, y: 187}
+      - {x: -211, y: 186}
+      - {x: -212, y: 186}
+      - {x: -212, y: 187}
+      - {x: -214, y: 193}
+      - {x: -217, y: 194}
+      - {x: -225, y: 190}
+      - {x: -225, y: 161}
+      - {x: -206, y: 159}
+      - {x: -166, y: 159}
+      - {x: -165, y: 160}
+      - {x: -165, y: 164}
+      - {x: -167, y: 166}
+      - {x: -169, y: 166}
+    - - {x: -194, y: 170}
+      - {x: -196, y: 168}
+      - {x: -196, y: 165}
+      - {x: -194, y: 163}
+      - {x: -192, y: 163}
+      - {x: -190, y: 165}
+      - {x: -190, y: 168}
+      - {x: -192, y: 170}
+    - - {x: -206, y: 173}
+      - {x: -209, y: 172}
+      - {x: -209, y: 168}
+      - {x: -208, y: 166}
+      - {x: -203, y: 166}
+      - {x: -203, y: 172}
+      - {x: -205, y: 173}
+    - - {x: -166, y: 185}
+      - {x: -167, y: 182}
+      - {x: -164, y: 178}
+      - {x: -160, y: 178}
+      - {x: -158, y: 180}
+      - {x: -158, y: 181}
+      - {x: -162, y: 185}
+    - - {x: -168, y: 197}
+      - {x: -167, y: 194}
+      - {x: -162, y: 194}
+      - {x: -160, y: 196}
+      - {x: -161, y: 199}
+      - {x: -166, y: 199}
+    - - {x: -238, y: 206}
+      - {x: -238, y: 198}
+      - {x: -230, y: 198}
+      - {x: -230, y: 206}
+    - - {x: -223, y: 224}
+      - {x: -228, y: 222}
+      - {x: -228, y: 219}
+      - {x: -219, y: 210}
+      - {x: -216, y: 210}
+      - {x: -216, y: 221}
+      - {x: -218, y: 224}
+    - - {x: -198, y: 222}
+      - {x: -200, y: 220}
+      - {x: -200, y: 215}
+      - {x: -198, y: 213}
+      - {x: -196, y: 213}
+      - {x: -194, y: 215}
+      - {x: -194, y: 220}
+      - {x: -196, y: 222}
+    - - {x: -219, y: 236}
+      - {x: -221, y: 234}
+      - {x: -221, y: 231}
+      - {x: -219, y: 229}
+      - {x: -217, y: 229}
+      - {x: -215, y: 231}
+      - {x: -215, y: 234}
+      - {x: -217, y: 236}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
