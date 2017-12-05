@@ -80,6 +80,8 @@ namespace LibPDBinding
 			Release();
 			SetupHooks();
 			libpd_init();
+
+            
 		}
 
 		//store open patches
@@ -88,7 +90,6 @@ namespace LibPDBinding
 		/// Init PD
 		[DllImport(DllName, EntryPoint="libpd_init", CallingConvention = CallingConvention)]
 		private static extern void libpd_init() ;
-
 
 		/// Return Type: void
 		[DllImport(DllName, EntryPoint="libpd_clear_search_path", CallingConvention = CallingConvention)]

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LibPDBinding;
 
 public class ChimneyUp : MonoBehaviour {
 
@@ -33,6 +34,9 @@ public class ChimneyUp : MonoBehaviour {
     private float smokeStart;
 
     private bool forceApplied = false;
+    private bool isStopping = false;
+
+    private bool isVisible;
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +46,7 @@ public class ChimneyUp : MonoBehaviour {
         if (smokeSystem.isPlaying)
         {
             smokeSystem.Stop();
+            isStopping = true;
             effectCollider.enabled = false;
             smokeOn = false;
         }
@@ -54,18 +59,35 @@ public class ChimneyUp : MonoBehaviour {
 		if (Time.time > nextSmoke)
         {
             smokeSystem.Play();
+
+            //LibPD.SendFloat("smokeAttack", 0.3f);
+            //LibPD.SendFloat("smokeDecay", -0.3f);
+            LibPD.SendFloat("smokeVolume", 0.2f);
+            LibPD.SendBang("smokebang");
+            if (!isVisible)
+                StartCoroutine(FadeSmoke());
+
             //effectCollider.enabled = true;
             nextSmoke = Time.time + smokeDuration + smokeInterval;
             smokeStart = Time.time;
             smokeOn = true;
             forceApplied = false;
+            isStopping = false;
         }
 
         if (Time.time > nextSmoke - smokeInterval)
         {
-            smokeSystem.Stop();
-            effectCollider.enabled = false;
-            smokeOn = false;
+            if (!isStopping)
+            {
+                isStopping = true;
+                Debug.Log("STOP");
+                smokeSystem.Stop();
+                StartCoroutine(WaitForSmoke());
+
+                effectCollider.enabled = false;
+                smokeOn = false;
+            }
+            
         }
 
         if (smokeOn && Time.time >= smokeStart + updraftDelay)
@@ -97,7 +119,35 @@ public class ChimneyUp : MonoBehaviour {
                 
             }
         }
+        
     }
+
+    IEnumerator WaitForSmoke()
+    {
+        yield return new WaitForSeconds(1.0f);
+        LibPD.SendBang("stopbang");
+    }
+
+    private void OnBecameVisible()
+    {
+        isVisible = true;
+        StopCoroutine(FadeSmoke());
+        LibPD.SendFloat("smokeScale", 1.0f);
+    }
+
+    private void OnBecameInvisible()
+    {
+        isVisible = false;
+        StartCoroutine(FadeSmoke());
+    }
+
+    IEnumerator FadeSmoke()
+    {
+        float dist = (Player.Instance.transform.position - transform.position).magnitude;
+        yield return LibPD.SendFloat("smokeScale", 1 /(1.5f*dist));
+    }
+
+    
 
 
 }

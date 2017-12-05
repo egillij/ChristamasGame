@@ -357,6 +357,10 @@ Prefab:
       propertyPath: smokeInterval
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1385996141035850, guid: b80ec424ff8c18046aa24fb696452977, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b80ec424ff8c18046aa24fb696452977, type: 2}
   m_IsPrefabParent: 0
@@ -957,7 +961,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1480576070}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &1480576072
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1053,6 +1057,55 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 1
   m_SideArc: 90
+--- !u!1 &1653110878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1653110880}
+  - component: {fileID: 1653110879}
+  - component: {fileID: 1653110881}
+  m_Layer: 0
+  m_Name: LibPd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1653110879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653110878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262d6ca9dc64955428f193b69fee634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfPatch: ChimneySmoke1.pd
+--- !u!4 &1653110880
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653110878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.582638, y: 2.4887245, z: -0.109375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1653110881
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653110878}
+  m_Enabled: 1
 --- !u!1001 &1654382670
 Prefab:
   m_ObjectHideFlags: 0

@@ -649,7 +649,7 @@ MonoBehaviour:
   heart: {fileID: 2800000, guid: 3907ac566fa5ea8409af63e553964a36, type: 3}
   LevelStart: 0
   LevelDuration: 0
-  health: 0
+  health: 3
 --- !u!4 &1465620319
 Transform:
   m_ObjectHideFlags: 0
