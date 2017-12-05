@@ -1,7 +1,6 @@
 Implementations:
 	+ Gera stærra borð
 	+ Búa til fleiri platforma
-	+ Bæta við smákökum sem "healthkit".
 	+ Tímmað undirborð með stigasöfnun. Mismunandi týpur (Egill)
 	+ Bæta Enemy AI	
 	+ Skorstein til að ferðast milli sublevela (bónus borða) (Egill)     % comment frá Sibba: Hafðu sublevelin fyrir ofan aðallevelin ekki að neðan inn í scenes
@@ -15,6 +14,7 @@ Implementations:
 		Skorsteinar til að ferðast milli levela Sigurbjörn [done]
 		Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn) [done]
 		Grýlukerti sem detta ef player fer undir þau [done]
+		Bæta við smákökum sem "healthkit".
 
 
 

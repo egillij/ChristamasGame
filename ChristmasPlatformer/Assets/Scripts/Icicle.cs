@@ -26,8 +26,10 @@ public class Icicle : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag != "Icicle")
+        if (other.gameObject.tag != "Icicle" && Rbody.gravityScale > 0f)
+        {
             Animator.SetTrigger("break");
+        }
     }
 
     void DestoryElement()
