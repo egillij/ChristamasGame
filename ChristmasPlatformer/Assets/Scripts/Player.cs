@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
@@ -310,6 +311,11 @@ public class Player : Character
                 throwable.GetComponent<Kunai>().Initialize(Vector2.left);
             }
         }
+    }
+
+    public void Death()
+    {
+        SceneManager.LoadScene("Finished");
     }
 
     public override IEnumerator TakeDamage()
