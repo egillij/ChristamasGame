@@ -80,7 +80,6 @@ public class ChimneyUp : MonoBehaviour {
             if (!isStopping)
             {
                 isStopping = true;
-                Debug.Log("STOP");
                 smokeSystem.Stop();
                 StartCoroutine(WaitForSmoke());
 
