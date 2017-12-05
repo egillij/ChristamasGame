@@ -5020,7 +5020,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.2291775
+  orthographic size: 9.402147
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5043,7 +5043,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424455483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.7, y: 2, z: -10}
+  m_LocalPosition: {x: -11, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5060,9 +5060,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2fd69ce35525740b7c31271503085f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -15
+  xMin: -12
   xMax: 500
-  yMin: 1.2
+  yMin: 3.3
   yMax: 100
   target: {fileID: 1798720122}
 --- !u!4 &1448661145 stripped
@@ -5222,11 +5222,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4328234286234698, guid: 5890a77d590cdfa4081d5861a56d3f7e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -16
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 4328234286234698, guid: 5890a77d590cdfa4081d5861a56d3f7e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4328234286234698, guid: 5890a77d590cdfa4081d5861a56d3f7e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5533,7 +5533,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770561765246204, guid: f5ef5d080af333543943a01002f7c584, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.3
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4770561765246204, guid: f5ef5d080af333543943a01002f7c584, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5793,7 +5793,17 @@ Prefab:
     - target: {fileID: 61201862542163824, guid: dbf07ad66f093e34cab8db9cd29ddeb8,
         type: 2}
       propertyPath: m_Size.x
-      value: 0.80015564
+      value: 0.8001557
+      objectReference: {fileID: 0}
+    - target: {fileID: 61380528846045254, guid: dbf07ad66f093e34cab8db9cd29ddeb8,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.6931714
+      objectReference: {fileID: 0}
+    - target: {fileID: 61380528846045254, guid: dbf07ad66f093e34cab8db9cd29ddeb8,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.033414304
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbf07ad66f093e34cab8db9cd29ddeb8, type: 2}
@@ -5981,11 +5991,21 @@ Prefab:
     - target: {fileID: 61201862542163824, guid: dbf07ad66f093e34cab8db9cd29ddeb8,
         type: 2}
       propertyPath: m_Size.x
-      value: 0.80015564
+      value: 0.8001557
       objectReference: {fileID: 0}
     - target: {fileID: 1599760350985806, guid: dbf07ad66f093e34cab8db9cd29ddeb8, type: 2}
       propertyPath: m_Name
       value: Icicle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61380528846045254, guid: dbf07ad66f093e34cab8db9cd29ddeb8,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.031194689
+      objectReference: {fileID: 0}
+    - target: {fileID: 61380528846045254, guid: dbf07ad66f093e34cab8db9cd29ddeb8,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.6637001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbf07ad66f093e34cab8db9cd29ddeb8, type: 2}

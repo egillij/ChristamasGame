@@ -266,7 +266,7 @@ MonoBehaviour:
   throwPosition: {fileID: 4632933383926986}
   throwablePrefab: {fileID: 1988258060381486, guid: 17e104d54a75b43438b5af3f61eaa642,
     type: 2}
-  health: 3
+  health: 6
   jumpForce: 10
   airControl: 1
   groundPoints:
