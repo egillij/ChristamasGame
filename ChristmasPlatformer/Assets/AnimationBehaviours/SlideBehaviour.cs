@@ -7,7 +7,15 @@ public class SlideBehaviour : StateMachineBehaviour {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Enemy2.Instance.Slide = true;
+        
+        //if (animator.tag == "Enemy")
+        //{
+        //    animator.GetComponentInParent<Enemy>().Slide = true;
+        //}
+        if (animator.tag == "Player")
+        {
+            Player.Instance.Slide = true;
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -18,7 +26,10 @@ public class SlideBehaviour : StateMachineBehaviour {
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Enemy2.Instance.Slide = false;
+        if (animator.tag == "Player")
+        {
+            Player.Instance.Slide = false;
+        }
         animator.ResetTrigger("slide");
     }
 

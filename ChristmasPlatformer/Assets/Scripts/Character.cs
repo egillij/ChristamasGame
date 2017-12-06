@@ -30,17 +30,27 @@ public abstract class Character : MonoBehaviour
     public virtual void Start()
     {
         facingRight = true;
-        Animator = GetComponent<Animator>();
+        if (name == "Player")
+        {
+            Animator = GetComponentInChildren<Animator>();
+        }
+        else
+        {
+            Animator = GetComponent<Animator>();
+        }
+        
 
     }
 
     public void ChangeDirection()
     {
         facingRight = !facingRight;
-        Vector3 positionBefore = transform.position;
-        transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
-        transform.position = positionBefore + (facingRight ? Vector3.right : Vector3.left) * 1.6f;
         
+        SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
+        Vector3 positionBefore = renderer.transform.position;
+        renderer.flipX = !renderer.flipX;
+        renderer.transform.position = positionBefore + (facingRight ? Vector3.right * 1.6f : Vector3.left * 1.6f);
+
     }
 
     public virtual void ThrowAttack(int value)

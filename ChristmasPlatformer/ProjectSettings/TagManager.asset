@@ -13,6 +13,10 @@ TagManager:
   - Enemy
   - Hell
   - Icicle
+  - EnemySight
+  - SmokingChimney
+  - Jump Left
+  - PlayerSprites
   layers:
   - Default
   - TransparentFX

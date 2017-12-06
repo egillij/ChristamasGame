@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 251423155449440168}
   m_Layer: 0
   m_Name: Chimney With Smoke
-  m_TagString: Untagged
+  m_TagString: SmokingChimney
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

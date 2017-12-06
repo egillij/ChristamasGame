@@ -142,8 +142,23 @@ public class ChimneyUp : MonoBehaviour {
 
     IEnumerator FadeSmoke()
     {
+        GameObject[] chimneys = GameObject.FindGameObjectsWithTag("SmokingChimney");
         float dist = (Player.Instance.transform.position - transform.position).magnitude;
-        yield return LibPD.SendFloat("smokeScale", 1 /(1.5f*dist));
+        bool closest = true;
+        foreach (GameObject chim in chimneys)
+        {
+            if (chim != gameObject)
+            {
+                float thisdist = (Player.Instance.transform.position - chim.transform.position).magnitude;
+                closest = dist > thisdist;
+            }
+        }
+
+        if (closest)
+            LibPD.SendFloat("smokeScale", 1 / (1.5f * dist));
+
+        yield return 0.0f;
+
     }
 
     

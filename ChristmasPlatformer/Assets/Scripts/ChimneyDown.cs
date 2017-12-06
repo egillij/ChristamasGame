@@ -29,7 +29,7 @@ public class ChimneyDown : MonoBehaviour
         if (IsInside())
         {
             Player.Instance.AllowedDown = true;
-
+            //Debug.Log(Player.Instance.GoDown);
             if (Player.Instance.GoDown)
             {
                 ChimneyCollider.enabled = false;

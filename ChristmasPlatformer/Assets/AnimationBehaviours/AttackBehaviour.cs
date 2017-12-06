@@ -7,7 +7,7 @@ public class AttackBehaviour : StateMachineBehaviour {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Character>().Attack = true;
+        animator.GetComponentInParent<Character>().Attack = true;
 
         animator.SetFloat("speed", 0);
 
@@ -30,10 +30,10 @@ public class AttackBehaviour : StateMachineBehaviour {
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Character>().Attack = false;
+        animator.GetComponentInParent<Character>().Attack = false;
         
         if (animator.tag == "Enemy")
-            animator.GetComponent<Enemy>().SwordCollider.enabled = false;   
+            animator.GetComponentInParent<Enemy>().SwordCollider.enabled = false;   
 
         animator.ResetTrigger("attack");
         animator.ResetTrigger("throw");

@@ -30,10 +30,10 @@ public class PlatformMover : MonoBehaviour {
         {
             movingDirection = -1.0f * movingDirection;
             rb.velocity = Vector2.zero;
-            if (playerOnTop)
-            {
-                pBody.velocity = Vector2.zero;
-            }
+            //if (playerOnTop)
+            //{
+            //    pBody.velocity = Vector2.zero;
+            //}
         }
         //rb.velocity = movingDirection * speed;
         rb.transform.Translate(movingDirection * speed * Time.deltaTime);
@@ -58,7 +58,7 @@ public class PlatformMover : MonoBehaviour {
             playerOnTop = true;
             Player.Instance.MovingPlatform = this.gameObject;
             pBody = collision.gameObject.GetComponent<Rigidbody2D>();
-            pBody.velocity = Vector2.zero;
+            //pBody.velocity = Vector2.zero;
             collision.gameObject.transform.parent = this.transform;
         }
     }

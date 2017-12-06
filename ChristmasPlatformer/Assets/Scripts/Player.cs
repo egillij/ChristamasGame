@@ -76,14 +76,20 @@ public class Player : Character
         base.Start();
         Rbody = GetComponent<Rigidbody2D>();
 
+        //Ignore collision between player and enemies
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Physics2D.IgnoreCollision(enemy.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
+        }
+
         BonusScore = 0.0f;
         health = GameManager.instance.health;
-
     }
 
     void Update()
     {
-        if(Sleep)
+        if (Sleep)
         {
             if (Time.time >= sleepStop)
             {
@@ -116,6 +122,7 @@ public class Player : Character
         }
 
         OnGround = IsGrounded();
+
         HandleMovement(horizontal);
 
         Flip(horizontal);
@@ -212,7 +219,7 @@ public class Player : Character
             Rbody.velocity = new Vector2(0, -1 * movementSpeed);
             return;
         }
-
+        
         if (Rbody.velocity.y < 0)
         {
             Animator.SetBool("land", true);
@@ -256,6 +263,7 @@ public class Player : Character
             {
                 MovingPlatform.GetComponent<PlatformMover>().playerOnTop = false;
             }
+            Debug.Log("JUMP");
             Rbody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
             Jump = false;
         }

@@ -32,3 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Finished.unity
     guid: b60cb7bf367049146bde4cd4968815a3
+  - enabled: 1
+    path: Assets/Scenes/Congratulations.unity
+    guid: 00000000000000000000000000000000
