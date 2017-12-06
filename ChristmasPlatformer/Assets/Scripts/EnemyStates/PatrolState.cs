@@ -10,6 +10,14 @@ public class PatrolState : IEnemyState {
 
     private float patrolDuration = 10.0f;
 
+    private float turnaroundTimer;
+
+    private float turnaroundCooldown = 3.0f;
+
+    private float randomThrowTimer;
+
+    private float randomThrowCooldown = 5.0f;
+
     public void Enter(Enemy enemy)
     {
         this.enemy = enemy;
@@ -18,6 +26,9 @@ public class PatrolState : IEnemyState {
     public void Execute()
     {
         Patrol();
+
+        SurpriseTurnaround();
+        RandomThrow();
 
         enemy.Move();
 
@@ -34,9 +45,23 @@ public class PatrolState : IEnemyState {
 
     public void OnTriggerEnter(Collider2D other)
     {
+        Debug.Log(other.tag);
         if (other.tag == "Edge")
         {
             enemy.ChangeDirection();
+        }
+
+        else if (other.tag.Contains("Jump"))
+        {
+            if (other.tag.Contains("Left") && !enemy.isFacingRight)
+            {
+                enemy.MakeJump();
+            }
+            else if (other.tag.Contains("Right") && enemy.isFacingRight)
+            {
+                enemy.MakeJump();
+                turnaroundTimer = 0.0f;
+            }
         }
     }
 
@@ -48,6 +73,26 @@ public class PatrolState : IEnemyState {
         if (patrolTimer >= patrolDuration)
         {
             enemy.ChangeState(new IdleState());
+        }
+    }
+
+    private void SurpriseTurnaround()
+    {
+        turnaroundTimer += Time.deltaTime;
+        if (Random.value > 0.99f && turnaroundTimer > turnaroundCooldown)
+        {
+            enemy.ChangeDirection();
+            turnaroundTimer = 0.0f;
+        }
+    }
+
+    private void RandomThrow()
+    {
+        randomThrowTimer += Time.deltaTime;
+        if (Random.value > 0.9f && randomThrowTimer > randomThrowCooldown)
+        {
+            enemy.ChangeState(new RangedState());
+            randomThrowTimer = 0.0f;
         }
     }
 }

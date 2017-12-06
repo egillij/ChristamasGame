@@ -55,13 +55,11 @@ public class Player : Character
 
     public bool GoDown { get; set; }
 
-    public Rigidbody2D Rbody { get; set; }
-
     public GameObject MovingPlatform { get; set; }
 
     public bool Sleep { get; set; }
 
-    public float BonusScore {get;set;}
+    public float BonusScore {get; set;}
 
     public override bool IsDead
     {
@@ -74,7 +72,6 @@ public class Player : Character
     public override void Start()
     {
         base.Start();
-        Rbody = GetComponent<Rigidbody2D>();
 
         //Ignore collision between player and enemies
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -263,7 +260,6 @@ public class Player : Character
             {
                 MovingPlatform.GetComponent<PlatformMover>().playerOnTop = false;
             }
-            Debug.Log("JUMP");
             Rbody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
             Jump = false;
         }

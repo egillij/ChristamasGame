@@ -6,6 +6,8 @@ public abstract class Character : MonoBehaviour
 {
     public Animator Animator { get; private set; }
 
+    public Rigidbody2D Rbody { get; private set; }
+
     [SerializeField]
     protected float movementSpeed;
 
@@ -29,6 +31,7 @@ public abstract class Character : MonoBehaviour
 
     public virtual void Start()
     {
+        Rbody = GetComponent<Rigidbody2D>();
         facingRight = true;
         if (name == "Player")
         {
@@ -42,7 +45,7 @@ public abstract class Character : MonoBehaviour
 
     }
 
-    public void ChangeDirection()
+    public virtual void ChangeDirection()
     {
         facingRight = !facingRight;
         
@@ -82,8 +85,11 @@ public abstract class Character : MonoBehaviour
         {
             if (other.tag == "Snowball")
             {
-                Destroy(other.gameObject);
-                StartCoroutine(TakeDamage());
+                if (!IsDead)
+                {
+                    Destroy(other.gameObject);
+                    StartCoroutine(TakeDamage());
+                }
             }            
         }
     }

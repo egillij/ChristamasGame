@@ -17,6 +17,7 @@ TagManager:
   - SmokingChimney
   - Jump Left
   - PlayerSprites
+  - Jump Right
   layers:
   - Default
   - TransparentFX

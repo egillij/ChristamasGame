@@ -6,7 +6,7 @@ public class RangedState : IEnemyState {
 
     private Enemy enemy;
 
-    private float throwTimer;
+    private float throwTimer = 0.0f;
     private float throwCooldown = 3.0f;
     private bool canThrow = true;
 
@@ -25,7 +25,8 @@ public class RangedState : IEnemyState {
 
         else if (enemy.target != null)
         {
-            enemy.Move();
+            if (enemy.aggresive)
+                enemy.Move();
         }
         else
         {

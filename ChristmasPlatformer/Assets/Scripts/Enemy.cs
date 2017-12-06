@@ -17,6 +17,8 @@ public class Enemy : Character {
 
     public EdgeCollider2D SwordCollider;
 
+    public bool aggresive;
+
     public bool InMeleeRange
     {
         get
@@ -48,6 +50,14 @@ public class Enemy : Character {
         get
         {
             return health <= 0;
+        }
+    }
+
+    public bool isFacingRight
+    {
+        get
+        {
+            return facingRight;
         }
     }
 
@@ -107,6 +117,15 @@ public class Enemy : Character {
         }
     }
 
+    public void MakeJump()
+    {
+        if (!Attack)
+        {
+            Debug.Log("Jump");
+            Rbody.AddForce(new Vector2(0, 10f), ForceMode2D.Impulse);
+        }
+    }
+
     public Vector2 GetDirection()
     {
         return facingRight ? Vector2.right : Vector2.left;
@@ -122,6 +141,17 @@ public class Enemy : Character {
     {
         health--;
 
+        if (Player.Instance.transform.position.x < transform.position.x)
+        {
+            if (facingRight) ChangeDirection();
+        }
+        else
+        {
+            if (!facingRight) ChangeDirection();
+        }
+        StartCoroutine(ExtendSight());
+        
+
         if (!IsDead)
         {
             Animator.SetTrigger("damage");
@@ -136,5 +166,45 @@ public class Enemy : Character {
     public void MeleeAttack()
     {
         SwordCollider.enabled = !SwordCollider.enabled;
+    }
+
+    public override void ChangeDirection()
+    {
+        base.ChangeDirection();
+        BoxCollider2D[] childs = GetComponentsInChildren<BoxCollider2D>();
+        foreach(BoxCollider2D child in childs)
+        {
+            if (child.gameObject.name == "Sight")
+            {
+                child.gameObject.transform.localScale = new Vector3(-1f * child.gameObject.transform.localScale.x, 1f, 1f);
+            }
+        }
+        transform.Translate(GetDirection() * movementSpeed * Time.deltaTime);
+    }
+
+    private IEnumerator ExtendSight()
+    {
+        BoxCollider2D[] childs = GetComponentsInChildren<BoxCollider2D>();
+        BoxCollider2D sight = null;
+        foreach(BoxCollider2D child in childs)
+        {
+            if (child.gameObject.name == "Sight")
+            {
+                sight = child;
+            }
+        }
+
+        if (sight != null)
+        {
+            sight.size = new Vector2(sight.size.x * 10f, sight.size.y);
+        }
+        
+        yield return new WaitForSeconds(1.0f);
+
+        if (sight != null)
+        {
+            sight.size = new Vector2(sight.size.x / 10f, sight.size.y);
+        }
+
     }
 }
