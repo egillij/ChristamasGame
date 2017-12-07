@@ -126,6 +126,7 @@ public abstract class Character : MonoBehaviour
             {
                 if (!IsDead)
                 {
+                    
                     Destroy(other.gameObject);
                     StartCoroutine(TakeDamage());
                 }

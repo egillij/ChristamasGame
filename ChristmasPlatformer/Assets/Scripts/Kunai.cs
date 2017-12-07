@@ -15,6 +15,14 @@ public class Kunai : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        if (gameObject.name.Contains("Snowball"))
+        {
+            GameObject[] enemySights = GameObject.FindGameObjectsWithTag("EnemySight");
+            foreach(GameObject es in enemySights)
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), es.GetComponent<BoxCollider2D>());
+            }
+        }
 	}
 
     private void FixedUpdate()

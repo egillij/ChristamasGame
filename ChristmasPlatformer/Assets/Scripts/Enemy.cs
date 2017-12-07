@@ -132,7 +132,6 @@ public class Enemy : Character {
     {
         if (!Attack)
         {
-            Debug.Log("Jump");
             Animator.SetTrigger("jump");
             Rbody.AddForce(new Vector2(0, 10f), ForceMode2D.Impulse);
         }
@@ -193,6 +192,9 @@ public class Enemy : Character {
         }
         transform.Translate(GetDirection() * movementSpeed * Time.deltaTime);
         throwPosition.transform.position = throwPosition.transform.position + (facingRight ? Vector3.right : Vector3.left) * 4.5f;
+        Vector3 swordBefore = SwordCollider.transform.position;
+        SwordCollider.transform.localScale = new Vector3(SwordCollider.transform.localScale.x * -1.0f, 1.0f, 1.0f);
+        SwordCollider.transform.position = swordBefore + (facingRight ? Vector3.right : Vector3.left) * 1.6f;
     }
 
     private IEnumerator ExtendSight()

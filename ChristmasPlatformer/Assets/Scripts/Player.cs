@@ -286,6 +286,7 @@ public class Player : Character
     {
         base.ChangeDirection();
         throwPosition.transform.position = throwPosition.transform.position + (facingRight ? Vector3.right : Vector3.left) * 1.5f;
+        
     }
 
     public void Death()
