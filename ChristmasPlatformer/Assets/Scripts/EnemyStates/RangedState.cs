@@ -12,6 +12,7 @@ public class RangedState : IEnemyState {
 
     public void Enter(Enemy enemy)
     {
+        Debug.Log(enemy);
         this.enemy = enemy;
     }
 

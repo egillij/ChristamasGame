@@ -15,6 +15,15 @@ public class Enemy : Character {
     [SerializeField]
     private float throwRange;
 
+    //[SerializeField]
+    //private Transform[] groundPoints;
+
+    //[SerializeField]
+    //private float groundRadius;
+
+    //[SerializeField]
+    //private LayerMask whatIsGround;
+
     public EdgeCollider2D SwordCollider;
 
     public bool aggresive;
@@ -79,6 +88,8 @@ public class Enemy : Character {
 
         if (!TakingDamage)
         {
+
+            HandleLayers();
             currentState.Execute();
         }
 
@@ -122,6 +133,7 @@ public class Enemy : Character {
         if (!Attack)
         {
             Debug.Log("Jump");
+            Animator.SetTrigger("jump");
             Rbody.AddForce(new Vector2(0, 10f), ForceMode2D.Impulse);
         }
     }
@@ -180,6 +192,7 @@ public class Enemy : Character {
             }
         }
         transform.Translate(GetDirection() * movementSpeed * Time.deltaTime);
+        throwPosition.transform.position = throwPosition.transform.position + (facingRight ? Vector3.right : Vector3.left) * 4.5f;
     }
 
     private IEnumerator ExtendSight()

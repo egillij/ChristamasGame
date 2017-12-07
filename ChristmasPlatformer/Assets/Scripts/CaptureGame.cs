@@ -42,18 +42,7 @@ public class CaptureGame : MonoBehaviour {
             if (Time.time >= levelStart + levelDuration)
             {
                 //Player.Instance.Sleeping(3.0f);
-                closingText.enabled = true;
-
-                if (Time.time >= levelStart + levelDuration + 3.0f)
-                {
-                    closingText.enabled = false;
-                    SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
-                    GameObject.FindGameObjectWithTag("Player").transform.position = playerReturnPosition;
-                    //Freeze player for 2 or 3 seconds
-                    Player.Instance.Sleeping(1.0f);
-                    Player.Instance.BonusScore += score;
-                    SceneManager.UnloadSceneAsync(this.gameObject.scene);
-                }
+                StartCoroutine(EndLevel());
 
             }
             else
@@ -127,5 +116,21 @@ public class CaptureGame : MonoBehaviour {
         levelStart = Time.time;
         spawnRate = 3.0f / levelDifficulty;
         badRate = 0.5f * Mathf.Exp(-1f / levelDifficulty);
+    }
+
+    private IEnumerator EndLevel()
+    {
+        closingText.enabled = true;
+
+        yield return new WaitForSeconds(3.0f);
+
+        closingText.enabled = false;
+        SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+        GameObject.FindGameObjectWithTag("Player").transform.position = playerReturnPosition;
+        //Freeze player for 1 second
+        Player.Instance.Sleeping(1.0f);
+        Player.Instance.BonusScore += score;
+        SceneManager.UnloadSceneAsync(this.gameObject.scene);
+
     }
 }

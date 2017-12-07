@@ -40,7 +40,15 @@ public class ChimneyUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        pBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        GameObject[] playertags = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject pt in playertags)
+        {
+            if (pt.name == "Player")
+            {
+                pBody = pt.GetComponent<Rigidbody2D>();
+            }
+        }
+        
         //playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
         nextSmoke = Time.time;
         if (smokeSystem.isPlaying)
@@ -109,8 +117,8 @@ public class ChimneyUp : MonoBehaviour {
                     //pBody.AddForce(new Vector2(0.0f, updraft));
 
                     //Uses distance to decay the updraft force
-                    if (pBody.velocity.y < -5.0)
-                        pBody.velocity = new Vector2(pBody.velocity.x, 0.0f);
+                    //if (pBody.velocity.y < -5.0)
+                    //    pBody.velocity = new Vector2(pBody.velocity.x, 0.0f);
                     float distance = (collision.gameObject.transform.position - this.gameObject.transform.position).magnitude;
                     float updraft = Mathf.Exp(updraftDecay * distance) * forceMag;
                     pBody.AddForce(new Vector2(0.0f, updraft), ForceMode2D.Impulse);

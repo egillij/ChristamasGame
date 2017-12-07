@@ -16,6 +16,14 @@ public class AnimationHandler : MonoBehaviour {
 
     public void ThrowAttack(int value)
     {
-        Player.Instance.ThrowAttack(value);
+        if (tag.Contains("Player"))
+        {
+            Player.Instance.ThrowAttack(value);
+        }
+        else if (tag.Contains("Enemy"))
+        {
+            GetComponentInParent<Character>().ThrowAttack(value);
+        }
+        
     }
 }

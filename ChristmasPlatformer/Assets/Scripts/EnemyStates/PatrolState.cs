@@ -45,7 +45,6 @@ public class PatrolState : IEnemyState {
 
     public void OnTriggerEnter(Collider2D other)
     {
-        Debug.Log(other.tag);
         if (other.tag == "Edge")
         {
             enemy.ChangeDirection();
@@ -53,15 +52,20 @@ public class PatrolState : IEnemyState {
 
         else if (other.tag.Contains("Jump"))
         {
-            if (other.tag.Contains("Left") && !enemy.isFacingRight)
+            if (Random.value > 0.0)
             {
-                enemy.MakeJump();
+                if (other.tag.Contains("Left") && !enemy.isFacingRight)
+                {
+                    enemy.MakeJump();
+                    turnaroundTimer = 0.0f;
+                }
+                else if (other.tag.Contains("Right") && enemy.isFacingRight)
+                {
+                    enemy.MakeJump();
+                    turnaroundTimer = 0.0f;
+                }
             }
-            else if (other.tag.Contains("Right") && enemy.isFacingRight)
-            {
-                enemy.MakeJump();
-                turnaroundTimer = 0.0f;
-            }
+            
         }
     }
 

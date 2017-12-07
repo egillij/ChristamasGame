@@ -26,14 +26,14 @@ public class Player : Character
     [SerializeField]
     private bool airControl;
 
-    [SerializeField]
-    private Transform[] groundPoints;
+    //[SerializeField]
+    //private Transform[] groundPoints;
 
-    [SerializeField]
-    private float groundRadius;
+    //[SerializeField]
+    //private float groundRadius;
 
-    [SerializeField]
-    private LayerMask whatIsGround;
+    //[SerializeField]
+    //private LayerMask whatIsGround;
 
     [SerializeField]
     private Transform throwAirPosition;
@@ -186,27 +186,6 @@ public class Player : Character
         }
     }
 
-    private bool IsGrounded()
-    {
-        if (Rbody.velocity.y <= 0)
-        {
-            foreach (Transform point in groundPoints)
-            {
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRadius, whatIsGround);
-
-                for (int i = 0; i < colliders.Length; i++)
-                {
-                    if (colliders[i].gameObject != gameObject)
-                    {
-                        return true;
-                    }
-                }
-            }
-        }
-
-        return false;
-    }
-
     private void HandleMovement(float horizontal)
     {
         float finalSpeed = movementSpeed;
@@ -217,10 +196,10 @@ public class Player : Character
             return;
         }
         
-        if (Rbody.velocity.y < 0)
-        {
-            Animator.SetBool("land", true);
-        }
+        //if (Rbody.velocity.y < 0)
+        //{
+        //    Animator.SetBool("land", true);
+        //}
 
         if (Run)
         {
@@ -274,20 +253,6 @@ public class Player : Character
         }
     }
 
-    private void HandleLayers()
-    {
-        if (!OnGround)
-        {
-            Animator.SetLayerWeight(1, 1);
-            Animator.SetLayerWeight(0, 0);
-        }
-        else
-        {
-            Animator.SetLayerWeight(0, 1);
-            Animator.SetLayerWeight(1, 0);
-        }
-    }
-
     public void Sleeping(float sleepDuration)
     {
         Sleep = true;
@@ -315,6 +280,12 @@ public class Player : Character
                 throwable.GetComponent<Kunai>().Initialize(Vector2.left);
             }
         }
+    }
+
+    public override void ChangeDirection()
+    {
+        base.ChangeDirection();
+        throwPosition.transform.position = throwPosition.transform.position + (facingRight ? Vector3.right : Vector3.left) * 1.5f;
     }
 
     public void Death()

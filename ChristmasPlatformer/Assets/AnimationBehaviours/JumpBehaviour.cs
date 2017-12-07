@@ -7,7 +7,7 @@ public class JumpBehaviour : StateMachineBehaviour {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (animator.tag == "Player")
+        if (animator.tag.Contains("Player")) // == "Player")
         {
             Player.Instance.Jump = true;
         }
@@ -15,19 +15,24 @@ public class JumpBehaviour : StateMachineBehaviour {
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    if (Player.Instance.OnGround)
-    //    {
-    //        animator.SetBool("land", false);
-    //        animator.ResetTrigger("jump");
-    //    }
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (animator.GetComponentInParent<Character>().IsGrounded())
+        {
+            animator.SetBool("land", false);
+            animator.ResetTrigger("jump");
+        }
+
+        else if (animator.GetComponentInParent<Character>().Rbody.velocity.y < 0)
+        {
+            animator.SetBool("land", true);
+        }
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (animator.tag == "Player")
+        if (animator.tag.Contains("Player"))
         {
             Player.Instance.Jump = false;
         }

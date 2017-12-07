@@ -12,7 +12,7 @@ public class SlideBehaviour : StateMachineBehaviour {
         //{
         //    animator.GetComponentInParent<Enemy>().Slide = true;
         //}
-        if (animator.tag == "Player")
+        if (animator.tag.Contains("Player"))
         {
             Player.Instance.Slide = true;
         }
@@ -26,7 +26,7 @@ public class SlideBehaviour : StateMachineBehaviour {
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (animator.tag == "Player")
+        if (animator.tag.Contains("Player"))
         {
             Player.Instance.Slide = false;
         }

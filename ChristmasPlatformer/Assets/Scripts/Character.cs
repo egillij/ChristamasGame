@@ -20,6 +20,15 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected int health;
 
+    [SerializeField]
+    private Transform[] groundPoints;
+
+    [SerializeField]
+    private float groundRadius;
+
+    [SerializeField]
+    private LayerMask whatIsGround;
+
     public bool Attack { get; set; }
     public abstract bool IsDead { get; }
 
@@ -33,15 +42,8 @@ public abstract class Character : MonoBehaviour
     {
         Rbody = GetComponent<Rigidbody2D>();
         facingRight = true;
-        if (name == "Player")
-        {
-            Animator = GetComponentInChildren<Animator>();
-        }
-        else
-        {
-            Animator = GetComponent<Animator>();
-        }
-        
+        Animator = GetComponentInChildren<Animator>();
+
 
     }
 
@@ -51,10 +53,47 @@ public abstract class Character : MonoBehaviour
         
         SpriteRenderer renderer = GetComponentInChildren<SpriteRenderer>();
         Vector3 positionBefore = renderer.transform.position;
+
         renderer.flipX = !renderer.flipX;
         renderer.transform.position = positionBefore + (facingRight ? Vector3.right * 1.6f : Vector3.left * 1.6f);
-
+        
     }
+
+    public bool IsGrounded()
+    {
+        if (Rbody.velocity.y <= 0)
+        {
+            foreach (Transform point in groundPoints)
+            {
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRadius, whatIsGround);
+
+                for (int i = 0; i < colliders.Length; i++)
+                {
+                    if (colliders[i].gameObject != gameObject)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public void HandleLayers()
+    {
+        if (!IsGrounded())
+        {
+            Animator.SetLayerWeight(1, 1);
+            Animator.SetLayerWeight(0, 0);
+        }
+        else
+        {
+            Animator.SetLayerWeight(0, 1);
+            Animator.SetLayerWeight(1, 0);
+        }
+    }
+
 
     public virtual void ThrowAttack(int value)
     {

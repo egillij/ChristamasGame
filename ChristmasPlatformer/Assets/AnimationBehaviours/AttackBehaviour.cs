@@ -11,7 +11,7 @@ public class AttackBehaviour : StateMachineBehaviour {
 
         animator.SetFloat("speed", 0);
 
-        if(animator.tag == "Player") //Change enemy2 out for player and change player movm
+        if(animator.tag.Contains("Player")) //Change enemy2 out for player and change player movm
         {
             if (Player.Instance.OnGround)
             {

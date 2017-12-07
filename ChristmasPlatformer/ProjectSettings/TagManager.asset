@@ -18,6 +18,7 @@ TagManager:
   - Jump Left
   - PlayerSprites
   - Jump Right
+  - EnemySprites
   layers:
   - Default
   - TransparentFX

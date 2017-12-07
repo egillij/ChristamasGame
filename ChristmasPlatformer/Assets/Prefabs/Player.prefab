@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 114651019089261656}
   m_Layer: 10
   m_Name: Spriteholder
-  m_TagString: Player
+  m_TagString: PlayerSprites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365347652504300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.62, y: -10.46, z: 0}
+  m_LocalPosition: {x: -39.62, y: 9.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4947951497256560}
@@ -308,8 +308,6 @@ MonoBehaviour:
   throwablePrefab: {fileID: 1988258060381486, guid: 17e104d54a75b43438b5af3f61eaa642,
     type: 2}
   health: 6
-  jumpForce: 10
-  airControl: 1
   groundPoints:
   - {fileID: 4947951497256560}
   - {fileID: 4875250084700354}
@@ -318,6 +316,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294962943
+  jumpForce: 10
+  airControl: 1
   throwAirPosition: {fileID: 4408417055582730}
   stoppingSpeed: 0
 --- !u!212 &212224227426204720
