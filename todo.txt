@@ -1,11 +1,9 @@
 Implementations:
 	+ Gera stærra borð
 	+ Búa til fleiri platforma
-	+ Tímmað undirborð með stigasöfnun. Mismunandi týpur (Egill)
-	+ Bæta Enemy AI	
-	+ Skorstein til að ferðast milli sublevela (bónus borða) (Egill)     % comment frá Sibba: Hafðu sublevelin fyrir ofan aðallevelin ekki að neðan inn í scenes
-	+ Myndband í byrjun af óvinunum stela gjöfunum. Tilgangur leiksins er að finna allar gjafirnar til að bjarga jólunum.
-	+ Fleiri enemies en Ninjas
+	+ Bæta Enemy AI	(Egill)
+	+ Instructions scene.
+	+ Fleiri enemies en Ninjas. %Er þetta framtíðarhugmynd kannski?
 	+ Skjá sem sýnir stig og bíður þér að setja í highscore list þegar þú deyrð/vinnur
 	
 
@@ -16,6 +14,8 @@ Implementations:
 		Ef player dettur útaf mappi (niður fyrir vatn) þá missir hann eytt líf og respawnar í byrjun borðs. (Sigurbjörn) [done]
 		Grýlukerti sem detta ef player fer undir þau [done]
 		Bæta við smákökum sem "healthkit".
+		Tímað undirborð með stigasöfnun. Mismunandi týpur (Egill) [done]
+		Skorstein til að ferðast milli sublevela (bónus borða) (Egill)     % comment frá Sibba: Hafðu sublevelin fyrir ofan aðallevelin ekki að neðan inn í scenes
 
 
 
@@ -23,11 +23,12 @@ Bugs:
 	
 	+ Laga player death þegar hann er hoppandi. Festist í jump eða landing animation.
 	+ Laga Player damage. (Frekar óskýrt t.d. þegar hann verður fyrir sprengju) Einnig sést ekki damage þegar hlaupandi.
-	+ Laga Enemy collision við Player
+	
 
 		Moving platform er buggað (Egill) [mögulega lagað]
 		Laga run animation [done]
 		Disappearing platform (Egill) [done]
+		Laga Enemy collision við Player [done]
 
 
 Hljóð:
@@ -44,3 +45,7 @@ Nice to have - Future things if time:
 	+ Gera Player attack animation. Nota candy cane? (Ground og jump attack?) [FRAMTÍÐARHUGMYND]
 	+klára hreindýr (Sigurbjörn) (On Hold)
 	+Álfar?? Bjarga/Follower [Framtíðarhugmynd]
+	+Fleiri týpur of sublevels (minigames)
+	+Endakall (boss) í endanum á lokalevelinu.
+	+ 13 borð, hvert í anda íslensku jólasveinanna og sprites fyrir jólasvein.
+	+ Myndband í byrjun af óvinunum stela gjöfunum. Tilgangur leiksins er að finna allar gjafirnar til að bjarga jólunum.
