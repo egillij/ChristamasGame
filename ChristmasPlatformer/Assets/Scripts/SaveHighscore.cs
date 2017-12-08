@@ -20,7 +20,7 @@ public class SaveHighscore : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        scoreText.text = "Score: " + GameManager.instance.score.ToString();
+        scoreText.text = "Score: " + GameManager.instance.finalScore.ToString();
 
         string filePath = Path.Combine(Application.dataPath, gameDataProjectFilePath);
         
@@ -42,11 +42,11 @@ public class SaveHighscore : MonoBehaviour {
             bool saved = false;
             foreach (Highscore highscore in highscores)
             {
-                if (!saved && GameManager.instance.score >= highscore.score)
+                if (!saved && GameManager.instance.finalScore >= highscore.score)
                 {
                     highScoreInstance[count] = new Highscore();
                     highScoreInstance[count].name = nameInput.text;
-                    highScoreInstance[count].score = GameManager.instance.score;
+                    highScoreInstance[count].score = GameManager.instance.finalScore;
 
                     count++;
                     saved = true;

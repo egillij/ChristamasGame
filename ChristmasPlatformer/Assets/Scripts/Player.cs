@@ -20,6 +20,10 @@ public class Player : Character
         }
     }
 
+    public BoxCollider2D SlideCollider;
+    public BoxCollider2D WalkCollider;
+
+
     [SerializeField]
     private float jumpForce;
 
@@ -37,6 +41,8 @@ public class Player : Character
 
     [SerializeField]
     private Transform throwAirPosition;
+
+    
 
     [SerializeField]
     private float stoppingSpeed;
@@ -58,6 +64,7 @@ public class Player : Character
     public GameObject MovingPlatform { get; set; }
 
     public bool Sleep { get; set; }
+
 
     public int BonusScore {get; set;}
     public int EnemiesKilled { get; set; }
@@ -121,11 +128,11 @@ public class Player : Character
         }
 
         OnGround = IsGrounded();
-        if (OnGround && Animator.GetCurrentAnimatorStateInfo(1).IsName("PlayerJump"))
-        {
-            Animator.SetBool("land", true);
-            Animator.ResetTrigger("jump");
-        }
+        //if (OnGround && Animator.GetCurrentAnimatorStateInfo(1).IsName("PlayerJump"))
+        //{
+        //    //Animator.SetBool("land", true);
+        //    Animator.ResetTrigger("jump");
+        //}
 
         HandleMovement(horizontal);
 
@@ -137,10 +144,14 @@ public class Player : Character
 
     private void Flip(float horizontal)
     {
-        if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
+        if (!Slide)
         {
-            ChangeDirection();
+            if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
+            {
+                ChangeDirection();
+            }
         }
+        
     }
 
     private void HandleInput()
@@ -165,17 +176,16 @@ public class Player : Character
             Run = false;
         }
         //Debug.Log(Input.GetKeyDown(KeyCode.DownArrow));
-        //Debug.Log(AllowedDown);
         if (Input.GetKeyDown(KeyCode.DownArrow) && AllowedDown)
         {
-            Debug.Log("GGOOO DOWN");
             GoDown = true;
         }
 
-        //if (Input.GetKeyDown(KeyCode.S))
-        //{
-        //    Animator.SetTrigger("slide");
-        //}
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (Mathf.Abs(Rbody.velocity.x) > 0.0f && OnGround)
+                Animator.SetTrigger("slide");
+        }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -202,10 +212,10 @@ public class Player : Character
             return;
         }
 
-        if (Rbody.velocity.y < 0)
-        {
-            Animator.SetBool("land", true);
-        }
+        //if (Rbody.velocity.y < 0)
+        //{
+        //    Animator.SetBool("land", true);
+        //}
 
         if (Run)
         {
@@ -297,7 +307,8 @@ public class Player : Character
 
     public void Death()
     {
-        SceneManager.LoadScene("Finished");
+        //SceneManager.LoadScene("Finished");
+        
     }
 
     public override IEnumerator TakeDamage()
@@ -312,11 +323,20 @@ public class Player : Character
         else
         {
             Animator.SetBool("dead", true);
-            SceneManager.LoadScene("LevelScore", LoadSceneMode.Additive);
-            LevelRecap.Instance.InitializeRecap(GameManager.instance.score, EnemiesKilled, BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), false);
-            LevelRecap.Instance.SceneName = "LevelSelect";
 
             yield return null;
         }
+    }
+
+    private IEnumerator LevelDeath()
+    {
+        SceneManager.LoadScene("LevelScore", LoadSceneMode.Additive);
+        
+        while (!SceneManager.GetSceneAt(1).isLoaded)
+        {
+            yield return null;
+        }
+        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, EnemiesKilled, BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), false, GameManager.instance.LevelDuration);
+        LevelRecap.Instance.SceneName = "LevelSelect";
     }
 }

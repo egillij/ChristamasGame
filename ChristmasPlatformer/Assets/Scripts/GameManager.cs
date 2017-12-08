@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 
     public int score;
 
+    public int finalScore;
+
     public Texture gift;
     public Texture heart;
 
@@ -65,7 +67,7 @@ public class GameManager : MonoBehaviour {
                 fontSize = 18,
                 fontStyle = FontStyle.Bold
             };
-            GUI.Label(new Rect(Screen.width/2, 0, 100, 100), string.Format("{0:F2}",(LevelDuration - LevelStart)), timeStyle);
+            GUI.Label(new Rect(Screen.width/2, 0, 100, 100), string.Format("{0:F2}",LevelDuration), timeStyle);
 
             // Add player health to GUI
             GUIStyle healthStyle = new GUIStyle()
@@ -83,7 +85,7 @@ public class GameManager : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        LevelDuration = Time.time;
+        LevelDuration += Time.fixedDeltaTime;
     }
 
 }

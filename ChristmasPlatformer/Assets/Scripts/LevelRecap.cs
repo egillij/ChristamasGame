@@ -25,9 +25,12 @@ public class LevelRecap : MonoBehaviour {
     [SerializeField]
     private GameObject dyingScreen;
 
+    private float levelTime;
+    private bool showTime;
+
     private int giftCount;
     private int enemyCount;
-    private float sublevelScore;
+    private int sublevelScore;
     private int levelNumber;
 
     private bool showGift;
@@ -43,7 +46,7 @@ public class LevelRecap : MonoBehaviour {
 
 
     private bool showTotal;
-    private float totalScore;
+    private int totalScore;
 
     private bool showButton;
 
@@ -51,7 +54,7 @@ public class LevelRecap : MonoBehaviour {
 
     // Use this for initialization
 	void Start () {
-        InitializeRecap(2, 1, 10, 1, true);
+        //InitializeRecap(2, 1, 10, 1, true, 65.3f);
     }
 	
 	// Update is called once per frame
@@ -59,11 +62,12 @@ public class LevelRecap : MonoBehaviour {
 		
 	}
 
-    public void InitializeRecap(int giftCount, int enemyCount, int sublevelScore, int levelNumber, bool winning)
+    public void InitializeRecap(int giftCount, int enemyCount, int sublevelScore, int levelNumber, bool winning, float time)
     {
         winningSreen.SetActive(winning);
         dyingScreen.SetActive(!winning);
 
+        this.levelTime = time;
         this.giftCount = giftCount;
         this.enemyCount = enemyCount;
         this.sublevelScore = sublevelScore;
@@ -81,7 +85,7 @@ public class LevelRecap : MonoBehaviour {
         currBonusScore = -1f;
 
         showTotal = false;
-        totalScore = -1f;
+        totalScore = -1;
 
         showButton = false;
         StartCoroutine(ScrollNumbers());
@@ -127,14 +131,13 @@ public class LevelRecap : MonoBehaviour {
             GUI.Label(new Rect(Screen.width / 2 + 30, 0f, 180, 180), dyingTexture, dyingStyle);
             GUI.Label(new Rect(Screen.width / 2 + 170, 0f, 180, 180), dyingTexture, dyingStyle);
         }
-        
 
-        if (showGift)
+        if (showTime)
         {
-            GUIStyle giftStyle = new GUIStyle()
+            GUIStyle timeStyle = new GUIStyle()
             {
                 fontSize = 24,
-                alignment = TextAnchor.MiddleLeft,
+                alignment = TextAnchor.MiddleCenter,
                 fontStyle = FontStyle.Bold,
                 richText = true,
                 normal = new GUIStyleState()
@@ -142,15 +145,12 @@ public class LevelRecap : MonoBehaviour {
                     textColor = Color.white
                 }
             };
-            GUI.Label(new Rect(300f, 275f, 200, 30), "Gifts Collected:", giftStyle);
-            if (currGiftCount >= 0)
-                GUI.Label(new Rect(600f, 275f, 200, 30), string.Format("{0}", currGiftCount), giftStyle);
-            if (showGiftMultiplier)
-                GUI.Label(new Rect(625f, 275f, 200, 30), "x 100", giftStyle);
+            GUI.Label(new Rect(0f, 250f, Screen.width, 30), string.Format("{0} minutes and {1:F2} seconds", Mathf.Floor(levelTime / 60), levelTime % 60), timeStyle);
 
-            if (showEnemy)
+
+            if (showGift)
             {
-                GUIStyle enemyStyle = new GUIStyle()
+                GUIStyle giftStyle = new GUIStyle()
                 {
                     fontSize = 24,
                     alignment = TextAnchor.MiddleLeft,
@@ -158,18 +158,18 @@ public class LevelRecap : MonoBehaviour {
                     richText = true,
                     normal = new GUIStyleState()
                     {
-                        textColor = new Color(79f / 255f, 0f, 0f)
+                        textColor = Color.white
                     }
                 };
-                GUI.Label(new Rect(300f, 350f, 200, 30), "Enemies defeated:", enemyStyle);
-                if (currEnemyCount >= 0)
-                    GUI.Label(new Rect(600f, 350f, 200, 30), string.Format("{0}", currEnemyCount), enemyStyle);
-                if (showEnemyMultiplier)
-                    GUI.Label(new Rect(625f, 350f, 200, 30), "x 50", enemyStyle);
+                GUI.Label(new Rect(300f, 325f, 200, 30), "Gifts Collected:", giftStyle);
+                if (currGiftCount >= 0)
+                    GUI.Label(new Rect(600f, 325f, 200, 30), string.Format("{0}", currGiftCount), giftStyle);
+                if (showGiftMultiplier)
+                    GUI.Label(new Rect(625f, 325f, 200, 30), "x 100", giftStyle);
 
-                if (showBonus)
+                if (showEnemy)
                 {
-                    GUIStyle sublevelStyle = new GUIStyle()
+                    GUIStyle enemyStyle = new GUIStyle()
                     {
                         fontSize = 24,
                         alignment = TextAnchor.MiddleLeft,
@@ -177,44 +177,67 @@ public class LevelRecap : MonoBehaviour {
                         richText = true,
                         normal = new GUIStyleState()
                         {
-                            textColor = new Color(25f / 255, 159f / 255, 0f)
+                            textColor = new Color(79f / 255f, 0f, 0f)
                         }
                     };
-                    GUI.Label(new Rect(300f, 425f, 200, 30), "Hidden Level:", sublevelStyle);
-                    if (currBonusScore >= 0)
-                        GUI.Label(new Rect(600f, 425f, 200, 30), string.Format("{0}", currBonusScore), sublevelStyle);
+                    GUI.Label(new Rect(300f, 400f, 200, 30), "Enemies defeated:", enemyStyle);
+                    if (currEnemyCount >= 0)
+                        GUI.Label(new Rect(600f, 400f, 200, 30), string.Format("{0}", currEnemyCount), enemyStyle);
+                    if (showEnemyMultiplier)
+                        GUI.Label(new Rect(625f, 400f, 200, 30), "x 50", enemyStyle);
 
-                    if (showTotal)
+                    if (showBonus)
                     {
-                        GUIStyle totalStyle = new GUIStyle()
+                        GUIStyle sublevelStyle = new GUIStyle()
                         {
-                            fontSize = 35,
+                            fontSize = 24,
                             alignment = TextAnchor.MiddleLeft,
                             fontStyle = FontStyle.Bold,
                             richText = true,
                             normal = new GUIStyleState()
                             {
-                                textColor = new Color(197f / 255f, 164f / 255f, 54f / 255f)
+                                textColor = new Color(25f / 255, 159f / 255, 0f)
                             }
                         };
-                        GUI.Label(new Rect(300f, 525f, 200, 30), "Total Score:", totalStyle);
-                        if (totalScore >= 0)
-                            GUI.Label(new Rect(600f, 525f, 200, 30), string.Format("{0}", totalScore), totalStyle);
+                        GUI.Label(new Rect(300f, 475f, 200, 30), "Hidden Level:", sublevelStyle);
+                        if (currBonusScore >= 0)
+                            GUI.Label(new Rect(600f, 475f, 200, 30), string.Format("{0}", currBonusScore), sublevelStyle);
 
-                        if (showButton)
+                        if (showTotal)
                         {
-                            GUIStyle continueStyle = new GUIStyle("button")
+                            GUIStyle totalStyle = new GUIStyle()
                             {
-                                fontSize = 26
+                                fontSize = 35,
+                                alignment = TextAnchor.MiddleLeft,
+                                fontStyle = FontStyle.Bold,
+                                richText = true,
+                                normal = new GUIStyleState()
+                                {
+                                    textColor = new Color(197f / 255f, 164f / 255f, 54f / 255f)
+                                }
                             };
+                            GUI.Label(new Rect(300f, 575f, 200, 30), "Total Score:", totalStyle);
+                            if (totalScore >= 0)
+                                GUI.Label(new Rect(600f, 575f, 200, 30), string.Format("{0}", totalScore), totalStyle);
 
-                            if (GUI.Button(new Rect(Screen.width / 2 - 60, 600f, 120, 60), "Continue", continueStyle))
+                            if (showButton)
                             {
-                                SceneManager.LoadScene(SceneName);
+                                GUIStyle continueStyle = new GUIStyle("button")
+                                {
+                                    fontSize = 26
+                                };
+
+                                if (GUI.Button(new Rect(Screen.width / 4 - 60, 650f, 120, 60), "Continue", continueStyle))
+                                {
+                                    SceneManager.LoadScene(SceneName);
+                                }
+
+                                if (GUI.Button(new Rect(Screen.width * 3 / 4 - 60, 650f, 120, 60), "Submit Score", continueStyle))
+                                {
+                                    SceneManager.LoadScene("Finished");
+                                }
                             }
                         }
-                        
-
                     }
                 }
             }
@@ -228,6 +251,9 @@ public class LevelRecap : MonoBehaviour {
 
     private IEnumerator ScrollNumbers()
     {
+        yield return new WaitForSeconds(1.0f);
+        showTime = true;
+
         yield return new WaitForSeconds(1.0f);
 
         showGift = true;
@@ -266,7 +292,8 @@ public class LevelRecap : MonoBehaviour {
         showTotal = true;
 
         yield return new WaitForSeconds(1.0f);
-        totalScore = giftCount * 100.0f + enemyCount * 50.0f + sublevelScore;
+        totalScore = giftCount * 100 + enemyCount * 50 + sublevelScore;
+        GameManager.instance.finalScore = totalScore;
 
         yield return new WaitForSeconds(1.0f);
         showButton = true;

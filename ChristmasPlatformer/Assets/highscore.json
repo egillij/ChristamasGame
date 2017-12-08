@@ -7,6 +7,14 @@
         {
             "name": "Egill",
             "score": 22
+        },
+        {
+            "name": "Egill2",
+            "score": 10
+        },
+        {
+            "name": "",
+            "score": 0
         }
     ]
 }

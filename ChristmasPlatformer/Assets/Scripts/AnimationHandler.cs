@@ -26,4 +26,9 @@ public class AnimationHandler : MonoBehaviour {
         }
         
     }
+
+    public void Death()
+    {
+        Player.Instance.Death();
+    }
 }

@@ -30,13 +30,19 @@ public class ChimneyDown : MonoBehaviour
         if (IsInside())
         {
             Player.Instance.AllowedDown = true;
-            //Debug.Log(Player.Instance.GoDown);
-            if (Player.Instance.GoDown && ChimneyCollider.enabled)
+            Debug.Log(Player.Instance.AllowedDown);
+            if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                ChimneyCollider.enabled = false;
+                Player.Instance.GoDown = true;
+            }
+
+            if (Player.Instance.GoDown && !ChimneyCollider.isTrigger)
+            {
+                //ChimneyCollider.enabled = false;
+                ChimneyCollider.isTrigger = true;
                 StartCoroutine(ChangeScene());
                 //LibPD.SendFloat("banger", 1f);
-                //LibPD.SendBang("banger");
+                //LibPD.SendBang("banger"); 
             }
         }
         else
@@ -68,7 +74,7 @@ public class ChimneyDown : MonoBehaviour
     IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(0.75f);
-
+        
         Player.Instance.GoDown = false;
         Player.Instance.AllowedDown = false;
 
@@ -77,7 +83,7 @@ public class ChimneyDown : MonoBehaviour
         {
             yield return null;
         }
-        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, Player.Instance.EnemiesKilled, Player.Instance.BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), true);
+        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, Player.Instance.EnemiesKilled, Player.Instance.BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), true, GameManager.instance.LevelDuration);
         LevelRecap.Instance.SceneName = sceneName;
         //SceneManager.LoadScene(sceneName);
         

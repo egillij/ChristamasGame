@@ -7,7 +7,7 @@ public class SlideBehaviour : StateMachineBehaviour {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+
         //if (animator.tag == "Enemy")
         //{
         //    animator.GetComponentInParent<Enemy>().Slide = true;
@@ -15,6 +15,8 @@ public class SlideBehaviour : StateMachineBehaviour {
         if (animator.tag.Contains("Player"))
         {
             Player.Instance.Slide = true;
+            Player.Instance.SlideCollider.enabled = true;
+            Player.Instance.WalkCollider.enabled = false;
         }
     }
 
@@ -29,6 +31,8 @@ public class SlideBehaviour : StateMachineBehaviour {
         if (animator.tag.Contains("Player"))
         {
             Player.Instance.Slide = false;
+            Player.Instance.SlideCollider.enabled = false;
+            Player.Instance.WalkCollider.enabled = true;
         }
         animator.ResetTrigger("slide");
     }

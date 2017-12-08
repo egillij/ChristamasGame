@@ -19,7 +19,7 @@ public class JumpBehaviour : StateMachineBehaviour {
     {
         if (animator.GetComponentInParent<Character>().IsGrounded())
         {
-            animator.SetBool("land", false);
+            animator.SetBool("land", true);
             animator.ResetTrigger("jump");
         }
 
