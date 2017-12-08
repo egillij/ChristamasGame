@@ -59,7 +59,8 @@ public class Player : Character
 
     public bool Sleep { get; set; }
 
-    public float BonusScore {get; set;}
+    public int BonusScore {get; set;}
+    public int EnemiesKilled { get; set; }
 
     public override bool IsDead
     {
@@ -80,7 +81,8 @@ public class Player : Character
             Physics2D.IgnoreCollision(enemy.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
 
-        BonusScore = 0.0f;
+        BonusScore = 0;
+        EnemiesKilled = 0;
         health = GameManager.instance.health;
     }
 
@@ -119,6 +121,11 @@ public class Player : Character
         }
 
         OnGround = IsGrounded();
+        if (OnGround && Animator.GetCurrentAnimatorStateInfo(1).IsName("PlayerJump"))
+        {
+            Animator.SetBool("land", true);
+            Animator.ResetTrigger("jump");
+        }
 
         HandleMovement(horizontal);
 
@@ -180,7 +187,6 @@ public class Player : Character
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("GGOOO DOWN");
             GoDown = true;
             //Rbody.velocity = new Vector2(0, -1 * movementSpeed);
         }
@@ -195,11 +201,11 @@ public class Player : Character
             Rbody.velocity = new Vector2(0, -1 * movementSpeed);
             return;
         }
-        
-        //if (Rbody.velocity.y < 0)
-        //{
-        //    Animator.SetBool("land", true);
-        //}
+
+        if (Rbody.velocity.y < 0)
+        {
+            Animator.SetBool("land", true);
+        }
 
         if (Run)
         {
@@ -306,6 +312,10 @@ public class Player : Character
         else
         {
             Animator.SetBool("dead", true);
+            SceneManager.LoadScene("LevelScore", LoadSceneMode.Additive);
+            LevelRecap.Instance.InitializeRecap(GameManager.instance.score, EnemiesKilled, BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), false);
+            LevelRecap.Instance.SceneName = "LevelSelect";
+
             yield return null;
         }
     }

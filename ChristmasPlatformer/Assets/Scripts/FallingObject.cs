@@ -42,7 +42,7 @@ public class FallingObject : MonoBehaviour {
                     if (cam.name == "Falling Camera")
                     {
                         float currentScore = cam.GetComponent<CaptureGame>().score;
-                        cam.GetComponent<CaptureGame>().score = currentScore >=15 ? cam.GetComponent<CaptureGame>().score-15 : 0.0f;
+                        cam.GetComponent<CaptureGame>().score = currentScore >=15 ? cam.GetComponent<CaptureGame>().score-15 : 0;
                         
                     }
                 }

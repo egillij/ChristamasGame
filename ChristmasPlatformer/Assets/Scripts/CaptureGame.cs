@@ -12,7 +12,7 @@ public class CaptureGame : MonoBehaviour {
     public float levelDuration = 10.0f;
     public float levelDifficulty = 1f;
 
-    public float score;
+    public int score;
 
     public Vector3 playerReturnPosition;
 

@@ -23,7 +23,7 @@ public class JumpBehaviour : StateMachineBehaviour {
             animator.ResetTrigger("jump");
         }
 
-        else if (animator.GetComponentInParent<Character>().Rbody.velocity.y < 0)
+        else if (animator.GetComponentInParent<Character>().Rbody.velocity.y <= 0)
         {
             animator.SetBool("land", true);
         }

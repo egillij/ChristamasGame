@@ -34,4 +34,7 @@ EditorBuildSettings:
     guid: b60cb7bf367049146bde4cd4968815a3
   - enabled: 1
     path: Assets/Scenes/Congratulations.unity
+    guid: 098048483e347ee4c8fa07d5191cec85
+  - enabled: 1
+    path: Assets/Scenes/LevelScore.unity
     guid: 00000000000000000000000000000000

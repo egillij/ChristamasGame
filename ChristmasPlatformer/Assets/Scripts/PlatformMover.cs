@@ -13,7 +13,7 @@ public class PlatformMover : MonoBehaviour {
     private Vector2 movingDirection;
 
     public bool playerOnTop;
-    private Rigidbody2D pBody;
+    //private Rigidbody2D pBody;
 
 	void Start () {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -57,7 +57,7 @@ public class PlatformMover : MonoBehaviour {
         {
             playerOnTop = true;
             Player.Instance.MovingPlatform = this.gameObject;
-            pBody = collision.gameObject.GetComponent<Rigidbody2D>();
+            //pBody = collision.gameObject.GetComponent<Rigidbody2D>();
             //pBody.velocity = Vector2.zero;
             collision.gameObject.transform.parent = this.transform;
         }
@@ -69,7 +69,7 @@ public class PlatformMover : MonoBehaviour {
         {
             playerOnTop = true;
             Player.Instance.MovingPlatform = this.gameObject;
-            pBody = collision.gameObject.GetComponent<Rigidbody2D>();
+            //pBody = collision.gameObject.GetComponent<Rigidbody2D>();
             //pBody.velocity = Vector2.zero;
 
             collision.gameObject.transform.parent = this.transform;
@@ -81,7 +81,7 @@ public class PlatformMover : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             playerOnTop = false;
-            pBody = null;
+            //pBody = null;
             Player.Instance.MovingPlatform = null;
 
             collision.gameObject.transform.parent = null;

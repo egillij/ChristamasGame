@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class ChimneyDown : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class ChimneyDown : MonoBehaviour
         {
             Player.Instance.AllowedDown = true;
             //Debug.Log(Player.Instance.GoDown);
-            if (Player.Instance.GoDown)
+            if (Player.Instance.GoDown && ChimneyCollider.enabled)
             {
                 ChimneyCollider.enabled = false;
                 StartCoroutine(ChangeScene());
@@ -71,6 +72,14 @@ public class ChimneyDown : MonoBehaviour
         Player.Instance.GoDown = false;
         Player.Instance.AllowedDown = false;
 
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("LevelScore", LoadSceneMode.Additive);
+        while (!SceneManager.GetSceneAt(1).isLoaded)
+        {
+            yield return null;
+        }
+        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, Player.Instance.EnemiesKilled, Player.Instance.BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), true);
+        LevelRecap.Instance.SceneName = sceneName;
+        //SceneManager.LoadScene(sceneName);
+        
     }
 }

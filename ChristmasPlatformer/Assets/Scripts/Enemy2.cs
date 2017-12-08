@@ -40,7 +40,7 @@ public class Enemy2 : Character {
 
     public bool Jump { get; set; }
 
-    public Rigidbody2D Rbody { get; set; }
+    //public Rigidbody2D Rbody { get; set; }
 
     public override bool IsDead
     {
@@ -52,7 +52,7 @@ public class Enemy2 : Character {
 
     public override void Start () {
         base.Start();
-        Rbody = GetComponent<Rigidbody2D>();
+        //Rbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -124,38 +124,6 @@ public class Enemy2 : Character {
             Vector3 theScale = transform.localScale;
             theScale.x *= -1.0f;
             transform.localScale = theScale;
-        }
-    }
-
-    private bool IsGrounded()
-    {
-        if (Rbody.velocity.y <= 0.0f)
-        {
-            foreach(Transform point in groundPoints)
-            {
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRadius, whatIsGround);
-
-                for (int i = 0; i < colliders.Length; i++)
-                {
-                    if (colliders[i].gameObject != gameObject)
-                    {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    private void HandleLayers()
-    {
-        if (!OnGround)
-        {
-            Animator.SetLayerWeight(1, 1);
-        }
-        else
-        {
-            Animator.SetLayerWeight(1, 0);
         }
     }
 

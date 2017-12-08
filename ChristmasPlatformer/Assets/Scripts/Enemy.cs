@@ -170,6 +170,7 @@ public class Enemy : Character {
         else
         {
             Animator.SetBool("dead", true);
+            Player.Instance.EnemiesKilled += 1;
             yield return null;
         }
     }
