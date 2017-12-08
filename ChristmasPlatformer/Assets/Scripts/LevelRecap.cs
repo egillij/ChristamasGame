@@ -54,7 +54,7 @@ public class LevelRecap : MonoBehaviour {
 
     // Use this for initialization
 	void Start () {
-        //InitializeRecap(2, 1, 10, 1, true, 65.3f);
+        InitializeRecap(2, 1, 10, 1, true, 65.3f);
     }
 	
 	// Update is called once per frame
@@ -227,12 +227,12 @@ public class LevelRecap : MonoBehaviour {
                                     fontSize = 26
                                 };
 
-                                if (GUI.Button(new Rect(Screen.width / 4 - 60, 650f, 120, 60), "Continue", continueStyle))
+                                if (GUI.Button(new Rect(Screen.width / 4 - 60, 650f, 150, 60), "Continue", continueStyle))
                                 {
                                     SceneManager.LoadScene(SceneName);
                                 }
 
-                                if (GUI.Button(new Rect(Screen.width * 3 / 4 - 60, 650f, 120, 60), "Submit Score", continueStyle))
+                                if (GUI.Button(new Rect(Screen.width * 3 / 4 - 150, 650f, 210, 60), "Submit Score", continueStyle))
                                 {
                                     SceneManager.LoadScene("Finished");
                                 }
@@ -293,7 +293,7 @@ public class LevelRecap : MonoBehaviour {
 
         yield return new WaitForSeconds(1.0f);
         totalScore = giftCount * 100 + enemyCount * 50 + sublevelScore;
-        GameManager.instance.finalScore = totalScore;
+        //GameManager.instance.finalScore = totalScore;
 
         yield return new WaitForSeconds(1.0f);
         showButton = true;
