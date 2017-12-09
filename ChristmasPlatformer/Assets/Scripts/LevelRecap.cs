@@ -54,7 +54,7 @@ public class LevelRecap : MonoBehaviour {
 
     // Use this for initialization
 	void Start () {
-        InitializeRecap(2, 1, 10, 1, true, 65.3f);
+        InitializeRecap(2, 1, 10, 1, false, 65.3f);
     }
 	
 	// Update is called once per frame

@@ -1,10 +1,21 @@
 Implementations:
-	+ Gera stærra borð
-	+ Búa til fleiri platforma
-	+ Bæta Enemy AI	(Egill)
-	+ Instructions scene.
-	+ Fleiri enemies en Ninjas. %Er þetta framtíðarhugmynd kannski?
-	+ Skjá sem sýnir stig og bíður þér að setja í highscore list þegar þú deyrð/vinnur
+
+
+	+ Instructions scene. (Sigurbjörn)
+	+ Laga Hell, ekki reloada scene heldur teleporta player í level start (Sigurbjörn)
+	+ Skrifa nafn í byrjun leiks og geyma high score per level og overall automatískt og láta vita ef high score var náð (Egill)
+	+ Reset á lífi eftir hvert borð???
+	+ Menu takka í level select (Egill)
+		- Destroy á GameManager ef þú ferð í Menu (Egill)
+	+ Gera loka scene með fullt af gjöfum (Egill)
+
+
+	+ Setja highscore í lista fyrir hvert level (Sigurbjörn)
+		- ChangeSenes.cs leita að TODO
+
+	+ Breyta level 5 í level 3 og hafa sem lokalevel (Egill)
+	+ NAFN á leik
+	+ Slide með meira speed (Egill)
 	
 
 		Gera kort fyrir level selection. (Egill) [done? - mögulega breyta um kort eða fjarlægja logo af korti]
@@ -16,10 +27,12 @@ Implementations:
 		Bæta við smákökum sem "healthkit".
 		Tímað undirborð með stigasöfnun. Mismunandi týpur (Egill) [done]
 		Skorstein til að ferðast milli sublevela (bónus borða) (Egill)     % comment frá Sibba: Hafðu sublevelin fyrir ofan aðallevelin ekki að neðan inn í scenes
+		Skjá sem sýnir stig og bíður þér að setja í highscore list þegar þú deyrð/vinnur
+		Búa til fleiri platforma
+	+ Bæta Enemy AI	(Egill) [done?]
 
 
-
-Bugs: 
+Bugs / next iteration: 
 	
 	+ Laga player death þegar hann er hoppandi. Festist í jump eða landing animation.
 	+ Laga Player damage. (Frekar óskýrt t.d. þegar hann verður fyrir sprengju) Einnig sést ekki damage þegar hlaupandi.
@@ -49,3 +62,7 @@ Nice to have - Future things if time:
 	+Endakall (boss) í endanum á lokalevelinu.
 	+ 13 borð, hvert í anda íslensku jólasveinanna og sprites fyrir jólasvein.
 	+ Myndband í byrjun af óvinunum stela gjöfunum. Tilgangur leiksins er að finna allar gjafirnar til að bjarga jólunum.
+	+ Fleiri enemies en Ninjas. %Er þetta framtíðarhugmynd kannski?
+	+ Better GUI and UI
+	+ Player state machine
+	+ Improve and add to Enemy AI
