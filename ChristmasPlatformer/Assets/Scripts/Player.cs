@@ -222,24 +222,28 @@ public class Player : Character
             finalSpeed *= 1.5f;
         }
 
-        if (!Attack && !Slide && (OnGround || airControl))
+        if (!Attack && (OnGround || airControl))
         {
             if (MovingPlatform == null)
             {
-                Rbody.velocity = new Vector2(finalSpeed * horizontal, Rbody.velocity.y);
-                if (horizontal == 0.0f)
+                if (!Slide || (Slide && Mathf.Sign(horizontal) == Mathf.Sign(Rbody.velocity.x)))
                 {
-                    Rbody.velocity = new Vector2(0.0f, Rbody.velocity.y);
-                }
+                    Rbody.velocity = new Vector2(finalSpeed * horizontal, Rbody.velocity.y);
+                    if (horizontal == 0.0f)
+                    {
+                        Rbody.velocity = new Vector2(0.0f, Rbody.velocity.y);
+                    }
 
-                if (Mathf.Abs(Rbody.velocity.x) > finalSpeed)
-                {
-                    Rbody.velocity = new Vector2(Mathf.Sign(Rbody.velocity.x) * finalSpeed, Rbody.velocity.y);
+                    if (Mathf.Abs(Rbody.velocity.x) > finalSpeed)
+                    {
+                        Rbody.velocity = new Vector2(Mathf.Sign(Rbody.velocity.x) * finalSpeed, Rbody.velocity.y);
+                    }
+                    else
+                    {
+                        Rbody.AddForce(new Vector2(finalSpeed * horizontal, 0.0f));
+                    }
                 }
-                else
-                {
-                    Rbody.AddForce(new Vector2(finalSpeed * horizontal, 0.0f));
-                }
+                
             }
 
             else
@@ -336,7 +340,7 @@ public class Player : Character
         {
             yield return null;
         }
-        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, EnemiesKilled, BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), false, GameManager.instance.LevelDuration);
+        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), false, GameManager.instance.LevelDuration);
         LevelRecap.Instance.SceneName = "LevelSelect";
     }
 }

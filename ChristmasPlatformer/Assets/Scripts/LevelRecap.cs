@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -52,8 +53,11 @@ public class LevelRecap : MonoBehaviour {
 
     public string SceneName { get; set; }
 
+    private string gameDataProjectFilePath = "highscore{0}.json";
+    private bool onHighscoreList;
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         //InitializeRecap(2, 1, 10, 1, false, 65.3f);
     }
 	
@@ -227,14 +231,28 @@ public class LevelRecap : MonoBehaviour {
                                     fontSize = 26
                                 };
 
-                                if (GUI.Button(new Rect(Screen.width / 4 - 60, 650f, 150, 60), "Continue", continueStyle))
+                                if (GUI.Button(new Rect(Screen.width / 2 - 75, 650f, 150, 60), "Continue", continueStyle))
                                 {
                                     SceneManager.LoadScene(SceneName);
                                 }
 
-                                if (GUI.Button(new Rect(Screen.width * 3 / 4 - 150, 650f, 210, 60), "Submit Score", continueStyle))
+                                //if (GUI.Button(new Rect(Screen.width * 3 / 4 - 150, 650f, 210, 60), "Submit Score", continueStyle))
+                                //{
+                                //    SceneManager.LoadScene("Finished");
+                                //}
+
+                                if (onHighscoreList)
                                 {
-                                    SceneManager.LoadScene("Finished");
+                                    GUIStyle newHighStyle = new GUIStyle()
+                                    {
+                                        fontSize = 45,
+                                        fontStyle = FontStyle.Bold,
+                                        normal = new GUIStyleState()
+                                        {
+                                            textColor = Color.white
+                                        }
+                                    };
+                                    GUI.Label(new Rect(685f, 575f, 200, 30), "Highscore", newHighStyle);
                                 }
                             }
                         }
@@ -258,10 +276,15 @@ public class LevelRecap : MonoBehaviour {
 
         showGift = true;
         yield return new WaitForSeconds(1.0f);
+        float giftSpeed = 0.3f;
+        if(giftCount > 10)
+        {
+            giftSpeed = 0.1f;
+        }
         for (int i = 0; i <= giftCount; i++)
         {
             currGiftCount = i;
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(giftSpeed);
         }
         yield return new WaitForSeconds(0.25f);
         showGiftMultiplier = true;
@@ -273,7 +296,7 @@ public class LevelRecap : MonoBehaviour {
         for (int i = 0; i <= enemyCount; i++)
         {
             currEnemyCount = i;
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(0.5f);
         }
         yield return new WaitForSeconds(0.25f);
         showEnemyMultiplier = true;
@@ -293,10 +316,21 @@ public class LevelRecap : MonoBehaviour {
 
         yield return new WaitForSeconds(1.0f);
         totalScore = giftCount * 100 + enemyCount * 50 + sublevelScore;
-        //GameManager.instance.finalScore = totalScore;
+        GameManager.instance.finalScore += totalScore;
 
         yield return new WaitForSeconds(1.0f);
         showButton = true;
+
+        Highscore[] highscoreLevel = GetHighscoreLevel(levelNumber.ToString());
+        SaveToJson(highscoreLevel, levelNumber.ToString(), totalScore);
+        
+        if (dyingScreen.activeSelf || levelNumber == 3)
+        {
+            bool newLevelHigh = onHighscoreList;
+            Highscore[] highscoreAll = GetHighscoreLevel("");
+            SaveToJson(highscoreAll, "", GameManager.instance.finalScore);
+            onHighscoreList = onHighscoreList || newLevelHigh;
+        }
     }
 
     private IEnumerator DeathTransition()
@@ -307,5 +341,71 @@ public class LevelRecap : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
         dyingScreen.GetComponent<Animator>().ResetTrigger("idle");
         dyingScreen.GetComponent<Animator>().SetTrigger("death");
+    }
+
+    private Highscore[] GetHighscoreLevel(string level)
+    {
+        string filename = string.Copy(gameDataProjectFilePath);
+        string filePath = Path.Combine(Application.dataPath, string.Format(filename, level));
+        
+        if (File.Exists(filePath))
+        {
+            string dataAsJson = File.ReadAllText(filePath);
+            return JsonHelper.FromJson<Highscore>(dataAsJson);
+        }
+        return new Highscore[0];
+    }
+
+    public void SaveToJson(Highscore[] highscores, string level, int score)
+    {
+        string filename = string.Copy(gameDataProjectFilePath);
+        if (highscores.Length > 0)
+        {
+            Highscore[] highScoreInstance = new Highscore[highscores.Length + 1];
+            int count = 0;
+            bool saved = false;
+            onHighscoreList = false;
+            foreach (Highscore highscore in highscores)
+            {
+                if (!saved && totalScore >= highscore.score)
+                {
+                    highScoreInstance[count] = new Highscore();
+                    highScoreInstance[count].name = GameManager.instance.playerName;
+                    highScoreInstance[count].score = score;
+
+                    count++;
+                    saved = true;
+                    if (count <= 5)
+                    {
+                        onHighscoreList = true;
+                    }
+                    
+                }
+
+                highScoreInstance[count] = new Highscore();
+                highScoreInstance[count].name = highscore.name;
+                highScoreInstance[count].score = highscore.score;
+
+                count++;
+            }
+
+            string highScoreToJson = JsonHelper.ToJson(highScoreInstance, true);
+            string filePath = Path.Combine(Application.dataPath, string.Format(filename, level));
+
+            File.WriteAllText(filePath, highScoreToJson);
+        }
+        else
+        {
+            Highscore[] highScoreInstance = new Highscore[1];
+
+            highScoreInstance[0] = new Highscore();
+            highScoreInstance[0].name = GameManager.instance.playerName;
+            highScoreInstance[0].score = score;
+
+            string highScoreToJson = JsonHelper.ToJson(highScoreInstance, true);
+            string filePath = Path.Combine(Application.dataPath, string.Format(filename, level));
+            onHighscoreList = true;
+            File.WriteAllText(filePath, highScoreToJson);
+        }
     }
 }

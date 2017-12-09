@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810e7580e693e214a8cd241d5a416e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupbackground: {fileID: 0}
 --- !u!4 &74851093
 Transform:
   m_ObjectHideFlags: 0
@@ -225,7 +226,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 74851092}
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneSimple
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

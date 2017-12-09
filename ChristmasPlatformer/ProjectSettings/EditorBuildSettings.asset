@@ -16,16 +16,16 @@ EditorBuildSettings:
     guid: 886d5e6ab3b05da4fb8edf500dbb7135
   - enabled: 1
     path: Assets/Scenes/Level2.unity
-    guid: 00000000000000000000000000000000
+    guid: 29b2cd28f5d1ae948a5d56c5e15adb4f
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 288eb2e7da1e0a942b074f628d42fba4
   - enabled: 1
     path: Assets/Scenes/LevelTest.unity
     guid: 4e38271ad195cb3489c62f4ed1f9105f
   - enabled: 1
     path: Assets/Scenes/LevelTestEgill.unity
     guid: b6613518d9fe3534e917de374c037113
-  - enabled: 1
-    path: Assets/Scenes/LevelLast.unity
-    guid: 288eb2e7da1e0a942b074f628d42fba4
   - enabled: 1
     path: Assets/Scenes/FallingObjects.unity
     guid: b9bb119b16ee6e3479f6dce94deb1f6c

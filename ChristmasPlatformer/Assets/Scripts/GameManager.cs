@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
+    public string playerName;
     public int score;
 
     public int finalScore;
+    public int EnemiesKilled;
 
     public Texture gift;
     public Texture heart;
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour {
     public float LevelStart;
     public float LevelDuration;
     public int health;
+
+    public bool[] levelLock;
 
     void Awake()
     {
@@ -74,7 +78,6 @@ public class GameManager : MonoBehaviour {
             {
                 alignment = TextAnchor.MiddleCenter,
                 margin = new RectOffset(5, 0, 0, 0)
-
             };
             for (int i = 0; i < health; i++)
             {

@@ -78,14 +78,14 @@ public class SaveHighscore : MonoBehaviour {
             File.WriteAllText(filePath, highScoreToJson);      
         }
 
-        Destroy(GameManager.instance.gameObject);
+        //Destroy(GameManager.instance.gameObject);
 
         SceneManager.LoadScene("Menu");
     }
 
     public void BackToMenu()
     {
-        Destroy(GameManager.instance.gameObject);
+        //Destroy(GameManager.instance.gameObject);
 
         SceneManager.LoadScene("Menu");
     }

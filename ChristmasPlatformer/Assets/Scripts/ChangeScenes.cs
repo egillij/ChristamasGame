@@ -145,7 +145,7 @@ public class ChangeScenes : MonoBehaviour
 
     public void LoadSceneSimple(string sceneName)
     {
-        if (sceneName == "Menu")
+        if (sceneName == "Menu" && GameManager.instance != null)
         {
             Destroy(GameManager.instance.gameObject);
         }
