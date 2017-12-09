@@ -77,13 +77,15 @@ public class ChimneyDown : MonoBehaviour
         
         Player.Instance.GoDown = false;
         Player.Instance.AllowedDown = false;
-
+        int levelNr = Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]);
+        GameManager.instance.levelLock[levelNr] = true;
         SceneManager.LoadScene("LevelScore", LoadSceneMode.Additive);
         while (!SceneManager.GetSceneAt(1).isLoaded)
         {
             yield return null;
         }
-        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, Player.Instance.BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), true, GameManager.instance.LevelDuration);
+        
+        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, Player.Instance.BonusScore, levelNr, true, GameManager.instance.LevelDuration);
         LevelRecap.Instance.SceneName = sceneName;
         //SceneManager.LoadScene(sceneName);
         

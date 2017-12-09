@@ -312,7 +312,7 @@ public class Player : Character
     public void Death()
     {
         //SceneManager.LoadScene("Finished");
-        
+        StartCoroutine(LevelDeath());
     }
 
     public override IEnumerator TakeDamage()

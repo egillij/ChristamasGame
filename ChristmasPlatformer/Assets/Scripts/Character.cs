@@ -9,7 +9,7 @@ public abstract class Character : MonoBehaviour
     public Rigidbody2D Rbody { get; private set; }
 
     [SerializeField]
-    protected float movementSpeed;
+    public float movementSpeed;
 
     [SerializeField]
     protected Transform throwPosition;

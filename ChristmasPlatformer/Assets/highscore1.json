@@ -1,6 +1,26 @@
 {
     "Items": [
         {
+            "name": "Magnus",
+            "score": 1250
+        },
+        {
+            "name": "Egill",
+            "score": 1150
+        },
+        {
+            "name": "Egill",
+            "score": 950
+        },
+        {
+            "name": "Egill",
+            "score": 950
+        },
+        {
+            "name": "Egill",
+            "score": 950
+        },
+        {
             "name": "Egill",
             "score": 260
         },

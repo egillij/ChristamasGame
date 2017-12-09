@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public int health;
 
     public bool[] levelLock;
+    public bool countTime;
 
     void Awake()
     {
@@ -88,7 +89,8 @@ public class GameManager : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        LevelDuration += Time.fixedDeltaTime;
+        if (countTime)
+            LevelDuration += Time.fixedDeltaTime;
     }
 
 }

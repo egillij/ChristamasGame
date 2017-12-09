@@ -126,10 +126,11 @@ public class CaptureGame : MonoBehaviour {
 
         closingText.enabled = false;
         SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
-        GameObject.FindGameObjectWithTag("Player").transform.position = playerReturnPosition;
+        Player.Instance.transform.position = playerReturnPosition;
         //Freeze player for 1 second
         Player.Instance.Sleeping(1.0f);
         Player.Instance.BonusScore += score;
+        Player.Instance.movementSpeed = 5f;
         SceneManager.UnloadSceneAsync(this.gameObject.scene);
 
     }

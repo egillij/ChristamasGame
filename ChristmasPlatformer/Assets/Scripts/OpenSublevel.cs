@@ -149,7 +149,7 @@ public class OpenSublevel: MonoBehaviour {
         Player.Instance.AllowedDown = false;
         isPlayerDown = true;
         spriteRenderer.color = new Color(255, 255, 255, 255);
-
+        Player.Instance.movementSpeed = 10f;
         SceneManager.LoadScene(sublevelName, LoadSceneMode.Additive);
 
 

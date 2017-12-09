@@ -68,6 +68,8 @@ public class LevelRecap : MonoBehaviour {
 
     public void InitializeRecap(int giftCount, int enemyCount, int sublevelScore, int levelNumber, bool winning, float time)
     {
+        GameManager.instance.countTime = false;
+        Player.Instance.Rbody.Sleep();
         winningSreen.SetActive(winning);
         dyingScreen.SetActive(!winning);
 
@@ -233,6 +235,16 @@ public class LevelRecap : MonoBehaviour {
 
                                 if (GUI.Button(new Rect(Screen.width / 2 - 75, 650f, 150, 60), "Continue", continueStyle))
                                 {
+                                    
+                                    GameManager.instance.score = 0;
+                                    GameManager.instance.EnemiesKilled = 0;
+
+                                    if (dyingScreen.activeSelf)
+                                    {
+                                        GameManager.instance.health = 6;
+                                        GameManager.instance.finalScore = 0;
+                                    }
+                                        
                                     SceneManager.LoadScene(SceneName);
                                 }
 
