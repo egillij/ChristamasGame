@@ -142,4 +142,13 @@ public class ChangeScenes : MonoBehaviour
             
         }
     }
+
+    public void LoadSceneSimple(string sceneName)
+    {
+        if (sceneName == "Menu")
+        {
+            Destroy(GameManager.instance.gameObject);
+        }
+        SceneManager.LoadScene(sceneName);
+    }
 }
