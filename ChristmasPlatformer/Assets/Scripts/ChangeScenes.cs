@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Text.RegularExpressions;
 
 public class ChangeScenes : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class ChangeScenes : MonoBehaviour
     private bool open;
     private string sceneName;
     private string submenuName;
+    private SaveLoadHighscore highscoreSettings = new SaveLoadHighscore();
 
     public void LoadScene(string sceneName)
     {
@@ -107,20 +109,23 @@ public class ChangeScenes : MonoBehaviour
             };
             namePosition.y += 5;
             scorePosition.y += 5;
-            //TODO: Get high scores for the current level from json
-            for (int i = 0; i <=4; i++)
+            
+            Highscore[] highscores = highscoreSettings.GetHighscoresFromLevel(Regex.Replace(submenuName, @"\s+", ""));
+
+            int count = 1;
+
+            foreach (Highscore highscore in highscores)
             {
-                //Read player name and player score
-                
                 namePosition.y += 20;
                 scorePosition.y += 20;
-                //Replace "Player Name" with the player name variable
-                GUI.Label(namePosition, string.Format("{0}. {1}", i+1, "Player Name"), playerNameStyle);
-                //Replace (100/(i+1)) with the score variable
-                GUI.Label(scorePosition, (100/(i+1)).ToString(), playerNameStyle);
+                
+                GUI.Label(namePosition, string.Format("{0}. {1}", count, highscore.name), playerNameStyle);                
+                GUI.Label(scorePosition, highscore.score.ToString(), playerNameStyle);
+
+                if (count == 4) break;
+
+                count++;
             }
-            
-            
 
             //Buttons
             GUIStyle middleBtn = new GUIStyle("button")

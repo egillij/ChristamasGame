@@ -1,5 +1,5 @@
 {
-    "Items": [
+    "Overall": [
         {
             "name": "poasdk",
             "score": 5650
@@ -33,6 +33,10 @@
             "score": 1200
         },
         {
+            "name": "Forseti",
+            "score": 400
+        },
+        {
             "name": "Sigurbjorn",
             "score": 23
         },
@@ -47,6 +51,28 @@
         {
             "name": "",
             "score": 0
+        }
+    ],
+    "Level1": [
+        {
+            "name": "Forseti",
+            "score": 400
+        },
+        {
+            "name": "Raggi",
+            "score": 54
+        }
+    ],
+    "Level2": [
+        {
+            "name": "Maggi",
+            "score": 111
+        }
+    ],
+    "Level3": [
+        {
+            "name": "Biggi",
+            "score": 89
         }
     ]
 }

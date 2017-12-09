@@ -12,32 +12,25 @@ public class GetHighscore : MonoBehaviour {
     [SerializeField]
     Text[] pointFields;
 
-    private string gameDataProjectFilePath = "highscore.json";
+    SaveLoadHighscore highscoreSettings = new SaveLoadHighscore();
 
     void Start()
     {
-        string filePath = Path.Combine(Application.dataPath, gameDataProjectFilePath);
+        Highscore[] highscores = highscoreSettings.GetHighscoresFromLevel("Overall");
 
-        if (File.Exists(filePath))
+        if (highscores.Length > 0)
         {
-            string dataAsJson = File.ReadAllText(filePath);
-
-            Highscore[] highscores = JsonHelper.FromJson<Highscore>(dataAsJson);
-
-            if (highscores.Length > 0)
+            int count = 0;
+            foreach (Highscore highscore in highscores)
             {
-                int count = 0;
-                foreach (Highscore highscore in highscores)
-                {
-                    nameFields[count].text = (count + 1).ToString() + ". " + highscore.name;
-                    pointFields[count].text = highscore.score.ToString();
+                nameFields[count].text = (count + 1).ToString() + ". " + highscore.name;
+                pointFields[count].text = highscore.score.ToString();
 
-                    if (count == 4) break;
+                if (count == 4) break;
 
-                    count++;
-                }
-            }                    
-        }      
+                count++;
+            }
+        }              
     }
 	
 	// Update is called once per frame

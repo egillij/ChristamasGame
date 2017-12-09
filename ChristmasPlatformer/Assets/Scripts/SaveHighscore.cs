@@ -6,9 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SaveHighscore : MonoBehaviour {
-
-    private string gameDataProjectFilePath = "highscore.json";
-
     private Highscore[] highscores;
 
     [SerializeField]
@@ -17,19 +14,12 @@ public class SaveHighscore : MonoBehaviour {
     [SerializeField]
     private InputField nameInput;
 
+    private SaveLoadHighscore highscoreSettings = new SaveLoadHighscore();
+
     // Use this for initialization
     void Start ()
     {
-        scoreText.text = "Score: " + GameManager.instance.finalScore.ToString();
-
-        string filePath = Path.Combine(Application.dataPath, gameDataProjectFilePath);
-        
-        if (File.Exists(filePath))
-        {
-            string dataAsJson = File.ReadAllText(filePath);
-
-            highscores = JsonHelper.FromJson<Highscore>(dataAsJson);            
-        }
+        highscores = highscoreSettings.GetHighscoresFromLevel("Overall");        
     }
 	
     public void SaveToJson()
@@ -44,38 +34,28 @@ public class SaveHighscore : MonoBehaviour {
             {
                 if (!saved && GameManager.instance.finalScore >= highscore.score)
                 {
-                    highScoreInstance[count] = new Highscore();
-                    highScoreInstance[count].name = nameInput.text;
-                    highScoreInstance[count].score = GameManager.instance.finalScore;
-
+                    Highscore newHighscore = highscoreSettings.CreateHighscore(nameInput.name, GameManager.instance.finalScore);
+                    highScoreInstance[count] = newHighscore;
+                    
                     count++;
                     saved = true;
                 }
 
-                highScoreInstance[count] = new Highscore();
-                highScoreInstance[count].name = highscore.name;
-                highScoreInstance[count].score = highscore.score;
+                highScoreInstance[count] = highscore;
 
                 count++;
             }
 
-            string highScoreToJson = JsonHelper.ToJson(highScoreInstance, true);
-            string filePath = Path.Combine(Application.dataPath, gameDataProjectFilePath);
-
-            File.WriteAllText(filePath, highScoreToJson);
+            highscoreSettings.SaveToJson(highScoreInstance, "Overall");
         }
         else
         {
             Highscore[] highScoreInstance = new Highscore[1];
 
-            highScoreInstance[0] = new Highscore();
-            highScoreInstance[0].name = nameInput.text;
-            highScoreInstance[0].score = GameManager.instance.score;
+            Highscore newHighscore = highscoreSettings.CreateHighscore(nameInput.name, GameManager.instance.finalScore);
+            highScoreInstance[0] = newHighscore;
 
-            string highScoreToJson = JsonHelper.ToJson(highScoreInstance, true);
-            string filePath = Path.Combine(Application.dataPath, gameDataProjectFilePath);
-
-            File.WriteAllText(filePath, highScoreToJson);      
+            highscoreSettings.SaveToJson(highScoreInstance, "Overall");  
         }
 
         //Destroy(GameManager.instance.gameObject);

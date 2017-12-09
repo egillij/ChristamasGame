@@ -53,7 +53,9 @@ public class LevelRecap : MonoBehaviour {
 
     public string SceneName { get; set; }
 
-    private string gameDataProjectFilePath = "highscore{0}.json";
+    private string gameDataProjectFilePath = "highscore.json";
+
+    private SaveLoadHighscore highscoreSettings = new SaveLoadHighscore();
     private bool onHighscoreList;
 
     // Use this for initialization
@@ -333,14 +335,14 @@ public class LevelRecap : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
         showButton = true;
 
-        Highscore[] highscoreLevel = GetHighscoreLevel(levelNumber.ToString());
-        SaveToJson(highscoreLevel, levelNumber.ToString(), totalScore);
+        Highscore[] highscoreLevel = highscoreSettings.GetHighscoresFromLevel("Level" + levelNumber.ToString());
+        SaveToJson(highscoreLevel, "Level" + levelNumber.ToString(), totalScore);
         
         if (dyingScreen.activeSelf || levelNumber == 3)
         {
             bool newLevelHigh = onHighscoreList;
-            Highscore[] highscoreAll = GetHighscoreLevel("");
-            SaveToJson(highscoreAll, "", GameManager.instance.finalScore);
+            Highscore[] highscoreAll = highscoreSettings.GetHighscoresFromLevel("Overall");
+            SaveToJson(highscoreAll, "Overall", GameManager.instance.finalScore);
             onHighscoreList = onHighscoreList || newLevelHigh;
         }
     }
@@ -355,22 +357,8 @@ public class LevelRecap : MonoBehaviour {
         dyingScreen.GetComponent<Animator>().SetTrigger("death");
     }
 
-    private Highscore[] GetHighscoreLevel(string level)
-    {
-        string filename = string.Copy(gameDataProjectFilePath);
-        string filePath = Path.Combine(Application.dataPath, string.Format(filename, level));
-        
-        if (File.Exists(filePath))
-        {
-            string dataAsJson = File.ReadAllText(filePath);
-            return JsonHelper.FromJson<Highscore>(dataAsJson);
-        }
-        return new Highscore[0];
-    }
-
     public void SaveToJson(Highscore[] highscores, string level, int score)
-    {
-        string filename = string.Copy(gameDataProjectFilePath);
+    {   
         if (highscores.Length > 0)
         {
             Highscore[] highScoreInstance = new Highscore[highscores.Length + 1];
@@ -381,9 +369,8 @@ public class LevelRecap : MonoBehaviour {
             {
                 if (!saved && totalScore >= highscore.score)
                 {
-                    highScoreInstance[count] = new Highscore();
-                    highScoreInstance[count].name = GameManager.instance.playerName;
-                    highScoreInstance[count].score = score;
+                    Highscore newHighscore = highscoreSettings.CreateHighscore(GameManager.instance.playerName, score);
+                    highScoreInstance[count] = newHighscore;
 
                     count++;
                     saved = true;
@@ -394,30 +381,24 @@ public class LevelRecap : MonoBehaviour {
                     
                 }
 
-                highScoreInstance[count] = new Highscore();
-                highScoreInstance[count].name = highscore.name;
-                highScoreInstance[count].score = highscore.score;
+                highScoreInstance[count] = highscore;
 
                 count++;
             }
 
-            string highScoreToJson = JsonHelper.ToJson(highScoreInstance, true);
-            string filePath = Path.Combine(Application.dataPath, string.Format(filename, level));
-
-            File.WriteAllText(filePath, highScoreToJson);
+            highscoreSettings.SaveToJson(highScoreInstance, level);
         }
         else
         {
             Highscore[] highScoreInstance = new Highscore[1];
 
-            highScoreInstance[0] = new Highscore();
-            highScoreInstance[0].name = GameManager.instance.playerName;
-            highScoreInstance[0].score = score;
+            Highscore newHighscore = highscoreSettings.CreateHighscore(GameManager.instance.playerName, score);
 
-            string highScoreToJson = JsonHelper.ToJson(highScoreInstance, true);
-            string filePath = Path.Combine(Application.dataPath, string.Format(filename, level));
+            highScoreInstance[0] = newHighscore;
+
+            highscoreSettings.SaveToJson(highScoreInstance, level);
+
             onHighscoreList = true;
-            File.WriteAllText(filePath, highScoreToJson);
         }
     }
 }
