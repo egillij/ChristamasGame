@@ -4,7 +4,7 @@ Implementations:
 	+ Instructions scene. (Sigurbjörn)
 	+ Laga Hell, ekki reloada scene heldur teleporta player í level start (Sigurbjörn)
 	
-	+ Byrja tímatalningu í ChangeScenes.cs þegar ýtt er á Play (Egill)
+	
 	+ Reset á lífi eftir hvert borð???
 	+ Setja highscore í lista fyrir hvert level (Sigurbjörn)
 		- ChangeSenes.cs leita að TODO
@@ -35,6 +35,7 @@ Implementations:
 		+ Geyma high score per level og overall automatískt og láta vita ef high score var náð (Egill)
 		+ Slide með meira speed (Egill)
 		+ Reset á GameManager.instance.score þegar nýtt level er byrjað og GameManager.instance.EnemiesKilled. (Egill)
+		+ Byrja tímatalningu í ChangeScenes.cs þegar ýtt er á Play (Egill)
 
 
 Bugs / next iteration: 

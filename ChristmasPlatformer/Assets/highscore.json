@@ -33,6 +33,10 @@
             "score": 1200
         },
         {
+            "name": "Siggi",
+            "score": 2200
+        },
+        {
             "name": "Forseti",
             "score": 400
         },
@@ -55,6 +59,10 @@
     ],
     "Level1": [
         {
+            "name": "Siggi",
+            "score": 950
+        },
+        {
             "name": "Forseti",
             "score": 400
         },
@@ -65,11 +73,19 @@
     ],
     "Level2": [
         {
+            "name": "Siggi",
+            "score": 600
+        },
+        {
             "name": "Maggi",
             "score": 111
         }
     ],
     "Level3": [
+        {
+            "name": "Siggi",
+            "score": 650
+        },
         {
             "name": "Biggi",
             "score": 89
