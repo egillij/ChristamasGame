@@ -40,7 +40,7 @@ public class SaveLoadHighscore
     {
         string filePath = Path.Combine(Application.dataPath, gameDataProjectFilePath);
 
-        Dictionary<string, Highscore[]> highscoreDictionary = GetAllOtherHigscores(updatedHighscore);
+        Dictionary<string, Highscore[]> highscoreDictionary = GetAllHighscores(updatedHighscore);
 
         highscoreDictionary.Add(updatedHighscore, highscoreInstance);
         
@@ -56,9 +56,9 @@ public class SaveLoadHighscore
         File.WriteAllText(filePath, highScoreToJson);
     }
 
-    private Dictionary<string, Highscore[]> GetAllOtherHigscores(string notGet)
+    private Dictionary<string, Highscore[]> GetAllHighscores(string notGet)
     {
-        Dictionary<string, Highscore[]> allOtherHighscores = new Dictionary<string, Highscore[]>();
+        Dictionary<string, Highscore[]> allHighscores = new Dictionary<string, Highscore[]>();
         
         foreach (string type in highscoreTypes)
         {
@@ -69,9 +69,9 @@ public class SaveLoadHighscore
 
             Highscore[] highscores = GetHighscoresFromLevel(type);
 
-            allOtherHighscores.Add(type, highscores);            
+            allHighscores.Add(type, highscores);            
         }
 
-        return allOtherHighscores;
+        return allHighscores;
     }
 }
