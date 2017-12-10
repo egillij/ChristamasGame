@@ -695,7 +695,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Run by holding J
+  m_Text: Slide by pressing S
 --- !u!222 &743389804
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Slide by pressing S
+  m_Text: Run by holding J
 --- !u!222 &830347529
 CanvasRenderer:
   m_ObjectHideFlags: 0
