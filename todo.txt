@@ -1,7 +1,7 @@
 Implementations:
 
 
-	+ Instructions scene. (Sigurbjörn)
+	
 	+ Reset á lífi eftir hvert borð???
 	+ NAFN á leik
 	+ Level lock, implementa í ChangeScenes.cs. Þegar submenu opnað á þá er play takkinn disabled ef level er læst (Egill)
@@ -30,6 +30,7 @@ Implementations:
 		+ Byrja tímatalningu í ChangeScenes.cs þegar ýtt er á Play (Egill)
 		+ Laga Hell, ekki reloada scene heldur teleporta player í level start (Sigurbjörn)
 		+ Setja highscore í lista fyrir hvert level (Sigurbjörn)
+		+ Instructions scene. (Sigurbjörn)
 		
 
 

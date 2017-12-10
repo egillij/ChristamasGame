@@ -41,3 +41,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelScore.unity
     guid: ceb0ff0ad63098240a44e8734953074c
+  - enabled: 1
+    path: Assets/Scenes/Instructions/One.unity
+    guid: a9470ee03132d964ab061bf31b67ab70
+  - enabled: 1
+    path: Assets/Scenes/Instructions/Two.unity
+    guid: 825478d28c257c6459042e58be7d022b
+  - enabled: 1
+    path: Assets/Scenes/Instructions/Three.unity
+    guid: 6f09cdefc6f7a9945a601f53ac421b5f
