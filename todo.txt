@@ -2,16 +2,8 @@ Implementations:
 
 
 	+ Instructions scene. (Sigurbjörn)
-	+ Laga Hell, ekki reloada scene heldur teleporta player í level start (Sigurbjörn)
-	
-	
 	+ Reset á lífi eftir hvert borð???
-	+ Setja highscore í lista fyrir hvert level (Sigurbjörn)
-		- ChangeSenes.cs leita að TODO
-
-	
 	+ NAFN á leik
-	
 	+ Level lock, implementa í ChangeScenes.cs. Þegar submenu opnað á þá er play takkinn disabled ef level er læst (Egill)
 	
 
@@ -36,6 +28,9 @@ Implementations:
 		+ Slide með meira speed (Egill)
 		+ Reset á GameManager.instance.score þegar nýtt level er byrjað og GameManager.instance.EnemiesKilled. (Egill)
 		+ Byrja tímatalningu í ChangeScenes.cs þegar ýtt er á Play (Egill)
+		+ Laga Hell, ekki reloada scene heldur teleporta player í level start (Sigurbjörn)
+		+ Setja highscore í lista fyrir hvert level (Sigurbjörn)
+		
 
 
 Bugs / next iteration: 

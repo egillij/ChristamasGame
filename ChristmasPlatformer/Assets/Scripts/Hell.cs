@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Hell : MonoBehaviour {
-    
+public class Hell : MonoBehaviour
+{
+    [SerializeField]
+    private Vector2 startPoint;
+        
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -16,7 +19,7 @@ public class Hell : MonoBehaviour {
     IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(0.5f);
-     
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        Player.Instance.Rbody.MovePosition(startPoint);     
     }
 }
