@@ -30,15 +30,6 @@ public class Player : Character
     [SerializeField]
     private bool airControl;
 
-    //[SerializeField]
-    //private Transform[] groundPoints;
-
-    //[SerializeField]
-    //private float groundRadius;
-
-    //[SerializeField]
-    //private LayerMask whatIsGround;
-
     [SerializeField]
     private Transform throwAirPosition;
 
@@ -113,8 +104,6 @@ public class Player : Character
 
     void FixedUpdate()
     {
-        //GameManager.instance.LevelDuration = Time.time;
-
         if (IsDead)
         {
             Animator.SetBool("dead", true);
@@ -128,11 +117,6 @@ public class Player : Character
         }
 
         OnGround = IsGrounded();
-        //if (OnGround && Animator.GetCurrentAnimatorStateInfo(1).IsName("PlayerJump"))
-        //{
-        //    //Animator.SetBool("land", true);
-        //    Animator.ResetTrigger("jump");
-        //}
 
         HandleMovement(horizontal);
 
@@ -156,11 +140,6 @@ public class Player : Character
 
     private void HandleInput()
     {
-        //if (Input.GetKeyDown(KeyCode.LeftShift))
-        //{
-        //    Animator.SetTrigger("attack");
-        //}
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Animator.SetTrigger("jump");
@@ -175,7 +154,7 @@ public class Player : Character
         {
             Run = false;
         }
-        //Debug.Log(Input.GetKeyDown(KeyCode.DownArrow));
+
         if (Input.GetKeyDown(KeyCode.DownArrow) && AllowedDown)
         {
             GoDown = true;
@@ -198,7 +177,6 @@ public class Player : Character
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             GoDown = true;
-            //Rbody.velocity = new Vector2(0, -1 * movementSpeed);
         }
     }
 
@@ -211,11 +189,6 @@ public class Player : Character
             Rbody.velocity = new Vector2(0, -1 * movementSpeed);
             return;
         }
-
-        //if (Rbody.velocity.y < 0)
-        //{
-        //    Animator.SetBool("land", true);
-        //}
 
         if (Run)
         {
@@ -253,7 +226,7 @@ public class Player : Character
 
         }
 
-        if (Jump && OnGround)//Rbody.velocity.y == 0.0f)
+        if (Jump && OnGround)
         {
             if (MovingPlatform != null)
             {
@@ -311,7 +284,6 @@ public class Player : Character
 
     public void Death()
     {
-        //SceneManager.LoadScene("Finished");
         StartCoroutine(LevelDeath());
     }
 
