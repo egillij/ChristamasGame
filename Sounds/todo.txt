@@ -1,37 +1,42 @@
 Hljóð fyrir interactibles:	
 	
-	- Hljóð á icicle
-	- Hljóð á smákökur
+	- Hljóð á icicle (ís að brotna) (kannski hægt að nota gler)
+	- Hljóð á smákökur (drekka hljóð)
+	- Þegar player fer niður í skorstein, magical sound 
 	
-Character hljóð
-	- Hljóð fyrir hoppa
-	- Hljóð fyrir deyja
-	- Hljóð fyror TakeDamage
-	- Hljóð fyrir árás
-	- Hvaða hljóð á Enemy?
-	- Hljóð fyrir labba og hlaupa
-		-t.d. brak í snjó þegar lappir snerta jörð (triggerað úr animation)
-	- hljóð á player ef hann á eitt líf eftir [mögulega done]
+Charactr hljóð
+	- Hljóð fyrir hoppa (langt douuu) 
+	- Hljóð fyrir deyja (huueee) 
+	- Hljóð fyrir TakeDamage (ahh) 
+	- Hljóð fyrir árás 
+	- Hljóð fyrir melee árás?
+
+	- Hljóð fyrir labba og hlaupa (Egill)
+		-t.d. brak í snjó þegar lappir snerta jörð (triggerað úr animation) lágar tíðnir í exponential attack decay?
+	- hljóð á player ef hann á eitt líf eftir (Egill)
 
 Umhverfishljóð
-	- jóla soundtracks
-	- vindur?
+	- jóla soundtracks (Sigurbjörn)
+	- vindur (Sigurbjörn)
 
 
 Hljóð í menu:	
 	- Hljóð á recap skjá
-		- scroll hljóð þegar stig eru talin
-		- boom hjóð þegar nýr texti byrtist
-		- Hljóð ef highscore
 		- Mismunandi hljóð í byrjun eftir því hvort það var sigur eða dauði
 
-	- Hljóð á takka?
-		- virkar sem feedback að það sé búið að ýta á takkann
-
-	- Soundtrack á menu
+	- Soundtrack á menu (spila instrumental lag)
 
 
 Búið:
 	- Hljóð fyrir pakka [done]
-	- Hljóð fyrir skorstein og ef leikmaður interactar við hann [done]
-	- Hljóð á sprengju [done]
+	- Hljóð fyrir skorsteins reyk og ef leikmaður interactar við hann [done]
+	- Hljóð á sprengju. kvellur og þráður [done]
+
+Nice to have:
+	- Hvaða hljóð á Enemy? 
+	- Hljóð á takka?
+		- virkar sem feedback að það sé búið að ýta á takkann
+	- Hljóð á recap skjá
+		- scroll hljóð þegar stig eru talin
+		- boom hjóð þegar nýr texti byrtist
+		- Hljóð ef highscore (taka upp klapp og breyta eiginleikum þess í pd)
