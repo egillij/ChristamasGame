@@ -2,7 +2,7 @@ Hljóð fyrir interactibles:
 	
 	- Hljóð á icicle (ís að brotna) (kannski hægt að nota gler)
 	- Hljóð á smákökur (drekka hljóð)
-	- Þegar player fer niður í skorstein, magical sound 
+	- Þegar player fer niður í skorstein, magical sound (Egill)
 	
 Charactr hljóð
 	- Hljóð fyrir hoppa (langt douuu) 
