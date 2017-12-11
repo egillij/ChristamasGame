@@ -2,7 +2,6 @@ Hljóð fyrir interactibles:
 	
 	- Hljóð á icicle (ís að brotna) (kannski hægt að nota gler)
 	- Hljóð á smákökur (drekka hljóð)
-	- Þegar player fer niður í skorstein, magical sound (Egill)
 	
 Charactr hljóð
 	- Hljóð fyrir hoppa (langt douuu) 
@@ -31,6 +30,7 @@ Búið:
 	- Hljóð fyrir pakka [done]
 	- Hljóð fyrir skorsteins reyk og ef leikmaður interactar við hann [done]
 	- Hljóð á sprengju. kvellur og þráður [done]
+	- Þegar player fer niður í skorstein, magical sound (Egill)
 
 Nice to have:
 	- Hvaða hljóð á Enemy? 
