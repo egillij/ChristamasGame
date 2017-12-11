@@ -1,0 +1,37 @@
+Hljóð fyrir interactibles:	
+	
+	- Hljóð á icicle
+	- Hljóð á smákökur
+	
+Character hljóð
+	- Hljóð fyrir hoppa
+	- Hljóð fyrir deyja
+	- Hljóð fyror TakeDamage
+	- Hljóð fyrir árás
+	- Hvaða hljóð á Enemy?
+	- Hljóð fyrir labba og hlaupa
+		-t.d. brak í snjó þegar lappir snerta jörð (triggerað úr animation)
+	- hljóð á player ef hann á eitt líf eftir [mögulega done]
+
+Umhverfishljóð
+	- jóla soundtracks
+	- vindur?
+
+
+Hljóð í menu:	
+	- Hljóð á recap skjá
+		- scroll hljóð þegar stig eru talin
+		- boom hjóð þegar nýr texti byrtist
+		- Hljóð ef highscore
+		- Mismunandi hljóð í byrjun eftir því hvort það var sigur eða dauði
+
+	- Hljóð á takka?
+		- virkar sem feedback að það sé búið að ýta á takkann
+
+	- Soundtrack á menu
+
+
+Búið:
+	- Hljóð fyrir pakka [done]
+	- Hljóð fyrir skorstein og ef leikmaður interactar við hann [done]
+	- Hljóð á sprengju [done]
