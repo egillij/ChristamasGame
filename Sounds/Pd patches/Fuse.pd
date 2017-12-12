@@ -1,0 +1,31 @@
+#N canvas 4443 332 578 376 10;
+#X obj 136 254 dac~;
+#X obj 136 228 *~;
+#X obj 172 206 *~ 10;
+#X obj 72 173 hip~ 4000;
+#X obj 172 182 lop~ 60;
+#X obj 73 138 noise~;
+#X obj 173 156 *~;
+#X msg 227 164 1;
+#X msg 188 135 0;
+#X obj 169 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 139 87 delay 1 500 msec;
+#X obj 170 33 r fuse;
+#X obj 247 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 1;
+#X connect 8 0 6 1;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 12 0 7 0;
