@@ -12,7 +12,7 @@ Charactr hljóð
 
 	- Hljóð fyrir labba og hlaupa (Egill)
 		-t.d. brak í snjó þegar lappir snerta jörð (triggerað úr animation) lágar tíðnir í exponential attack decay?
-	- hljóð á player ef hann á eitt líf eftir (Egill)
+	
 
 Umhverfishljóð
 	- jóla soundtracks (Sigurbjörn)
@@ -31,6 +31,7 @@ Búið:
 	- Hljóð fyrir skorsteins reyk og ef leikmaður interactar við hann [done]
 	- Hljóð á sprengju. kvellur og þráður [done]
 	- Þegar player fer niður í skorstein, magical sound (Egill)
+	- hljóð á player ef hann á eitt líf eftir (Egill)
 
 Nice to have:
 	- Hvaða hljóð á Enemy? 
