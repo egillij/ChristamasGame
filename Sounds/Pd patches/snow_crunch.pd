@@ -131,10 +131,8 @@
 #X text 594 141 load a crunch with slower tempo;
 #X msg 550 205 symbol snow_crunch_slower.wav;
 #X obj 346 84 r snowCrunch;
-#X obj 762 177 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 653 84 table array1;
-#X obj 769 82 table array2;
+#X obj 96 116 table array1;
+#X obj 637 117 table array2;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
 #X connect 2 0 8 0;
@@ -194,6 +192,3 @@
 #X connect 44 0 41 0;
 #X connect 47 0 12 0;
 #X connect 48 0 36 0;
-#X connect 49 0 47 0;
-#X connect 49 0 17 0;
-#X connect 49 0 12 1;

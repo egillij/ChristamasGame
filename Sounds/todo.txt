@@ -4,14 +4,11 @@ Hljóð fyrir interactibles:
 	- Hljóð á smákökur (drekka hljóð)
 	
 Charactr hljóð
-	- Hljóð fyrir hoppa (langt douuu) 
+
 	- Hljóð fyrir deyja (huueee) 
 	- Hljóð fyrir TakeDamage (ahh) 
 	- Hljóð fyrir árás 
 	- Hljóð fyrir melee árás?
-
-	- Hljóð fyrir labba og hlaupa (Egill)
-		-t.d. brak í snjó þegar lappir snerta jörð (triggerað úr animation) lágar tíðnir í exponential attack decay?
 	
 
 Umhverfishljóð
@@ -32,6 +29,9 @@ Búið:
 	- Hljóð á sprengju. kvellur og þráður [done]
 	- Þegar player fer niður í skorstein, magical sound (Egill)
 	- hljóð á player ef hann á eitt líf eftir (Egill)
+	- Hljóð fyrir labba og hlaupa (Egill)
+		-t.d. brak í snjó þegar lappir snerta jörð (triggerað úr animation) lágar tíðnir í exponential attack decay?
+	- Hljóð fyrir hoppa (langt douuu) (Egill) [done]	
 
 Nice to have:
 	- Hvaða hljóð á Enemy? 
