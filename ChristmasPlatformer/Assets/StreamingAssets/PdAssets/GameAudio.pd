@@ -1,4 +1,4 @@
-#N canvas -8 -8 1536 781 10;
+#N canvas -3 1 1525 767 10;
 #X obj 100 663 dac~;
 #N canvas 953 50 958 988 (subpatch) 0;
 #X obj 65 275 *~ 1;
@@ -408,10 +408,10 @@
 #X msg 668 115 0;
 #X obj 649 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 619 67 delay 1 500 msec;
 #X obj 650 13 r fuse;
 #X obj 727 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X obj 619 67 delay 500;
 #X connect 1 0 4 0;
 #X connect 2 0 3 1;
 #X connect 3 0 19 0;
@@ -533,7 +533,7 @@
 #X connect 94 0 93 1;
 #X connect 95 0 93 1;
 #X connect 96 0 95 0;
-#X connect 97 0 96 0;
+#X connect 97 0 98 0;
+#X connect 98 0 94 0;
 #X connect 98 0 99 0;
-#X connect 99 0 97 0;
-#X connect 99 0 94 0;
+#X connect 99 0 96 0;
