@@ -7,7 +7,6 @@ Charactr hljóð
 
 	- Hljóð fyrir deyja (huueee) 
 	- Hljóð fyrir TakeDamage (ahh) 
-	- Hljóð fyrir árás 
 	- Hljóð fyrir melee árás?
 	
 
@@ -32,6 +31,7 @@ Búið:
 	- Hljóð fyrir labba og hlaupa (Egill)
 		-t.d. brak í snjó þegar lappir snerta jörð (triggerað úr animation) lágar tíðnir í exponential attack decay?
 	- Hljóð fyrir hoppa (langt douuu) (Egill) [done]	
+	- Hljóð fyrir árás 
 
 Nice to have:
 	- Hvaða hljóð á Enemy? 
