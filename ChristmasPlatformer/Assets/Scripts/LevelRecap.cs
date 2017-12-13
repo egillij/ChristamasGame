@@ -53,8 +53,6 @@ public class LevelRecap : MonoBehaviour {
 
     public string SceneName { get; set; }
 
-    private string gameDataProjectFilePath = "highscore.json";
-
     private SaveLoadHighscore highscoreSettings = new SaveLoadHighscore();
     private bool onHighscoreList;
 

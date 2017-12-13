@@ -7,7 +7,6 @@ public class FallingBomb : MonoBehaviour
 
     public Animator Animator { get; private set; }
     private CircleCollider2D ExplosionRadius;
-    private bool hasHurtPlayer = false;
 
     // Use this for initialization
     void Start ()

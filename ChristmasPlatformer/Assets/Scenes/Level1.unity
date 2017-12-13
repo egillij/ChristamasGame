@@ -4970,7 +4970,6 @@ GameObject:
   - component: {fileID: 1424455487}
   - component: {fileID: 1424455486}
   - component: {fileID: 1424455485}
-  - component: {fileID: 1424455484}
   - component: {fileID: 1424455489}
   m_Layer: 0
   m_Name: Main Camera
@@ -4979,13 +4978,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1424455484
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1424455483}
-  m_Enabled: 1
 --- !u!124 &1424455485
 Behaviour:
   m_ObjectHideFlags: 0
@@ -5375,6 +5367,68 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6dda0c96e18a3c4b817a751244b8a80, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1520290788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1520290791}
+  - component: {fileID: 1520290790}
+  - component: {fileID: 1520290789}
+  - component: {fileID: 1520290792}
+  m_Layer: 0
+  m_Name: LibPd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1520290789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520290788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262d6ca9dc64955428f193b69fee634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfPatch: GameAudio.pd
+--- !u!81 &1520290790
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520290788}
+  m_Enabled: 1
+--- !u!4 &1520290791
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520290788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.97618, y: -7.3359876, z: 1.046875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1520290792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520290788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f25ebdbd952d44b9954913bf69b9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pdFileName: snow_wind
 --- !u!4 &1534071147 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4429131898620248, guid: b6dda0c96e18a3c4b817a751244b8a80,
