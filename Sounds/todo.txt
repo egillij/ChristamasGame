@@ -1,13 +1,13 @@
 Hljóð fyrir interactibles:	
 	
 	- Hljóð á icicle (ís að brotna) (kannski hægt að nota gler)
-	- Hljóð á smákökur (drekka hljóð)
+	
 	
 Charactr hljóð
 
-	- Hljóð fyrir deyja (huueee) 
+
 	- Hljóð fyrir TakeDamage (ahh) 
-	- Hljóð fyrir melee árás?
+	
 	
 
 Umhverfishljóð
@@ -32,6 +32,8 @@ Búið:
 		-t.d. brak í snjó þegar lappir snerta jörð (triggerað úr animation) lágar tíðnir í exponential attack decay?
 	- Hljóð fyrir hoppa (langt douuu) (Egill) [done]	
 	- Hljóð fyrir árás 
+	- Hljóð á smákökur (drekka hljóð) [Egill]
+	- Hljóð fyrir deyja (huueee) Ef lítill tími þá er hægt að gera eh-eh-eh. [Egill]
 
 Nice to have:
 	- Hvaða hljóð á Enemy? 
@@ -41,3 +43,5 @@ Nice to have:
 		- scroll hljóð þegar stig eru talin
 		- boom hjóð þegar nýr texti byrtist
 		- Hljóð ef highscore (taka upp klapp og breyta eiginleikum þess í pd)
+	- Hljóð fyrir melee árás?
+	- snjóbolti hittir óvin eða map 
