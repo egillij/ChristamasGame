@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using LibPDBinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,6 +30,7 @@ public class Icicle : MonoBehaviour {
         if (other.gameObject.tag != "Icicle" && Rbody.gravityScale > 0f)
         {
             Animator.SetTrigger("break");
+            LibPD.SendBang("icicle");
         }
     }
 
