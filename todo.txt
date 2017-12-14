@@ -3,7 +3,7 @@ Loka skref:
 	- Bæta við soundtrack. (Sigurbjörn)
 	- Afhverju er enemy að detta út af platform. (Egill)
 	- Level Select takki inn í levels (Egill)
-	- Smoke hljóð. Hvað varð um það? (Egill)
+
 	- Setja rétt nöfn á Pd skjöl (Sigurbjörn)
 	- Taka til í Unity.
 	- Yfirlestur á skýrslum.
@@ -14,6 +14,7 @@ Búið:
 	- Setja nafna á leiknum í Menu (Egill)
 	- Laga silent night svo það stoppi eftir borð
 	- Kíkja á moving platforms (Sigurbjörn)
+	- Smoke hljóð. Hvað varð um það? (Egill)
 
 
 Implementations:

@@ -33,6 +33,7 @@ public class MilkAndCookies : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            LibPDBinding.LibPD.SendBang("lowhealthStop");
             LibPDBinding.LibPD.SendBang("drinkBang");
             GameManager.instance.health++;
             Destroy(gameObject);

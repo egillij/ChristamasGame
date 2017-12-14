@@ -172,8 +172,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1543619312538820}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.3, y: -20.599998, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.4, y: -5.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4063021663503308}
@@ -412,7 +412,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294966015
   target: {fileID: 0}
-  meleeRange: 2
+  meleeRange: 6
   throwRange: 12
   SwordCollider: {fileID: 68378866138700838}
   aggresive: 0

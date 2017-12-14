@@ -70,10 +70,19 @@ public class ChimneyUp : MonoBehaviour {
 
             //LibPD.SendFloat("smokeAttack", 0.3f);
             //LibPD.SendFloat("smokeDecay", -0.3f);
-            //LibPD.SendFloat("smokeVolume", 0.2f);
-            //LibPD.SendBang("smokebang");
-            if (!isVisible)
+            LibPD.SendFloat("smokeVolume", 0.6f);
+            
+
+            if (!GetComponent<SpriteRenderer>().isVisible)
+            {
+                //LibPD.SendFloat("smokeScale", 0.0f);
                 StartCoroutine(FadeSmoke());
+            }
+            else
+            {
+                LibPD.SendFloat("smokeScale", 1.0f);
+            }
+            LibPD.SendBang("smokebang");
 
             //effectCollider.enabled = true;
             nextSmoke = Time.time + smokeDuration + smokeInterval;
@@ -137,6 +146,7 @@ public class ChimneyUp : MonoBehaviour {
 
     private void OnBecameVisible()
     {
+        
         isVisible = true;
         StopCoroutine(FadeSmoke());
         LibPD.SendFloat("smokeScale", 1.0f);
@@ -163,7 +173,7 @@ public class ChimneyUp : MonoBehaviour {
         }
 
         if (closest)
-            LibPD.SendFloat("smokeScale", 1 / (1.5f * dist));
+            LibPD.SendFloat("smokeScale", Mathf.Min(1.0f, 1 / (1.5f * dist)));
 
         yield return 0.0f;
 

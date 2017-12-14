@@ -53,4 +53,12 @@ public class AnimationHandler : MonoBehaviour {
         if (Player.Instance.OnGround)
             LibPDBinding.LibPD.SendBang("snowCrunch");
     }
+
+    public void MeleeAttack()
+    {
+        if (tag.Contains("Enemy"))
+        {
+            GetComponentInParent<Enemy>().MeleeAttack();
+        }
+    }
 }
