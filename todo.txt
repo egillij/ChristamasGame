@@ -1,5 +1,5 @@
 Loka skref:
-	- Þegar player á eitt líf eftir, slökkva á viðvörun ef hann nær sér í nýtt líf
+
 	- Bæta við soundtrack. (Sigurbjörn)
 	- Afhverju er enemy að detta út af platform. (Egill)
 	- Level Select takki inn í levels (Egill)
@@ -15,6 +15,7 @@ Búið:
 	- Laga silent night svo það stoppi eftir borð
 	- Kíkja á moving platforms (Sigurbjörn)
 	- Smoke hljóð. Hvað varð um það? (Egill)
+	- Þegar player á eitt líf eftir, slökkva á viðvörun ef hann nær sér í nýtt líf
 
 
 Implementations:
