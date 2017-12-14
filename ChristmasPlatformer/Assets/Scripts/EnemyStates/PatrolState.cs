@@ -48,6 +48,7 @@ public class PatrolState : IEnemyState {
         if (other.tag == "Edge")
         {
             enemy.ChangeDirection();
+            turnaroundTimer = 0.0f;
         }
 
         else if (other.tag.Contains("Jump"))

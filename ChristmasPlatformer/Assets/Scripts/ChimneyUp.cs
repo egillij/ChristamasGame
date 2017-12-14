@@ -70,7 +70,7 @@ public class ChimneyUp : MonoBehaviour {
 
             //LibPD.SendFloat("smokeAttack", 0.3f);
             //LibPD.SendFloat("smokeDecay", -0.3f);
-            LibPD.SendFloat("smokeVolume", 0.6f);
+            LibPD.SendFloat("smokeVolume", 0.4f);
             
 
             if (!GetComponent<SpriteRenderer>().isVisible)
