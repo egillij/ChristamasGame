@@ -1,6 +1,5 @@
 Loka skref:
-
-	- Kíkja á moving platforms (Sigurbjörn)
+	- Þegar player á eitt líf eftir, slökkva á viðvörun ef hann nær sér í nýtt líf
 	- Bæta við soundtrack. (Sigurbjörn)
 	- Afhverju er enemy að detta út af platform. (Egill)
 	- Level Select takki inn í levels (Egill)
@@ -14,6 +13,7 @@ Búið:
 	- Fækka icicles aðeins í level 3. (Egill)
 	- Setja nafna á leiknum í Menu (Egill)
 	- Laga silent night svo það stoppi eftir borð
+	- Kíkja á moving platforms (Sigurbjörn)
 
 
 Implementations:
