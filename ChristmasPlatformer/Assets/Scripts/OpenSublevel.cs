@@ -105,6 +105,7 @@ public class OpenSublevel: MonoBehaviour {
                 if (Player.Instance.GoDown)
                 {
                     returnPos = Player.Instance.gameObject.transform.position;
+                    LibPDBinding.LibPD.SendBang("chimneyMagic");
                     ChimneyCollider.enabled = false;
                     sceneIsLoading = true;
                     StartCoroutine(ChangeScene());

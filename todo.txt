@@ -1,10 +1,26 @@
+Loka skref:
+
+	- Kíkja á moving platforms (Sigurbjörn)
+	- Bæta við soundtrack. (Sigurbjörn)
+	- Afhverju er enemy að detta út af platform. (Egill)
+	- Level Select takki inn í levels (Egill)
+	- Smoke hljóð. Hvað varð um það? (Egill)
+	- Setja rétt nöfn á Pd skjöl (Sigurbjörn)
+	- Taka til í Unity.
+	- Yfirlestur á skýrslum.
+
+Búið:
+	- Hljóð á sublevel chimney (Egill)	
+	- Fækka icicles aðeins í level 3. (Egill)
+	- Setja nafna á leiknum í Menu (Egill)
+	- Laga silent night svo það stoppi eftir borð
+
+
 Implementations:
 
 
 	
-	+ Reset á lífi eftir hvert borð???
-	+ NAFN á leik
-	+ Level lock, implementa í ChangeScenes.cs. Þegar submenu opnað á þá er play takkinn disabled ef level er læst (Egill)
+
 	
 
 		Gera kort fyrir level selection. (Egill) [done? - mögulega breyta um kort eða fjarlægja logo af korti]
@@ -31,6 +47,8 @@ Implementations:
 		+ Laga Hell, ekki reloada scene heldur teleporta player í level start (Sigurbjörn)
 		+ Setja highscore í lista fyrir hvert level (Sigurbjörn)
 		+ Instructions scene. (Sigurbjörn)
+		+ NAFN á leik
+		+ Level lock, implementa í ChangeScenes.cs. Þegar submenu opnað á þá er play takkinn disabled ef level er læst (Egill)
 		
 
 

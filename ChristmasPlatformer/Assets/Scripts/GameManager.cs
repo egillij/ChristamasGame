@@ -80,9 +80,16 @@ public class GameManager : MonoBehaviour {
                 alignment = TextAnchor.MiddleCenter,
                 margin = new RectOffset(5, 0, 0, 0)
             };
+            float width = 0;
             for (int i = 0; i < health; i++)
             {
-                GUI.Box(new Rect(Screen.width-250+i*50, 0, 100, 70), heart, healthStyle);
+
+                if (width % 6 == 0)
+                    width = 0;
+                float height = Mathf.Floor(i / 6f) * 50;
+                GUI.Box(new Rect(Screen.width-350+width*50, height, 100, 70), heart, healthStyle);
+
+                width += 1;
             }
         }        
     }

@@ -291,6 +291,7 @@ public class Player : Character
 
     public override IEnumerator TakeDamage()
     {
+        LibPD.SendBang("damageBang");
         GameManager.instance.health--;
         if(GameManager.instance.health == 1)
         {

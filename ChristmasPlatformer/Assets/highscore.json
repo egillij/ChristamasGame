@@ -1,6 +1,10 @@
 {
     "Overall": [
         {
+            "name": "asdasd",
+            "score": 7820
+        },
+        {
             "name": "poasdk",
             "score": 5650
         },
@@ -41,6 +45,10 @@
             "score": 400
         },
         {
+            "name": "askks",
+            "score": 1250
+        },
+        {
             "name": "sadasd",
             "score": 250
         },
@@ -67,8 +75,16 @@
     ],
     "Level1": [
         {
+            "name": "askks",
+            "score": 950
+        },
+        {
             "name": "Siggi",
             "score": 950
+        },
+        {
+            "name": "asdasd",
+            "score": 900
         },
         {
             "name": "asdf",
@@ -89,8 +105,16 @@
     ],
     "Level2": [
         {
+            "name": "asdasd",
+            "score": 620
+        },
+        {
             "name": "Siggi",
             "score": 600
+        },
+        {
+            "name": "askks",
+            "score": 300
         },
         {
             "name": "sadasd",
@@ -106,6 +130,10 @@
         }
     ],
     "Level3": [
+        {
+            "name": "asdasd",
+            "score": 6300
+        },
         {
             "name": "Siggi",
             "score": 650

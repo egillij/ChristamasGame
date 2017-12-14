@@ -1,11 +1,8 @@
-Hljóð fyrir interactibles:	
-	
+Hljóð fyrir interactibles:		
 	- Hljóð á icicle (ís að brotna) (kannski hægt að nota gler)
 	
 	
 Charactr hljóð
-
-
 	- Hljóð fyrir TakeDamage (ahh) 
 	- Slide fyri player
 	
@@ -17,8 +14,7 @@ Umhverfishljóð
 
 
 Hljóð í menu:	
-	- Hljóð á recap skjá
-		- Mismunandi hljóð í byrjun eftir því hvort það var sigur eða dauði
+	
 
 	- Soundtrack á menu (spila instrumental lag)
 
@@ -46,3 +42,5 @@ Nice to have:
 		- Hljóð ef highscore (taka upp klapp og breyta eiginleikum þess í pd)
 	- Hljóð fyrir melee árás?
 	- snjóbolti hittir óvin eða map 
+	- Hljóð á recap skjá
+		- Mismunandi hljóð í byrjun eftir því hvort það var sigur eða dauði
