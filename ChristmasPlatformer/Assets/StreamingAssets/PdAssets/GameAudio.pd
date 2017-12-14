@@ -1,4 +1,4 @@
-#N canvas 0 50 1920 997 10;
+#N canvas -8 -8 1920 997 10;
 #X obj 100 663 dac~;
 #N canvas 953 50 958 988 (subpatch) 0;
 #X obj 65 275 *~ 1;
@@ -651,10 +651,10 @@
 #X obj 881 928 phasor~;
 #X obj 1471 505 readsf~;
 #X obj 1449 597 dac~;
-#X msg 1466 445 open jinglebells1.wav \, 1;
+#X msg 1470 431 open jinglebells1.wav \, 1;
 #X obj 1597 499 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 1495 475 0, f 2;
+#X msg 1502 470 0, f 2;
 #X obj 1552 530 metro 435;
 #N canvas 918 248 958 988 tamborina 0;
 #X obj 422 179 *~;
@@ -894,6 +894,11 @@
 0.165 0.165 0.165 0.294 0.294 0.294 0.349 0.349 0.349 0.294 0.247 0.262
 0.262 0.262 0.33 0.33 0.33 0.262 0.262 0.196 0.165 0.196 0.196 0.175
 0.147 0.131 0.131 0.131 0 0 0 0 0;
+#X obj 1936 547 readsf~;
+#X obj 1914 639 dac~;
+#X obj 1929 599 *~ 1;
+#X obj 1941 450 r drinkBang;
+#X msg 1935 473 open drinking.wav \, 1;
 #X connect 1 0 4 0;
 #X connect 2 0 3 1;
 #X connect 3 0 19 0;
@@ -1335,6 +1340,7 @@
 #X connect 336 0 342 1;
 #X connect 336 0 340 1;
 #X connect 337 0 335 0;
+#X connect 337 0 330 0;
 #X connect 338 0 232 0;
 #X connect 340 0 339 0;
 #X connect 340 0 339 1;
@@ -1439,3 +1445,8 @@
 #X connect 426 0 349 0;
 #X connect 427 0 425 0;
 #X connect 428 0 422 0;
+#X connect 429 0 431 0;
+#X connect 431 0 430 0;
+#X connect 431 0 430 1;
+#X connect 432 0 433 0;
+#X connect 433 0 429 0;
