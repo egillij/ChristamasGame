@@ -7,9 +7,25 @@ public class AudioInScene : MonoBehaviour {
 
     [SerializeField]
     private string pdFileName;
+    private bool isPlayed = false;
+
+    [SerializeField]
+    private bool stopOnDestroy;
     
-	void Awake()
+	void Update()
     {
-        LibPD.SendBang(pdFileName);
+
+        if(!isPlayed)
+        {
+            
+            LibPD.SendBang(pdFileName);
+            isPlayed = true;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (stopOnDestroy)
+            LibPD.SendBang(pdFileName + "Stop");
     }
 }

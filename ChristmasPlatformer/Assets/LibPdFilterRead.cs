@@ -7,15 +7,16 @@ using System.IO;
 
 public class LibPdFilterRead : MonoBehaviour
 {
-	// C# pointer stuff
-	private GCHandle dataHandle;
+    public static LibPdFilterRead instance;
+    // C# pointer stuff
+    private GCHandle dataHandle;
 	private IntPtr dataPtr;
 
 	// Patch handle, create one for each patch
 	private int SPatch;
 
 	// Pd related
-	private bool islibpdready;
+	public bool islibpdready;
 	private int numberOfTicks;
 
 	// Public, patch name
@@ -37,10 +38,25 @@ public class LibPdFilterRead : MonoBehaviour
 			}
 			else Debug.LogError("Error opening libpd");
 		}
-	}
 
-	// Unity audio callback
-	public void OnAudioFilterRead (float[] data, int channels)
+        MakeSingleton();
+    }
+
+    private void MakeSingleton()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    // Unity audio callback
+    public void OnAudioFilterRead (float[] data, int channels)
 	{	
 		/*
 		if(dataPtr == IntPtr.Zero)

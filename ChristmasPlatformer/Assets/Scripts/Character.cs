@@ -96,7 +96,7 @@ public abstract class Character : MonoBehaviour
 
 
     public virtual void ThrowAttack(int value)
-    {
+    {   
         if (facingRight)
         {
             GameObject throwable = (GameObject)Instantiate(throwablePrefab, throwPosition.position, Quaternion.Euler(new Vector3(0, 0, -90)));

@@ -70,8 +70,8 @@ public class ChimneyUp : MonoBehaviour {
 
             //LibPD.SendFloat("smokeAttack", 0.3f);
             //LibPD.SendFloat("smokeDecay", -0.3f);
-            LibPD.SendFloat("smokeVolume", 0.2f);
-            LibPD.SendBang("smokebang");
+            //LibPD.SendFloat("smokeVolume", 0.2f);
+            //LibPD.SendBang("smokebang");
             if (!isVisible)
                 StartCoroutine(FadeSmoke());
 

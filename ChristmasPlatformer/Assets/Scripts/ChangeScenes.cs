@@ -23,7 +23,7 @@ public class ChangeScenes : MonoBehaviour
 
         //GameManager.instance.LevelStart = Time.time;
         //SceneManager.LoadScene(sceneName);
-        Debug.Log(EventSystem.current.IsPointerOverGameObject());
+        //Debug.Log(EventSystem.current.IsPointerOverGameObject());
         GameObject btn = EventSystem.current.currentSelectedGameObject;
         if (btn.name != submenuName)
         {

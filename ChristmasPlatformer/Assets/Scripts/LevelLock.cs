@@ -39,4 +39,9 @@ public class LevelLock : MonoBehaviour {
             }
         }
     }
+
+    private void OnDestroy()
+    {
+       LibPDBinding.LibPD.SendBang("jinglebellBangStop");
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using LibPDBinding;
 
 public class Player : Character
 {
@@ -232,6 +233,7 @@ public class Player : Character
             {
                 MovingPlatform.GetComponent<PlatformMover>().playerOnTop = false;
             }
+            LibPD.SendBang("jumpBang");
             Rbody.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
             Jump = false;
         }
@@ -283,13 +285,17 @@ public class Player : Character
     }
 
     public void Death()
-    {
+    {        
         StartCoroutine(LevelDeath());
     }
 
     public override IEnumerator TakeDamage()
     {
         GameManager.instance.health--;
+        if(GameManager.instance.health == 1)
+        {
+            StartCoroutine(LowHealth());
+        }
         health = GameManager.instance.health;
 
         if (!IsDead)
@@ -314,5 +320,17 @@ public class Player : Character
         }
         LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), false, GameManager.instance.LevelDuration);
         LevelRecap.Instance.SceneName = "LevelSelect";
+    }
+
+    private IEnumerator LowHealth()
+    {
+        LibPD.SendBang("lowhealthBang");
+        for (int i=0; i < 15; i++)
+        {
+            if (IsDead) break;
+
+            yield return new WaitForSeconds(1.0f);
+        }
+        LibPD.SendBang("lowhealthStop");
     }
 }

@@ -7,6 +7,7 @@ Charactr hljóð
 
 
 	- Hljóð fyrir TakeDamage (ahh) 
+	- Slide fyri player
 	
 	
 

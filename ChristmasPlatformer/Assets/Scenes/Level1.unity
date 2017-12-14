@@ -5375,35 +5375,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1520290791}
-  - component: {fileID: 1520290790}
-  - component: {fileID: 1520290789}
   - component: {fileID: 1520290792}
   m_Layer: 0
-  m_Name: LibPd
+  m_Name: LibPdScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1520290789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1520290788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 262d6ca9dc64955428f193b69fee634b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOfPatch: GameAudio.pd
---- !u!81 &1520290790
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1520290788}
-  m_Enabled: 1
 --- !u!4 &1520290791
 Transform:
   m_ObjectHideFlags: 0
@@ -5429,6 +5408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pdFileName: snow_wind
+  stopOnDestroy: 1
 --- !u!4 &1534071147 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4429131898620248, guid: b6dda0c96e18a3c4b817a751244b8a80,

@@ -30,7 +30,7 @@ public class ChimneyDown : MonoBehaviour
         if (IsInside())
         {
             Player.Instance.AllowedDown = true;
-            Debug.Log(Player.Instance.AllowedDown);
+            //Debug.Log(Player.Instance.AllowedDown);
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 Player.Instance.GoDown = true;
@@ -40,6 +40,7 @@ public class ChimneyDown : MonoBehaviour
             {
                 //ChimneyCollider.enabled = false;
                 ChimneyCollider.isTrigger = true;
+                LibPDBinding.LibPD.SendBang("chimneyMagic");
                 StartCoroutine(ChangeScene());
                 //LibPD.SendFloat("banger", 1f);
                 //LibPD.SendBang("banger"); 

@@ -34,6 +34,7 @@ public class Bomb : MonoBehaviour
     void TriggerExplosion()
     {
         Animator.SetTrigger("Explode");
+        LibPD.SendBang("bombBang");
         ExplosionRadius.enabled = true;
     }
 

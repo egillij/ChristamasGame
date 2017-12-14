@@ -31,4 +31,26 @@ public class AnimationHandler : MonoBehaviour {
     {
         Player.Instance.Death();
     }
+
+    public void DeathSound()
+    {
+        LibPDBinding.LibPD.SendBang("deathBang");
+    }
+
+    public void ThrowSound(int value)
+    {
+        Debug.Log(value);
+        if ((Player.Instance.OnGround && value == 0) || (!Player.Instance.OnGround && value ==1))
+        {
+            LibPDBinding.LibPD.SendFloat("throwVol", 1.0f);
+            LibPDBinding.LibPD.SendBang("throwBang");
+        }
+        
+    }
+
+    public void WalkSound()
+    {
+        if (Player.Instance.OnGround)
+            LibPDBinding.LibPD.SendBang("snowCrunch");
+    }
 }
