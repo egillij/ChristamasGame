@@ -4,6 +4,7 @@ Loka skref:
 	- Setja rétt nöfn á Pd skjöl (Sigurbjörn)
 	- Taka til í Unity.
 	- Yfirlestur á skýrslum.
+	- setja hljóð á gjafirnar í minigame
 
 Búið:
 	- Hljóð á sublevel chimney (Egill)	
