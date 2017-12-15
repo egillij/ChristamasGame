@@ -15,6 +15,7 @@ public class FallingObject : MonoBehaviour {
                 {
                     if (cam.name == "Falling Camera")
                     {
+                        LibPDBinding.LibPD.SendBang("banger");
                         cam.GetComponent<CaptureGame>().score += 10;
                     }
                 }
