@@ -15,15 +15,6 @@ public class Enemy : Character {
     [SerializeField]
     private float throwRange;
 
-    //[SerializeField]
-    //private Transform[] groundPoints;
-
-    //[SerializeField]
-    //private float groundRadius;
-
-    //[SerializeField]
-    //private LayerMask whatIsGround;
-
     public EdgeCollider2D SwordCollider;
 
     public bool aggresive;

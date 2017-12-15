@@ -99,7 +99,6 @@ public class OpenSublevel: MonoBehaviour {
         {
             if (IsInside())//Input.GetKeyDown(KeyCode.S))
             {
-                
                 Player.Instance.AllowedDown = true;
                 Player.Instance.PlayerDown();
                 if (Player.Instance.GoDown)
@@ -108,18 +107,14 @@ public class OpenSublevel: MonoBehaviour {
                     LibPDBinding.LibPD.SendBang("chimneyMagic");
                     ChimneyCollider.enabled = false;
                     sceneIsLoading = true;
-                    StartCoroutine(ChangeScene());
-                    
+                    StartCoroutine(ChangeScene());                    
                 }
-
             }
             else
             {
                 Player.Instance.AllowedDown = false;
             }
-
         }
-
     }
 
     private bool IsInside()
@@ -152,16 +147,5 @@ public class OpenSublevel: MonoBehaviour {
         spriteRenderer.color = new Color(255, 255, 255, 255);
         Player.Instance.movementSpeed = 10f;
         SceneManager.LoadScene(sublevelName, LoadSceneMode.Additive);
-
-
-
     }
-
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player" && !sceneIsLoading && isSublevelOpen)
-    //    {
-
-    //    }
-    //}
 }

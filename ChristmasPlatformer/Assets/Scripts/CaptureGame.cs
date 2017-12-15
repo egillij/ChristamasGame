@@ -41,9 +41,7 @@ public class CaptureGame : MonoBehaviour {
             startingText.enabled = false;
             if (Time.time >= levelStart + levelDuration)
             {
-                //Player.Instance.Sleeping(3.0f);
                 StartCoroutine(EndLevel());
-
             }
             else
             {

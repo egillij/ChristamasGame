@@ -20,10 +20,6 @@ public class ChangeScenes : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-
-        //GameManager.instance.LevelStart = Time.time;
-        //SceneManager.LoadScene(sceneName);
-        //Debug.Log(EventSystem.current.IsPointerOverGameObject());
         GameObject btn = EventSystem.current.currentSelectedGameObject;
         if (btn.name != submenuName)
         {
@@ -133,11 +129,6 @@ public class ChangeScenes : MonoBehaviour
                 alignment = TextAnchor.MiddleCenter
             };
             
-
-            //if (GUI.Button(new Rect(position.x + 200, position.y + boxheight*3/4, 100, 20), "High Scores", middleBtn))
-            //{
-            //    Debug.Log("OPEN HIGH SCORE LIST");
-            //}
             if (GUI.Button(new Rect(position.x+180, position.y+boxheight*3/4, 40, 20), "Play", middleBtn))
             {
                 GameManager.instance.LevelStart = Time.time;

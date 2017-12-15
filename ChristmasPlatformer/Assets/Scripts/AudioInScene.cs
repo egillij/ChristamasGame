@@ -17,7 +17,6 @@ public class AudioInScene : MonoBehaviour {
 
         if(!isPlayed)
         {
-            
             LibPD.SendBang(pdFileName);
             isPlayed = true;
         }

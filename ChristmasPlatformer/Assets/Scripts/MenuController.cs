@@ -12,16 +12,6 @@ public class MenuController : MonoBehaviour {
     [SerializeField]
     private InputField playerInput;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    
     public void CloseInputWindow()
     {
         inputPanel.SetActive(false);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using LibPDBinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ public class FallingBomb : MonoBehaviour
         if (other is BoxCollider2D && other.gameObject.tag == "Player")
         {
             Animator.SetTrigger("Burn");
+            LibPD.SendBang("fuse");
             TriggerExplosion();
         }
     }
@@ -28,6 +30,7 @@ public class FallingBomb : MonoBehaviour
     void TriggerExplosion()
     {
         Animator.SetTrigger("Explode");
+        LibPD.SendBang("bombBang");
         ExplosionRadius.enabled = true;
     }
 

@@ -30,7 +30,7 @@ public class ChimneyDown : MonoBehaviour
         if (IsInside())
         {
             Player.Instance.AllowedDown = true;
-            //Debug.Log(Player.Instance.AllowedDown);
+            
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 Player.Instance.GoDown = true;
@@ -38,12 +38,9 @@ public class ChimneyDown : MonoBehaviour
 
             if (Player.Instance.GoDown && !ChimneyCollider.isTrigger)
             {
-                //ChimneyCollider.enabled = false;
                 ChimneyCollider.isTrigger = true;
                 LibPDBinding.LibPD.SendBang("chimneyMagic");
-                StartCoroutine(ChangeScene());
-                //LibPD.SendFloat("banger", 1f);
-                //LibPD.SendBang("banger"); 
+                StartCoroutine(ChangeScene());                
             }
         }
         else
@@ -87,8 +84,6 @@ public class ChimneyDown : MonoBehaviour
         }
         
         LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, Player.Instance.BonusScore, levelNr, true, GameManager.instance.LevelDuration);
-        LevelRecap.Instance.SceneName = sceneName;
-        //SceneManager.LoadScene(sceneName);
-        
+        LevelRecap.Instance.SceneName = sceneName;        
     }
 }

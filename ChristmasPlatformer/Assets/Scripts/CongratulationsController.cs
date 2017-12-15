@@ -27,9 +27,8 @@ public class CongratulationsController : MonoBehaviour {
         {
             yield return null;
         }
-        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, Player.Instance.BonusScore, 3, true, GameManager.instance.LevelDuration);
-        LevelRecap.Instance.SceneName = "LevelSelect";
-        //SceneManager.LoadScene(sceneName);
 
+        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, Player.Instance.BonusScore, 3, true, GameManager.instance.LevelDuration);
+        LevelRecap.Instance.SceneName = "LevelSelect";        
     }
 }
