@@ -5,6 +5,14 @@
             "score": 7820
         },
         {
+            "name": "asdf",
+            "score": 6000
+        },
+        {
+            "name": "asdf",
+            "score": 5850
+        },
+        {
             "name": "poasdk",
             "score": 5650
         },
@@ -41,12 +49,20 @@
             "score": 2200
         },
         {
+            "name": "asdf",
+            "score": 600
+        },
+        {
             "name": "Forseti",
             "score": 400
         },
         {
             "name": "askks",
             "score": 1250
+        },
+        {
+            "name": "asdf",
+            "score": 1050
         },
         {
             "name": "sadasd",
@@ -69,11 +85,23 @@
             "score": 10
         },
         {
+            "name": "asdf",
+            "score": 0
+        },
+        {
+            "name": "asdf",
+            "score": 0
+        },
+        {
             "name": "",
             "score": 0
         }
     ],
     "Level1": [
+        {
+            "name": "asdf",
+            "score": 950
+        },
         {
             "name": "askks",
             "score": 950
@@ -91,8 +119,16 @@
             "score": 750
         },
         {
+            "name": "asdf",
+            "score": 750
+        },
+        {
             "name": "dasd",
             "score": 650
+        },
+        {
+            "name": "asdf",
+            "score": 600
         },
         {
             "name": "Forseti",
@@ -111,6 +147,10 @@
         {
             "name": "Siggi",
             "score": 600
+        },
+        {
+            "name": "asdf",
+            "score": 300
         },
         {
             "name": "askks",
@@ -135,12 +175,28 @@
             "score": 6300
         },
         {
+            "name": "asdf",
+            "score": 6000
+        },
+        {
+            "name": "asdf",
+            "score": 5850
+        },
+        {
             "name": "Siggi",
             "score": 650
         },
         {
             "name": "Biggi",
             "score": 89
+        },
+        {
+            "name": "asdf",
+            "score": 0
+        },
+        {
+            "name": "",
+            "score": 0
         }
     ]
 }

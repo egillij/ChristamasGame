@@ -32,7 +32,6 @@ public class EnterDoor : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Player");
             playerCanEnter = true;
             playerEnterTime = Time.time;
         }

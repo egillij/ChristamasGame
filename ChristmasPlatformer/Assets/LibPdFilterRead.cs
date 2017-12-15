@@ -131,7 +131,7 @@ public class LibPdFilterRead : MonoBehaviour
 		path = patchJar;
 		#endif
 
-		Debug.Log("Loading patch:" + path);
+		// Debug.Log("Loading patch:" + path);
 		return LibPD.OpenPatch (path);
 	}
 	
@@ -159,7 +159,7 @@ public class LibPdFilterRead : MonoBehaviour
 	// delegate for [print]
 	void ReceivePrint(string msg) 
 	{
-		Debug.Log("print:" + msg);
+		// Debug.Log("print:" + msg);
 	}
 	
 	

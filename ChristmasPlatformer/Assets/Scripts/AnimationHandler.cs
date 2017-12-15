@@ -39,7 +39,6 @@ public class AnimationHandler : MonoBehaviour {
 
     public void ThrowSound(int value)
     {
-        Debug.Log(value);
         if ((Player.Instance.OnGround && value == 0) || (!Player.Instance.OnGround && value ==1))
         {
             LibPDBinding.LibPD.SendFloat("throwVol", 1.0f);

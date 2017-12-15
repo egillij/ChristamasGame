@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
 
     void OnGUI()
     {
-        if (SceneManager.GetActiveScene().name != "Menu" && SceneManager.GetActiveScene().name != "LevelSelect" && SceneManager.GetActiveScene().name != "Finished" && SceneManager.GetActiveScene().name != "One" && SceneManager.GetActiveScene().name != "Two" && SceneManager.GetActiveScene().name != "Three")
+        if (SceneManager.GetActiveScene().name != "Menu" && SceneManager.GetActiveScene().name != "LevelSelect" && SceneManager.GetActiveScene().name != "Finished" && SceneManager.GetActiveScene().name != "One" && SceneManager.GetActiveScene().name != "Two" && SceneManager.GetActiveScene().name != "Three" && SceneManager.GetActiveScene().name != "Highscore")
         {
             // Gift and gift count
             GUIStyle giftStyle = new GUIStyle()
