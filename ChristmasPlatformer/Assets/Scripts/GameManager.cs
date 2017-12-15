@@ -23,8 +23,11 @@ public class GameManager : MonoBehaviour {
     public bool[] levelLock;
     public bool countTime;
 
+    public bool backToMenu;
+
     void Awake()
     {
+        backToMenu = true;
         MakeSingleton();
     }
 
@@ -83,13 +86,35 @@ public class GameManager : MonoBehaviour {
             float width = 0;
             for (int i = 0; i < health; i++)
             {
-
                 if (width % 6 == 0)
                     width = 0;
                 float height = Mathf.Floor(i / 6f) * 50;
                 GUI.Box(new Rect(Screen.width-350+width*50, height, 100, 70), heart, healthStyle);
 
                 width += 1;
+            }
+
+            //if(Input.GetKeyDown(KeyCode.Escape))
+            //{
+            //    backToMenu = !backToMenu;
+            //    Debug.Log("ESC");
+            //}
+            GUIStyle menuStyle = new GUIStyle()
+            {
+                alignment = TextAnchor.MiddleCenter,
+                fontSize = 24,
+                normal = new GUIStyleState()
+                {
+                    textColor = Color.red
+                }
+            };
+            if (backToMenu)
+            {
+                if (GUI.Button(new Rect(40, Screen.height - 50, 100, 50), "Back To Menu", menuStyle))
+                {
+                    score = 0;
+                    SceneManager.LoadScene("LevelSelect");
+                }
             }
         }        
     }

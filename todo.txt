@@ -1,9 +1,6 @@
 Loka skref:
 
 	- Bæta við soundtrack. (Sigurbjörn)
-
-	- Level Select takki inn í levels (Egill)
-
 	- Setja rétt nöfn á Pd skjöl (Sigurbjörn)
 	- Taka til í Unity.
 	- Yfirlestur á skýrslum.
@@ -17,6 +14,7 @@ Búið:
 	- Smoke hljóð. Hvað varð um það? (Egill)
 	- Þegar player á eitt líf eftir, slökkva á viðvörun ef hann nær sér í nýtt líf
 	- Afhverju er enemy að detta út af platform. (Egill)
+	- Level Select takki inn í levels (Egill)
 
 
 Implementations:
