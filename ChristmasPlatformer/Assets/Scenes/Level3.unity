@@ -2540,6 +2540,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4990815418537020, guid: dbf07ad66f093e34cab8db9cd29ddeb8,
     type: 2}
   m_PrefabInternal: {fileID: 718869485}
+--- !u!1 &819401777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 819401779}
+  - component: {fileID: 819401778}
+  m_Layer: 0
+  m_Name: LibPdInScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &819401778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819401777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f25ebdbd952d44b9954913bf69b9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pdFileName: deckBang
+  stopOnDestroy: 1
+--- !u!4 &819401779
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819401777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.9641604, y: -2.1902032, z: 0.0859375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &831231805
 Prefab:
   m_ObjectHideFlags: 0

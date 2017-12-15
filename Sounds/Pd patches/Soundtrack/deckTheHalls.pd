@@ -1,0 +1,17 @@
+#N canvas 4262 160 450 300 10;
+#X obj 55 116 readsf~;
+#X obj 56 165 dac~;
+#X obj 181 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 86 81 0, f 2;
+#X msg 54 42 open deckthehalls.wav \, 1;
+#X obj 212 79 r deckBang;
+#X obj 143 165 r deckBangStop;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 0 1 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
