@@ -83,7 +83,7 @@ public class ChimneyDown : MonoBehaviour
             yield return null;
         }
         
-        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, Player.Instance.BonusScore, levelNr, true, GameManager.instance.LevelDuration);
+        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, GameManager.instance.bonusScore, levelNr, true, GameManager.instance.LevelDuration);
         LevelRecap.Instance.SceneName = sceneName;        
     }
 }

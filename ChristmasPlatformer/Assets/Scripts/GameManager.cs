@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 
     public string playerName;
     public int score;
-
+    public int bonusScore;
     public int finalScore;
     public int EnemiesKilled;
 
@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour {
                 if (GUI.Button(new Rect(40, Screen.height - 50, 100, 50), "Back To Menu", menuStyle))
                 {
                     score = 0;
+                    bonusScore = 0;
                     SceneManager.LoadScene("LevelSelect");
                 }
             }

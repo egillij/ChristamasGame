@@ -26,12 +26,14 @@ public class EnterDoor : MonoBehaviour {
         Player.Instance.AllowedDown = false;
 
         SceneManager.LoadScene(sceneName);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            LibPDBinding.LibPD.SendBang("chimneyMagic");
             playerCanEnter = true;
             playerEnterTime = Time.time;
         }
@@ -41,6 +43,7 @@ public class EnterDoor : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
+            LibPDBinding.LibPD.SendBang("chimneyMagicStop");
             playerCanEnter = false;
         }
     }

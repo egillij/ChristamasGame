@@ -134,6 +134,7 @@ public class ChangeScenes : MonoBehaviour
                 GameManager.instance.LevelStart = Time.time;
                 GameManager.instance.LevelDuration = 0.0f;
                 GameManager.instance.countTime = true;
+                GameManager.instance.bonusScore = 0;
                 SceneManager.LoadScene(sceneName);
             }
             

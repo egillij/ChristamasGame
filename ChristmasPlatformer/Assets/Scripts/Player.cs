@@ -58,7 +58,7 @@ public class Player : Character
     public bool Sleep { get; set; }
 
 
-    public int BonusScore {get; set;}
+    //public int BonusScore {get; set;}
     public int EnemiesKilled { get; set; }
 
     public override bool IsDead
@@ -80,7 +80,6 @@ public class Player : Character
             Physics2D.IgnoreCollision(enemy.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
 
-        BonusScore = 0;
         EnemiesKilled = 0;
         health = GameManager.instance.health;
     }
@@ -319,7 +318,7 @@ public class Player : Character
         {
             yield return null;
         }
-        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, BonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), false, GameManager.instance.LevelDuration);
+        LevelRecap.Instance.InitializeRecap(GameManager.instance.score, GameManager.instance.EnemiesKilled, GameManager.instance.bonusScore, Convert.ToInt32(SceneManager.GetSceneAt(0).name.Split('l')[1]), false, GameManager.instance.LevelDuration);
         LevelRecap.Instance.SceneName = "LevelSelect";
     }
 

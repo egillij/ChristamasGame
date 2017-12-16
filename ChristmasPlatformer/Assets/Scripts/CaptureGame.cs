@@ -127,7 +127,8 @@ public class CaptureGame : MonoBehaviour {
         Player.Instance.transform.position = playerReturnPosition;
         //Freeze player for 1 second
         Player.Instance.Sleeping(1.0f);
-        Player.Instance.BonusScore += score;
+        GameManager.instance.bonusScore += score;
+        //Player.Instance.BonusScore += score;
         Player.Instance.movementSpeed = 5f;
         SceneManager.UnloadSceneAsync(this.gameObject.scene);
 

@@ -1,4 +1,4 @@
-#N canvas -8 -8 1536 781 10;
+#N canvas 0 50 1536 781 10;
 #X obj 100 663 dac~;
 #N canvas 953 50 958 988 (subpatch) 0;
 #X obj 65 275 *~ 1;
@@ -515,7 +515,7 @@
 #X msg 1484 196 0 0 \, 1 100 \, 0 700 100;
 #X obj -511 1028 noise~;
 #X obj -526 1051 *~;
-#X obj -544 1173 dac~;
+#X obj -544 1217 dac~;
 #X obj -650 1094 bp~ 440 80;
 #X obj -572 1094 bp~ 440 80;
 #X obj -495 1094 bp~ 440 80;
@@ -527,7 +527,7 @@
 -1 -1;
 #X obj -172 1037 noise~;
 #X obj -187 1060 *~;
-#X obj -214 1230 dac~;
+#X obj -222 1249 dac~;
 #X obj -311 1103 bp~ 440 80;
 #X obj -233 1103 bp~ 440 80;
 #X obj -156 1103 bp~ 440 80;
@@ -965,6 +965,11 @@
 #X msg 2078 431 open deckthehalls.wav \, 1;
 #X obj 2236 468 r deckBang;
 #X obj 2167 554 r deckBangStop;
+#X obj -162 1215 *~;
+#X msg -98 1161 1;
+#X msg -96 1193 0;
+#X obj -28 1190 r chimneyMagicStop;
+#X obj -533 1182 *~;
 #X connect 1 0 4 0;
 #X connect 2 0 3 1;
 #X connect 3 0 19 0;
@@ -1240,6 +1245,7 @@
 #X connect 207 0 217 0;
 #X connect 207 0 222 0;
 #X connect 207 0 206 0;
+#X connect 207 0 496 0;
 #X connect 208 0 209 1;
 #X connect 209 0 211 0;
 #X connect 209 0 212 0;
@@ -1262,16 +1268,14 @@
 #X connect 217 0 221 0;
 #X connect 218 0 219 0;
 #X connect 219 0 217 1;
-#X connect 220 0 210 0;
-#X connect 220 0 210 1;
+#X connect 220 0 495 1;
 #X connect 221 0 215 0;
 #X connect 222 0 218 0;
 #X connect 223 0 209 0;
 #X connect 224 0 223 0;
 #X connect 225 0 198 0;
 #X connect 225 0 220 0;
-#X connect 226 0 199 0;
-#X connect 226 0 199 1;
+#X connect 226 0 499 0;
 #X connect 227 0 220 1;
 #X connect 228 0 225 0;
 #X connect 229 0 207 0;
@@ -1598,3 +1602,12 @@
 #X connect 492 0 488 0;
 #X connect 493 0 490 0;
 #X connect 494 0 491 0;
+#X connect 495 0 210 0;
+#X connect 495 0 210 1;
+#X connect 496 0 495 1;
+#X connect 496 0 499 1;
+#X connect 497 0 495 1;
+#X connect 497 0 499 1;
+#X connect 498 0 497 0;
+#X connect 499 0 199 0;
+#X connect 499 0 199 1;

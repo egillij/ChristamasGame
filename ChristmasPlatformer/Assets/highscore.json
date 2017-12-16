@@ -5,8 +5,20 @@
             "score": 7820
         },
         {
+            "name": "Egill",
+            "score": 8030
+        },
+        {
+            "name": "sadsa",
+            "score": 7300
+        },
+        {
             "name": "asdf",
             "score": 6000
+        },
+        {
+            "name": "as",
+            "score": 5900
         },
         {
             "name": "asdf",
@@ -77,6 +89,10 @@
             "score": 150
         },
         {
+            "name": "sadsa",
+            "score": 7400
+        },
+        {
             "name": "Sigurbjorn",
             "score": 23
         },
@@ -103,6 +119,10 @@
     ],
     "Level1": [
         {
+            "name": "Egill",
+            "score": 950
+        },
+        {
             "name": "adsas",
             "score": 950
         },
@@ -121,6 +141,10 @@
         {
             "name": "asdasd",
             "score": 900
+        },
+        {
+            "name": "sadsa",
+            "score": 800
         },
         {
             "name": "asdf",
@@ -143,11 +167,19 @@
             "score": 400
         },
         {
+            "name": "sadsa",
+            "score": 100
+        },
+        {
             "name": "Raggi",
             "score": 54
         }
     ],
     "Level2": [
+        {
+            "name": "Egill",
+            "score": 680
+        },
         {
             "name": "adsas",
             "score": 620
@@ -159,6 +191,10 @@
         {
             "name": "Siggi",
             "score": 600
+        },
+        {
+            "name": "sadsa",
+            "score": 340
         },
         {
             "name": "asdf",
@@ -183,12 +219,24 @@
     ],
     "Level3": [
         {
+            "name": "Egill",
+            "score": 6400
+        },
+        {
             "name": "asdasd",
             "score": 6300
         },
         {
+            "name": "sadsa",
+            "score": 6160
+        },
+        {
             "name": "asdf",
             "score": 6000
+        },
+        {
+            "name": "as",
+            "score": 5900
         },
         {
             "name": "asdf",
